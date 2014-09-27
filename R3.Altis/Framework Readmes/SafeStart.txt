@@ -1,0 +1,20 @@
+========== F3 SafeStart ==========
+
+These SafeStart scripts are originally part of the F3 framework. They allow for a mandatory briefing time and/or stop accidental friendly fire at the beginning of a mission.
+Any and all projectiles coming from the player (though not any vehicle they enter) will be deleted (i.e. grenades, bullets).
+Note that this script only affects players.
+
+
+===== Usage =====
+
+- The scripts in this framework are edited to work in conjunction with Agent's Gear Scripts, including all of the different roles.
+- To allow specific slots to have the action, insert the following into that unit's init field: nul = [this] execVM "scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf";
+- Although it is set up in this framework, the system also requires the following lines:
+
+In the init.sqf, changing this for how many minutes you'd like the timer to run for:
+f_param_mission_timer = 5;
+
+In the init.sqf, actually executing the script and loop:
+[] execVM "scripts\safeStart\f_safeStart.sqf";
+
+In the description.ext there's a cfgNotifications section. Check the current description.ext for this. 
