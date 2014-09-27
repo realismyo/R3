@@ -10,8 +10,8 @@ by AGeNT
 ===== Using the Scripts =====
 - In their current state, the scripts will not work for AI, simply for testing purposes. In fact a whole different script will be required.
 - If called from unit init field, needs to look similar to below, with the desired loadout in ""
-- nul = [this,"desiredloadouthere"] execVM "scripts\assignGearFIA.sqf";
-e.g. - nul = [this,"pltld"] execVM "scripts\assignGearFIA.sqf";
+- nul = [this,"desiredloadouthere"] execVM "scripts\assignGear_FIA.sqf";
+e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_FIA.sqf";
 
 - Additional cases can be added below to support additional roles.
 - Check the assignGearDefines_FACTION.sqf for defined variables, alter them in that script. 
