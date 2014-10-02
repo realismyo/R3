@@ -106,13 +106,13 @@ KEGs_CTRL_PRESS = false;
 
 CameraLoop_count = 0;
 
-spectate_events = compile preprocessFileLineNumbers "spectator\specta_events.sqf";
-RefreshPlayerList = compile preprocessFileLineNumbers "spectator\RefreshPlayerList.sqf";
-FreeLookMovementHandler = compile preprocessFileLineNumbers "spectator\FreeLookMovementHandler.sqf";
-CameraMenuHandler = compile preprocessFileLineNumbers "spectator\CameraMenuHandler.sqf";
-PlayerMenuHandler = compile preprocessFileLineNumbers "spectator\PlayerMenuHandler.sqf";
-KEGsShowCombatMode = compile preprocessFileLineNumbers "spectator\specta_combatmode.sqf";
-KEGsShowUnitLocator = compile preprocessFileLineNumbers "spectator\specta_locator.sqf";
+spectate_events = compile preprocessFileLineNumbers "scripts\spectator\specta_events.sqf";
+RefreshPlayerList = compile preprocessFileLineNumbers "scripts\spectator\RefreshPlayerList.sqf";
+FreeLookMovementHandler = compile preprocessFileLineNumbers "scripts\spectator\FreeLookMovementHandler.sqf";
+CameraMenuHandler = compile preprocessFileLineNumbers "scripts\spectator\CameraMenuHandler.sqf";
+PlayerMenuHandler = compile preprocessFileLineNumbers "scripts\spectator\PlayerMenuHandler.sqf";
+KEGsShowCombatMode = compile preprocessFileLineNumbers "scripts\spectator\specta_combatmode.sqf";
+KEGsShowUnitLocator = compile preprocessFileLineNumbers "scripts\spectator\specta_locator.sqf";
 
 // Unit sides shown - Show all if sides not set
 if(isNil "KEGsShownSides") then {
