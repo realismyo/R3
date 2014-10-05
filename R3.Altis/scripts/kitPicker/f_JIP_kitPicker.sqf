@@ -15,7 +15,7 @@ KitPickInit = {
     _idx = COMBO lbAdd "Platoon Commander"; COMBO lbSetData [_idx, "pltld"];
     _idx = COMBO lbAdd "Platoon Sergeant"; COMBO lbSetData [_idx, "pltld"];
     _idx = COMBO lbAdd "Platoon FAC"; COMBO lbSetData [_idx, "pltfac"];
-    _idx = COMBO lbAdd "Platoon UAV Op."; COMBO lbSetData [_idx, "pltuavop"];
+    _idx = COMBO lbAdd "Platoon UAV Operator"; COMBO lbSetData [_idx, "pltuavop"];
     _idx = COMBO lbAdd "Platoon Medic"; COMBO lbSetData [_idx, "pltmed"];
 	// General Section Roles
     COMBO lbAdd "--Section Roles--";

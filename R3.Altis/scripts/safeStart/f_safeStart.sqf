@@ -1,7 +1,6 @@
 // F3 - Safe Start, Initialisation
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 //=====================================================================================
-
 // MAKE SURE THE PLAYER INITIALIZES PROPERLY
 
 if (!isDedicated && (isNull player)) then {
@@ -9,7 +8,6 @@ if (!isDedicated && (isNull player)) then {
 };
 
 // ====================================================================================
-
 // Make sure the component only starts after the mission has initialized
 sleep 0.1;
 
@@ -20,12 +18,13 @@ if (isServer) then {
 };
 
 // ====================================================================================
-//wait until server has initialized pv_mission_timer OR f_param_mission_timer was not set
+// Wait until server has initialized pv_mission_timer OR f_param_mission_timer was not set
 
 waituntil {sleep 3; ((!isNil "pv_mission_timer") || (f_param_mission_timer == 0));};
 
 // ====================================================================================
 // JIP clients are sent PVs before can init.sqf can process
+
 if (pv_mission_timer > 0) then {
 
 	// Start Mission Timer, Mission Timer Hint, turn on invincibility

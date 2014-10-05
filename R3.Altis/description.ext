@@ -1,62 +1,39 @@
 // ====================================================================================
-//	Author: Simwah
-//	Created:   2014-09-14 17:50:10
-//	Last Modified by:   Simwah
-//	Last Modified time: 2014-10-02 21:42:17
-//	File Name: description.ext
-//	Credits: F3, AGeNT
+//	File: description.ext
+//	Last Modified By: Mr. Agnet
+// http://community.bistudio.com/wiki/description.ext
 // ====================================================================================
-
+// =============================== CONFIGURABLE VARIABLES =============================
 // ====================================================================================
-// ====================================================================================
-// ================================CONFIGURABLE OPTIONS================================
-// ====================================================================================
-// ====================================================================================
-
-// ====================================================================================
-
 // R3 - Loading Screen
 
-onLoadName = "*** Insert mission name here. ***";
-author = "*** Insert mission author name here. ***";
+onLoadName = "** Insert mission name here. **";
+author = "** Insert mission author name here. **";
+onLoadMission = "** Insert loading screen message here **";
+loadScreen = "loadscreen.jpg";
 
 // ====================================================================================
-
 // R3 - Respawn Settings
+// Respawn = 4 for JIP, Respawn = 1 for NO JIP
 
 respawn = 4;
 respawndelay = 3;
 
 // ====================================================================================
-
+// =========== DO NOT CHANGE ANYTHING BELOW UNLESS YOU KNOW WHAT YOU'RE DOING =========
 // ====================================================================================
-// ====================================================================================
-// ============DO NOT CHANGE ANYTHING BELOW UNLESS YOU KNOW WHAT YOUR DOING============
-// ====================================================================================
-// ====================================================================================
-
-// ====================================================================================
-
 // R3 - Mission Header
 
 class Header
 {
-	gameType = Coop;
+	gameType = Coop; 			// Coop = Cooperative Mission, Team = Team Mission
 	minPlayers = 1;
-	maxPlayers = 453;
+	maxPlayers = 109;			// framework has by default 109 slots
 };
 
 // ====================================================================================
-
-// R3 - Loading Screen
-
-onLoadMission = "Made with the R3 Mission Framework - http://code.realismyo.com/R3";
-loadScreen = "loadscreen.jpg";
-
-// ====================================================================================
-// R3 - Parameters
-
-// Add any new parameters to the END of the block, not the START. 
+// R3 - Parameter Block
+// Add any new parameters to the END of the block, not the START, otherwise other parameters will be set incorrectly. 
 // These values can be changed in the pre-mission lobby.
 
 class Params
@@ -72,24 +49,22 @@ class Params
 };
 
 // ====================================================================================
-
-// R3 - Start of Notifications block.
+// R3 - BIS Notifications Config Block
 
 class cfgNotifications
 {
 	// Notification Template
 	class Template
 	{
-		title = ""; // Tile displayed as text on black background. Filled by arguments.
-		iconPicture = ""; // Small icon displayed in left part. Colored by "color", filled by arguments.
-		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
-		description = ""; // Brief description displayed as structured text. Colored by "color", filled by arguments.
-		color[] = {1,1,1,1}; // Icon and text color
-		duration = 5; // How many seconds will the notification be displayed
-		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
-		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+		title = ""; 			// Tile displayed as text on black background. Filled by arguments.
+		iconPicture = ""; 		// Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; 			// Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = ""; 		// Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,1,1,1}; 	// Icon and text color
+		duration = 5; 			// How many seconds will the notification be displayed
+		priority = 0; 			// Priority; higher number = more important; tasks in queue are selected by priority
+		difficulty[] = {}; 		// Required difficulty settings. All listed difficulties has to be enabled
 	};
-
 	// Notifications for the R3 Safe Start Component
 	class SafeStart
 	{
@@ -116,19 +91,21 @@ class cfgNotifications
 };
 
 // ====================================================================================
+// R3 - Script Configs
 
-// R3 - Menu components
-
-// Menu components for the JIP Menu
-#include "scripts\kitPicker\f_JIP_kitpicker.h"
-
-// Menu components for the Spectator Script
-#include "scripts\spectator\spectating.hpp"
+#include "scripts\kitPicker\f_JIP_kitpicker.h"	// Menu components for the JIP Menu
+#include "scripts\spectator\spectating.hpp"		// Kegetys Spectator Script
 
 // ====================================================================================
-
-// R3 - Disable AI Slots
+// R3 - Disable Playable Unit AI
 
 disabledAI = 1;
+
+//=====================================================================================
+// R3 - Debug Console - Enabled for logged in admin
+// Leave this shit here otherwise Mr. Agnet will hunt you down personally. 
+
+enableDebugConsole = 1;			// 0 = disabled, 1 = admin logged in, 2 = everyone (don't bloody well do this unless you want a shitstorm)
+allowFunctionsRecompile = 1;	// allow shit to be fixed
 
 //=====================================================================================

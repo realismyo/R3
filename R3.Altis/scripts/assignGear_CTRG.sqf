@@ -25,7 +25,7 @@ private [
 ];
 
 // ==== gear script variables ====
-_3GLs = true;						// 3GL rounds instead of regular 1GL rounds. This variable is specific to the NATO scripts.
+_3GLs = false;						// 3GL rounds instead of regular 1GL rounds. This variable is specific to the NATO scripts.
 _underwaterWeapons = true;			// divers assigned underwater rifles, if false then same rifle as everyone else. 
 _nightGear = false;					// night vision goggles and IR strobes equipped
 _scopes = false;					// scopes replace regular attachments
@@ -51,12 +51,12 @@ if (_plebUniform != "") then { removeUniform _unit; };
 if (_goggles != "") then { removeGoggles _unit; };
 
 // gear removal
-removeVest _unit;
-removeHeadgear _unit;
 removeAllItems _unit;
 removeAllWeapons _unit; 
-removeBackpack _unit;
 removeAllAssignedItems _unit;
+removeVest _unit;
+removeHeadgear _unit;
+removeBackpack _unit;
 
 switch (_loadout) do {									// case switch for desired loadout
 	
@@ -70,7 +70,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
-			_unit addMagazines [_glExplody,2];
+			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		} else {
@@ -78,9 +78,7 @@ switch (_loadout) do {									// case switch for desired loadout
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		};
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -110,17 +108,13 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazine _designatorBat;
 		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		if (_3GLs) then {
-			_unit addMagazines [_glExplody,2];
-			_unit addMagazines [_glSmokeOne,1];
-			_unit addMagazines [_glSmokeTwo,1];
-		} else {
-			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,2];
 			_unit addMagazines [_glSmokeTwo,2];
+		} else {
+			_unit addMagazines [_glSmokeOne,5];
+			_unit addMagazines [_glSmokeTwo,5];
 		};
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["fac"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -134,9 +128,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleMag,9];
 		_unit addMagazine _uavBat;
 		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["uavop"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -152,7 +144,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
-			_unit addMagazines [_glExplody,2];
+			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		} else {
@@ -160,9 +152,7 @@ switch (_loadout) do {									// case switch for desired loadout
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		};
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -174,12 +164,16 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit linkItem _x } foreach _secTools;
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,1];
-		_unit addMagazines [_glSmokeTwo,1];
-		_unit addMagazines [_pistolMag,2];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		};
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["tl"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -190,9 +184,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_autoRifleMag,5];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _autoRifle;
-		_unit addWeapon _pistol;
 		["ar"] call _addRuck;
 		["ar"] call _addAttachments;
 		call _IFAK;
@@ -203,9 +195,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["aar"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -216,9 +206,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["rm"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -229,9 +217,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["rmat"] call _addRuck;
 		["general"] call _addAttachments;
 		_unit addWeapon _lat;
@@ -243,9 +229,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleScopedMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleScoped;
-		_unit addWeapon _pistol;
 		["rmsc"] call _addRuck;
 		["scopedgeneral"] call _addAttachments;
 		call _IFAK;
@@ -256,9 +240,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_dmrMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _dmr;
-		_unit addWeapon _pistol;
 		["dmr"] call _addRuck;
 		["dmr"] call _addAttachments;
 		call _IFAK;
@@ -270,7 +252,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
-			_unit addMagazines [_glExplody,2];
+			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		} else {
@@ -278,9 +260,7 @@ switch (_loadout) do {									// case switch for desired loadout
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		};
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["gren"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -291,9 +271,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_mmgMag,4];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _mmg;
-		_unit addWeapon _pistol;
 		["mmg"] call _addRuck;
 		["mmg"] call _addAttachments;
 		call _IFAK;
@@ -304,9 +282,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["mmgass"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -321,9 +297,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_smgMag,6];
 		_unit addMagazines [_smoke,2];
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _smg;
-		_unit addWeapon _pistol;
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
@@ -334,9 +308,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_smgMag,6];
 		_unit addMagazines [_smoke,2];
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _smg;
-		_unit addWeapon _pistol;
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
@@ -348,9 +320,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_carbineMag,6];
 		_unit addMagazines [_smoke,2];
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _carbine;
-		_unit addWeapon _pistol;
 		["crew"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -363,9 +333,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit linkItem _x } foreach _secTools;
 		_unit addMagazines [_carbineMag,6];
 		_unit addMagazines [_smoke,2];
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _carbine;
-		_unit addWeapon _pistol;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
@@ -378,9 +346,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["hmggun"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -392,9 +358,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["hmgass"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -406,9 +370,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["gmggun"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -420,9 +382,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["gmgass"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -436,9 +396,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		_unit addMagazine _latMag;
 		["hat"] call _addRuck;
 		["general"] call _addAttachments;
@@ -451,9 +409,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		_unit addMagazine _latMag;
 		["hat"] call _addRuck;
 		["general"] call _addAttachments;
@@ -465,9 +421,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["aa"] call _addRuck;
 		["general"] call _addAttachments;
 		_unit addWeapon _aaLaunch;
@@ -479,9 +433,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["aa"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -522,9 +474,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		{ _unit addItem _x } foreach _sniperItems;
 		_unit addMagazines [_boltRifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _boltRifle;
-		_unit addWeapon _pistol;
 		["sniper"] call _addRuck;
 		["sniper"] call _addAttachments;
 		call _IFAK;
@@ -539,17 +489,15 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
-			_unit addMagazines [_glExplody,2];
+			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
 			_unit addMagazines [_glSmokeTwo,1];
 		} else {
 			_unit addMagazines [_glExplody,5];
-			_unit addMagazines [_glSmokeOne,1];
-			_unit addMagazines [_glSmokeTwo,1];
+			_unit addMagazines [_glSmokeOne,2];
+			_unit addMagazines [_glSmokeTwo,2];
 		};
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifleGL;
-		_unit addWeapon _pistol;
 		["spotter"] call _addRuck;
 		["suppgeneral"] call _addAttachments;
 		_unit setVariable ["AGM_IsMedic", true, true];
@@ -562,9 +510,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_pistolMag,2];
 		_unit addWeapon _rifle;
-		_unit addWeapon _pistol;
 		["rm"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;

@@ -7,7 +7,7 @@
 - Default behaviour DOES NOT replace goggles (aside from divers), players will have their default goggles.
 - Make sure you test locally to ensure your loadouts work.
 - Current Side, Faction: OPFOR, CSAT (CAMO)
-- Required Mods: @AGM, @ACRE2
+- Required Mods: @AGM, @task_force_radio
 */
 // ===============================
 // ========== Variables ==========
@@ -107,12 +107,12 @@ _diverVest = "V_RebreatherB";
 _sniperVest = "V_HarnessOGL_brn";
 // ============ rucks ============
 _plebRuck = "B_FieldPack_ocamo";
-_medRuck = "B_FieldPack_ocamo_Medic";
+_medRuck = "B_Kitbag_cbr";
 _assistantRuck = "B_Carryall_ocamo";
 _uavRuck = "O_UAV_01_backpack_F";
 _diverRuck = "B_AssaultPack_blk";
 _sniperRuck = "B_FieldPack_ocamo";
-_radioRuck = _plebRuck;		// no radio ruck exists yet, kept in so I don't have to rewrite everything in future.
+_radioRuck = "tf_mr3000";
 // ======== medical items ========
 _medOne = "AGM_Bandage";
 _medTwo = "AGM_Morphine";
@@ -138,10 +138,10 @@ _lat = "launch_RPG32_F";
 _latMag = "RPG32_F";
 // =========== misc ==============
 _binos = "Binocular";
-_radio = "ACRE_PRC148";
+_radio = "tf_fadak";
 // ============ fac ==============
-_airRadioRuck = _plebRuck;		// no radio ruck exists yet, kept in so I don't have to rewrite everything in future.
-_facItems = [_radio,"AGM_MapTools"];
+_airRadioRuck = "tf_mr6000l";
+_facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
 // =========== UAV ===============
 _uavTool = "B_UavTerminal";
@@ -172,25 +172,25 @@ _gmgTripod = "O_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== tools =============
 _nightVision = "NVGoggles_OPFOR";
-_basicTools = ["ACRE_PRC343","ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [_radio];
+_secItems = [];
 _pltTools = ["itemGPS"];
-_pltItems = [_radio];
+_pltItems = [];
 // ======== attachments ==========
-_generalAttachments = ["optic_ACO_grn","acc_pointer_IR"];
-_dmrAttachments = ["optic_Arco","acc_pointer_IR"];
-_autoRifleAttachments = ["optic_ACO_grn","acc_pointer_IR"];
-_mmgAttachments = ["optic_ACO_grn","acc_pointer_IR"];
+_generalAttachments = ["optic_ACO_grn","acc_flashlight"];
+_dmrAttachments = ["optic_Arco","acc_flashlight"];
+_autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
+_mmgAttachments = ["optic_ACO_grn","acc_flashlight"];
 
 _sniperAttachments = ["optic_LRPS"];
 _pistolAttachments = [];
 
-_scoped_rifleAttachments = ["optic_Arco","acc_pointer_IR"];
-_scoped_autoRifleAttachments = ["optic_Arco","acc_pointer_IR"];
-_scoped_mmgAttachments = ["optic_Arco","acc_pointer_IR"];
+_scoped_rifleAttachments = ["optic_Arco","acc_flashlight"];
+_scoped_autoRifleAttachments = ["optic_Arco","acc_flashlight"];
+_scoped_mmgAttachments = ["optic_Arco","acc_flashlight"];
 
 _suppressed_generalAttachments = ["muzzle_snds_M"];
 _suppressed_dmrAttachments = ["muzzle_snds_B"];
@@ -231,6 +231,23 @@ if ((!isNil "_nightGear") && _nightGear) then {
 };
 if ((!isNil "_nightGear") && _nightGear) then { 
 	_basicTools = _basicTools + [_nightVision]; 
+};
+if ((!isNil "_nightGear") && _nightGear) then { 
+	private "_test";
+	_test = _generalAttachments find "acc_flashlight";
+	if (_test != -1) then {_generalAttachments set [_test,"acc_pointer_IR"]};
+	_test = _dmrAttachments find "acc_flashlight";
+	if (_test != -1) then {_dmrAttachments set [_test,"acc_pointer_IR"]};
+	_test = _autoRifleAttachments find "acc_flashlight";
+	if (_test != -1) then {_autoRifleAttachments set [_test,"acc_pointer_IR"]};
+	_test = _mmgAttachments find "acc_flashlight";
+	if (_test != -1) then {_mmgAttachments set [_test,"acc_pointer_IR"]};
+	_test = _scoped_rifleAttachments find "acc_flashlight";
+	if (_test != -1) then {_scoped_rifleAttachments set [_test,"acc_pointer_IR"]};
+	_test = _scoped_autoRifleAttachments find "acc_flashlight";
+	if (_test != -1) then {_scoped_autoRifleAttachments set [_test,"acc_pointer_IR"]};
+	_test = _scoped_mmgAttachments find "acc_flashlight";
+	if (_test != -1) then {_scoped_mmgAttachments set [_test,"acc_pointer_IR"]};
 };
 // ===============================
 // ========== Functions ==========
@@ -323,6 +340,7 @@ _clearRuck = {
 	clearWeaponCargoGlobal (unitBackpack _unit);
 	clearMagazineCargoGlobal (unitBackpack _unit);
 	clearItemCargoGlobal (unitBackpack _unit);
+	sleep _delay;
 };
 
 // Adds ruck to the unit.
@@ -346,19 +364,14 @@ _addRuck = {
 			_unit addBackpack _medRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addItemCargoGlobal [_medTwo,6];	// morphine
+			(unitBackpack _unit) addItemCargoGlobal [_medOne,20];	// bandages
+			(unitBackpack _unit) addItemCargoGlobal [_medTwo,10];	// morphine
 			(unitBackpack _unit) addItemCargoGlobal [_medThree,10];	// epinephrine
 			(unitBackpack _unit) addItemCargoGlobal [_medFour,6];	// bloodbag
 		};
 		case "fac" : {
 			_unit addBackpack _airRadioRuck;
 			call _clearRuck;
-			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,6];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,4];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeTwo,4];
-			(unitBackpack _unit) addMagazineCargoGlobal [(_facSmokes select 0),2];
-			(unitBackpack _unit) addMagazineCargoGlobal [(_facSmokes select 1),2];
 		};
 		case "uavop" : {
 			_unit addBackpack _uavRuck;
@@ -468,12 +481,12 @@ _addRuck = {
 		};
 		
 		case "crew" : {
-			//_unit addBackpack _radioRuck;
-			//call _clearRuck;
+			_unit addBackpack _radioRuck;
+			call _clearRuck;
 		};
 		case "aircrew" : {
-			//_unit addBackpack _airRadioRuck;
-			//call _clearRuck;
+			_unit addBackpack _airRadioRuck;
+			call _clearRuck;
 		};
 		case "hmggun" : {
 			_unit addBackpack _hmgBarrel;
@@ -506,9 +519,6 @@ _addRuck = {
 			_unit addBackpack _sniperRuck;
 			call _clearRuck;
 			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,4];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,6];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,1];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeTwo,1];
 			(unitBackpack _unit) addItemCargoGlobal [_medOne,8];	// bandages
 			(unitBackpack _unit) addItemCargoGlobal [_medTwo,4];	// morphine
 			(unitBackpack _unit) addItemCargoGlobal [_medThree,4];	// epinephrine

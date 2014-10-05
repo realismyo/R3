@@ -13,26 +13,31 @@ class Mission
 		"agm_core",
 		"agm_movement",
 		"agm_medical",
-		"agm_explosives"
+		"agm_explosives",
+		"dac_source",
+		"A3_Modules_F"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
 		"A3_Animals_F_Rabbit",
 		"agm_interaction",
 		"agm_core",
 		"agm_movement",
 		"agm_medical",
 		"agm_explosives",
+		"dac_source",
+		"A3_Modules_F",
 		"a3_map_altis"
 	};
 	randomSeed=4822311;
 	class Intel
 	{
-		briefingName="R3";
-		overviewText="*** Insert mission description here. ***";
+		briefingName="** Insert mission type and name here **";
+		overviewText="** Insert mission description here. **";
 		startWeather=0;
 		startWind=0;
 		forecastWeather=0;
@@ -40,17 +45,17 @@ class Mission
 		forecastWaves=0;
 		wavesForced=1;
 		windForced=1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=8;
-		minute=15;
+		year=2014;
+		month=1;
+		day=1;
+		hour=10;
+		minute=0;
 		startFogDecay=0;
 		forecastFogDecay=0;
 	};
 	class Groups
 	{
-		items=20;
+		items=42;
 		class Item0
 		{
 			side="WEST";
@@ -67,8 +72,8 @@ class Mission
 					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
-					skill=0.60000002;
-					text="BLU_CMDR11";
+					skill=0.2;
+					text="BLU_PLT11_CO";
 					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Platoon Commander";
 				};
@@ -78,11 +83,11 @@ class Mission
 					special="NONE";
 					id=1;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_Soldier_SL_F";
 					player="PLAY CDG";
 					rank="SERGEANT";
-					skill=0.60000002;
-					text="BLU_SGT11";
+					skill=0.2;
+					text="BLU_PLT11_SGT";
 					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Platoon Sergeant";
 				};
@@ -94,8 +99,9 @@ class Mission
 					side="WEST";
 					vehicle="B_medic_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_MEDIC11";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT11_MEDIC";
 					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Platoon Medic";
 				};
@@ -107,8 +113,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JTACFO11";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT11_JTACFO";
 					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 JTAC / FO";
 				};
@@ -120,8 +127,8 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_RM11";
+					skill=0.2;
+					text="BLU_PLT11_RM";
 					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Rifleman";
 				};
@@ -142,9 +149,9 @@ class Mission
 					vehicle="B_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="BLU_SECCO11A";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_A11_SECCO";
 					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Alpha Section Commander";
 				};
@@ -154,12 +161,12 @@ class Mission
 					special="NONE";
 					id=6;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11A_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Grenadier";
+					skill=0.2;
+					text="BLU_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item2
 				{
@@ -167,12 +174,12 @@ class Mission
 					special="NONE";
 					id=7;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AR11A_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Automatic Rifleman";
+					skill=0.2;
+					text="BLU_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -180,12 +187,12 @@ class Mission
 					special="NONE";
 					id=8;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AAR11A_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Assistant Automatic Rifleman";
+					skill=0.2;
+					text="BLU_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Alpha Grenadier";
 				};
 				class Item4
 				{
@@ -195,11 +202,10 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="BLU_FTL11A";
+					skill=0.2;
+					text="BLU_A11_FTL";
 					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Fire Team Leader (2IC)";
+					description="1-1 Alpha Team Leader";
 				};
 				class Item5
 				{
@@ -207,12 +213,12 @@ class Mission
 					special="NONE";
 					id=10;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11A_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Grenadier";
+					skill=0.2;
+					text="BLU_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -220,12 +226,12 @@ class Mission
 					special="NONE";
 					id=11;
 					side="WEST";
-					vehicle="B_soldier_M_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_M11A_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Marksman";
+					skill=0.2;
+					text="BLU_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -235,8 +241,8 @@ class Mission
 					side="WEST";
 					vehicle="B_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_RAT11A_2";
+					skill=0.2;
+					text="BLU_A11_RMAT";
 					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Alpha Rifleman (AT)";
 				};
@@ -257,9 +263,9 @@ class Mission
 					vehicle="B_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="BLU_SECCO11B";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_B11_SECCO";
 					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Bravo Section Commander";
 				};
@@ -269,25 +275,25 @@ class Mission
 					special="NONE";
 					id=14;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11B_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Grenadier";
+					skill=0.2;
+					text="BLU_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.802,23.745708,11514.396};
+					position[]={11405.842,23.746691,11514.479};
 					special="NONE";
 					id=15;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AR11B_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Automatic Rifleman";
+					skill=0.2;
+					text="BLU_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -295,12 +301,12 @@ class Mission
 					special="NONE";
 					id=16;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AAR11B_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Assistant Automatic Rifleman";
+					skill=0.2;
+					text="BLU_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Bravo Grenadier";
 				};
 				class Item4
 				{
@@ -310,11 +316,10 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="BLU_FTL11B";
+					skill=0.2;
+					text="BLU_B11_FTL";
 					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Fire Team Leader (2IC)";
+					description="1-1 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -322,12 +327,12 @@ class Mission
 					special="NONE";
 					id=18;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11B_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Grenadier";
+					skill=0.2;
+					text="BLU_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -335,12 +340,12 @@ class Mission
 					special="NONE";
 					id=19;
 					side="WEST";
-					vehicle="B_soldier_M_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_M11B_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Marksman";
+					skill=0.2;
+					text="BLU_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -350,8 +355,8 @@ class Mission
 					side="WEST";
 					vehicle="B_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_RAT11B_2";
+					skill=0.2;
+					text="BLU_B11_RMAT";
 					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Bravo Rifleman (AT)";
 				};
@@ -372,9 +377,9 @@ class Mission
 					vehicle="B_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="BLU_SECCO11C";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_C11_SECCO";
 					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Charlie Section Commander";
 				};
@@ -384,12 +389,12 @@ class Mission
 					special="NONE";
 					id=22;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11C_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Grenadier";
+					skill=0.2;
+					text="BLU_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item2
 				{
@@ -397,12 +402,12 @@ class Mission
 					special="NONE";
 					id=23;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AR11C_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Automatic Rifleman";
+					skill=0.2;
+					text="BLU_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -410,12 +415,12 @@ class Mission
 					special="NONE";
 					id=24;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_AAR11C_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Assistant Automatic Rifleman";
+					skill=0.2;
+					text="BLU_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Charlie Grenadier";
 				};
 				class Item4
 				{
@@ -425,11 +430,10 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="BLU_FTL11C";
+					skill=0.2;
+					text="BLU_C11_FTL";
 					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Fire Team Leader (2IC)";
+					description="1-1 Charlie Team Leader";
 				};
 				class Item5
 				{
@@ -437,12 +441,12 @@ class Mission
 					special="NONE";
 					id=26;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11C_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Grenadier";
+					skill=0.2;
+					text="BLU_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -450,12 +454,12 @@ class Mission
 					special="NONE";
 					id=27;
 					side="WEST";
-					vehicle="B_soldier_M_F";
+					vehicle="B_soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_M11C_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Marksman";
+					skill=0.2;
+					text="BLU_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -465,8 +469,8 @@ class Mission
 					side="WEST";
 					vehicle="B_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_RAT11C_2";
+					skill=0.2;
+					text="BLU_C11_RMAT";
 					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Charlie Rifleman (AT)";
 				};
@@ -487,9 +491,9 @@ class Mission
 					vehicle="B_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="BLU_SECCO11D";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_D11_SECCO";
 					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Delta Section Commander";
 				};
@@ -499,12 +503,12 @@ class Mission
 					special="NONE";
 					id=30;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11D_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Grenadier";
+					skill=0.2;
+					text="BLU_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Machinegunner";
 				};
 				class Item2
 				{
@@ -512,12 +516,12 @@ class Mission
 					special="NONE";
 					id=31;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_LMG11D_1";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Light Machine Gunner";
+					skill=0.2;
+					text="BLU_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item3
 				{
@@ -525,12 +529,12 @@ class Mission
 					special="NONE";
 					id=32;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_ALMG11D_1";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Assistant Light Machine Gunner";
+					skill=0.2;
+					text="BLU_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 				class Item4
 				{
@@ -540,11 +544,10 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="BLU_FTL11D";
+					skill=0.2;
+					text="BLU_D11_FTL1";
 					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Fire Team Leader (2IC)";
+					description="1-1 Delta Team Leader";
 				};
 				class Item5
 				{
@@ -552,10 +555,10 @@ class Mission
 					special="NONE";
 					id=34;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_support_MG_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_HWG11D";
+					skill=0.2;
+					text="BLU_D11_HWG";
 					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Delta Heavy Weapons Gunner";
 				};
@@ -565,10 +568,10 @@ class Mission
 					special="NONE";
 					id=35;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_support_AMG_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_HWA11D";
+					skill=0.2;
+					text="BLU_D11_HWA1";
 					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_US.sqf"";";
 					description="1-1 Delta Heavy Weapons Assistant";
 				};
@@ -578,12 +581,12 @@ class Mission
 					special="NONE";
 					id=36;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_HWAB11D";
-					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Heavy Weapons Ammo Bearer";
+					skill=0.2;
+					text="BLU_D11_HWA2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 				class Item8
 				{
@@ -593,11 +596,10 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="BLU_FTL11D_2";
+					skill=0.2;
+					text="BLU_D11_FTL2";
 					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Fire Team Leader (3IC)";
+					description="1-1 Delta Team Leader";
 				};
 				class Item9
 				{
@@ -605,12 +607,12 @@ class Mission
 					special="NONE";
 					id=38;
 					side="WEST";
-					vehicle="B_Soldier_GL_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_GRN11D_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Grenadier";
+					skill=0.2;
+					text="BLU_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Machinegunner";
 				};
 				class Item10
 				{
@@ -618,12 +620,12 @@ class Mission
 					special="NONE";
 					id=39;
 					side="WEST";
-					vehicle="B_soldier_AR_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_LMG11D_2";
+					skill=0.2;
+					text="BLU_D11_MMGASS2";
 					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Light Machine Gunner";
+					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item11
 				{
@@ -631,12 +633,12 @@ class Mission
 					special="NONE";
 					id=40;
 					side="WEST";
-					vehicle="B_Soldier_A_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_ALMG11D_2";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Assistant Light Machine Gunner";
+					skill=0.2;
+					text="BLU_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 			};
 		};
@@ -655,9 +657,9 @@ class Mission
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
 					leader=1;
-					skill=0.60000002;
-					text="BLU_JIP11_1";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_1";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item1
@@ -668,9 +670,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_2";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_2";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item2
@@ -681,9 +683,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_3";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_3";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item3
@@ -694,9 +696,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_4";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_4";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item4
@@ -707,9 +709,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_5";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_5";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item5
@@ -720,9 +722,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_6";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_6";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item6
@@ -733,9 +735,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_7";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_7";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item7
@@ -746,9 +748,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="BLU_JIP11_8";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="BLU_JIP_8";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 			};
@@ -769,9 +771,9 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
-					skill=0.60000002;
-					text="OP_CMDR11";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_PLT11_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Platoon Commander";
 				};
 				class Item1
@@ -780,12 +782,12 @@ class Mission
 					special="NONE";
 					id=50;
 					side="EAST";
-					vehicle="O_Soldier_F";
+					vehicle="O_Soldier_SL_F";
 					player="PLAY CDG";
 					rank="SERGEANT";
-					skill=0.60000002;
-					text="OP_SGT11";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_PLT11_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Platoon Sergeant";
 				};
 				class Item2
@@ -794,11 +796,12 @@ class Mission
 					special="NONE";
 					id=51;
 					side="EAST";
-					vehicle="B_medic_F";
+					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_MEDIC11";
-					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT11_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Platoon Medic";
 				};
 				class Item3
@@ -809,9 +812,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JTACFO11";
-					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT11_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 JTAC / FO";
 				};
 				class Item4
@@ -822,9 +826,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_RM11";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_PLT11_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Rifleman";
 				};
 			};
@@ -844,10 +848,10 @@ class Mission
 					vehicle="O_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="OP_SECCO11A";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_A11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Alpha Section Commander";
 				};
 				class Item1
@@ -856,12 +860,12 @@ class Mission
 					special="NONE";
 					id=55;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11A_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Grenadier";
+					skill=0.2;
+					text="RED_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item2
 				{
@@ -869,12 +873,12 @@ class Mission
 					special="NONE";
 					id=56;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AR11A_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Automatic Rifleman";
+					skill=0.2;
+					text="RED_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -882,12 +886,12 @@ class Mission
 					special="NONE";
 					id=57;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AAR11A_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Assistant Automatic Rifleman";
+					skill=0.2;
+					text="RED_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Grenadier";
 				};
 				class Item4
 				{
@@ -897,11 +901,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="OP_FTL11A";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Fire Team Leader (2IC)";
+					skill=0.2;
+					text="RED_A11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Team Leader";
 				};
 				class Item5
 				{
@@ -909,12 +912,12 @@ class Mission
 					special="NONE";
 					id=59;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11A_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Grenadier";
+					skill=0.2;
+					text="RED_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -922,12 +925,12 @@ class Mission
 					special="NONE";
 					id=60;
 					side="EAST";
-					vehicle="O_soldier_M_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_M11A_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Alpha Marksman";
+					skill=0.2;
+					text="RED_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -937,9 +940,9 @@ class Mission
 					side="EAST";
 					vehicle="O_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_RAT11A_2";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_A11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Alpha Rifleman (AT)";
 				};
 			};
@@ -959,10 +962,10 @@ class Mission
 					vehicle="O_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="OP_SECCO11B";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_B11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Bravo Section Commander";
 				};
 				class Item1
@@ -971,12 +974,12 @@ class Mission
 					special="NONE";
 					id=63;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11B_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Grenadier";
+					skill=0.2;
+					text="RED_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item2
 				{
@@ -984,12 +987,12 @@ class Mission
 					special="NONE";
 					id=64;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AR11B_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Automatic Rifleman";
+					skill=0.2;
+					text="RED_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -997,12 +1000,12 @@ class Mission
 					special="NONE";
 					id=65;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AAR11B_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Assistant Automatic Rifleman";
+					skill=0.2;
+					text="RED_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Grenadier";
 				};
 				class Item4
 				{
@@ -1012,11 +1015,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="OP_FTL11B";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Fire Team Leader (2IC)";
+					skill=0.2;
+					text="RED_B11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -1024,12 +1026,12 @@ class Mission
 					special="NONE";
 					id=67;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11B_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Grenadier";
+					skill=0.2;
+					text="RED_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -1037,12 +1039,12 @@ class Mission
 					special="NONE";
 					id=68;
 					side="EAST";
-					vehicle="O_soldier_M_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_M11B_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Bravo Marksman";
+					skill=0.2;
+					text="RED_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -1052,9 +1054,9 @@ class Mission
 					side="EAST";
 					vehicle="O_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_RAT11B_2";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_B11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Bravo Rifleman (AT)";
 				};
 			};
@@ -1074,10 +1076,10 @@ class Mission
 					vehicle="O_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="OP_SECCO11C";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_C11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Charlie Section Commander";
 				};
 				class Item1
@@ -1086,12 +1088,12 @@ class Mission
 					special="NONE";
 					id=71;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11C_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Grenadier";
+					skill=0.2;
+					text="RED_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item2
 				{
@@ -1099,12 +1101,12 @@ class Mission
 					special="NONE";
 					id=72;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AR11C_1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Automatic Rifleman";
+					skill=0.2;
+					text="RED_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
@@ -1112,12 +1114,12 @@ class Mission
 					special="NONE";
 					id=73;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_AAR11C_1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Assistant Automatic Rifleman";
+					skill=0.2;
+					text="RED_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Grenadier";
 				};
 				class Item4
 				{
@@ -1127,11 +1129,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="OP_FTL11C";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Fire Team Leader (2IC)";
+					skill=0.2;
+					text="RED_C11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Team Leader";
 				};
 				class Item5
 				{
@@ -1139,12 +1140,12 @@ class Mission
 					special="NONE";
 					id=75;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11C_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Grenadier";
+					skill=0.2;
+					text="RED_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item6
 				{
@@ -1152,12 +1153,12 @@ class Mission
 					special="NONE";
 					id=76;
 					side="EAST";
-					vehicle="O_soldier_M_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_M11C_2";
-					init="nul = [this,""dm""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Charlie Marksman";
+					skill=0.2;
+					text="RED_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
@@ -1167,9 +1168,9 @@ class Mission
 					side="EAST";
 					vehicle="O_soldier_LAT_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_RAT11C_2";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_C11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Charlie Rifleman (AT)";
 				};
 			};
@@ -1189,10 +1190,10 @@ class Mission
 					vehicle="O_Soldier_SL_F";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="OP_SECCO11D";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_D11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Delta Section Commander";
 				};
 				class Item1
@@ -1201,12 +1202,12 @@ class Mission
 					special="NONE";
 					id=79;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11D_1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Grenadier";
+					skill=0.2;
+					text="RED_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Machinegunner";
 				};
 				class Item2
 				{
@@ -1214,12 +1215,12 @@ class Mission
 					special="NONE";
 					id=80;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_LMG11D_1";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Light Machine Gunner";
+					skill=0.2;
+					text="RED_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item3
 				{
@@ -1227,12 +1228,12 @@ class Mission
 					special="NONE";
 					id=81;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_ALMG11D_1";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Assistant Light Machine Gunner";
+					skill=0.2;
+					text="RED_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 				class Item4
 				{
@@ -1242,11 +1243,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="OP_FTL11D";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Fire Team Leader (2IC)";
+					skill=0.2;
+					text="RED_D11_FTL1";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Team Leader";
 				};
 				class Item5
 				{
@@ -1254,11 +1254,11 @@ class Mission
 					special="NONE";
 					id=83;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_support_MG_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_HWG11D";
-					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_D11_HWG";
+					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Delta Heavy Weapons Gunner";
 				};
 				class Item6
@@ -1267,11 +1267,11 @@ class Mission
 					special="NONE";
 					id=84;
 					side="EAST";
-					vehicle="O_Soldier_F";
+					vehicle="O_support_AMG_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_HWA11D";
-					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_US.sqf"";";
+					skill=0.2;
+					text="RED_D11_HWA1";
+					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
 					description="1-1 Delta Heavy Weapons Assistant";
 				};
 				class Item7
@@ -1280,12 +1280,12 @@ class Mission
 					special="NONE";
 					id=85;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_HWAB11D";
-					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Heavy Weapons Ammo Bearer";
+					skill=0.2;
+					text="RED_D11_HWA2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 				class Item8
 				{
@@ -1295,11 +1295,10 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					text="OP_FTL11D_2";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Fire Team Leader (3IC)";
+					skill=0.2;
+					text="RED_D11_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Team Leader";
 				};
 				class Item9
 				{
@@ -1307,12 +1306,12 @@ class Mission
 					special="NONE";
 					id=87;
 					side="EAST";
-					vehicle="O_Soldier_GL_F";
+					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_GRN11D_2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Grenadier";
+					skill=0.2;
+					text="RED_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Machinegunner";
 				};
 				class Item10
 				{
@@ -1320,12 +1319,12 @@ class Mission
 					special="NONE";
 					id=88;
 					side="EAST";
-					vehicle="O_soldier_AR_F";
+					vehicle="O_Soldier_AAR_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_LMG11D_2";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Light Machine Gunner";
+					skill=0.2;
+					text="RED_D11_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item11
 				{
@@ -1333,12 +1332,12 @@ class Mission
 					special="NONE";
 					id=89;
 					side="EAST";
-					vehicle="O_Soldier_A_F";
+					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_ALMG11D_2";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
-					description="1-1 Delta Assistant Light Machine Gunner";
+					skill=0.2;
+					text="RED_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					description="1-1 Delta Grenadier";
 				};
 			};
 		};
@@ -1357,9 +1356,9 @@ class Mission
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
 					leader=1;
-					skill=0.60000002;
-					text="OP_JIP11_1";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_1";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item1
@@ -1370,9 +1369,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_2";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_2";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item2
@@ -1383,9 +1382,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_3";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_3";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item3
@@ -1396,9 +1395,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_4";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_4";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item4
@@ -1409,9 +1408,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_5";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_5";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item5
@@ -1422,9 +1421,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_6";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_6";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item6
@@ -1435,9 +1434,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_7";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_7";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item7
@@ -1448,9 +1447,9 @@ class Mission
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="OP_JIP11_8";
-					init="nul = [this] execVM ""scripts\JIP\f_JIP_addReinforcementOptionsAction.sqf"";";
+					skill=0.2;
+					text="RED_JIP_8";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 			};
@@ -1467,11 +1466,12 @@ class Mission
 					special="NONE";
 					id=98;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
 					leader=1;
-					skill=0.60000002;
-					text="INDI_PLT1";
+					rank="CAPTAIN";
+					skill=0.2;
+					text="IND_RPILOT1";
 					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Rotary Wing Pilot";
 				};
@@ -1481,10 +1481,11 @@ class Mission
 					special="NONE";
 					id=99;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT2";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_RPILOT2";
 					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Rotary Wing Pilot";
 				};
@@ -1494,10 +1495,11 @@ class Mission
 					special="NONE";
 					id=100;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT3";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_RPILOT3";
 					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Rotary Wing Pilot";
 				};
@@ -1507,10 +1509,11 @@ class Mission
 					special="NONE";
 					id=101;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT4";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_RPILOT4";
 					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Rotary Wing Pilot";
 				};
@@ -1520,10 +1523,11 @@ class Mission
 					special="NONE";
 					id=102;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT5";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_RPILOT5";
 					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Rotary Wing Pilot";
 				};
@@ -1533,10 +1537,11 @@ class Mission
 					special="NONE";
 					id=103;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT6";
+					rank="CAPTAIN";
+					skill=0.2;
+					text="IND_FPILOT1";
 					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Fixed Wing Pilot";
 				};
@@ -1546,10 +1551,11 @@ class Mission
 					special="NONE";
 					id=104;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT7";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_FPILOT2";
 					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Fixed Wing Pilot";
 				};
@@ -1559,10 +1565,11 @@ class Mission
 					special="NONE";
 					id=105;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT8";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_FPILOT3";
 					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Fixed Wing Pilot";
 				};
@@ -1572,10 +1579,11 @@ class Mission
 					special="NONE";
 					id=106;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT9";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_FPILOT4";
 					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Fixed Wing Pilot";
 				};
@@ -1585,10 +1593,11 @@ class Mission
 					special="NONE";
 					id=107;
 					side="GUER";
-					vehicle="B_pilot_F";
+					vehicle="I_pilot_F";
 					player="PLAY CDG";
-					skill=0.60000002;
-					text="INDI_PLT10";
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_PILOT5";
 					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
 					description="Fixed Wing Pilot";
 				};
@@ -1609,7 +1618,7 @@ class Mission
 					vehicle="Rabbit_F";
 					player="PLAY CDG";
 					leader=1;
-					skill=0.60000002;
+					skill=0.2;
 					text="HC";
 					description="Numpty";
 				};
@@ -1623,7 +1632,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11392.34,23.85936,11524.255};
+					position[]={11996.415,0.10608446,11691.875};
 					class args
 					{
 						items=1;
@@ -1639,7 +1648,7 @@ class Mission
 					vehicle="AGM_ModuleInteraction";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
 				};
 			};
 		};
@@ -1651,7 +1660,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11392.292,23.891228,11526.223};
+					position[]={11996.3,2.0248668,11991.024};
 					class args
 					{
 						items=1;
@@ -1667,7 +1676,7 @@ class Mission
 					vehicle="AGM_ModuleCheckPBOs";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
 				};
 			};
 		};
@@ -1679,7 +1688,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11395.906,23.882702,11526.134};
+					position[]={11995.921,-0.2837804,11790.848};
 					class args
 					{
 						items=2;
@@ -1701,7 +1710,7 @@ class Mission
 					vehicle="AGM_ModuleFatigue";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
 				};
 			};
 		};
@@ -1713,7 +1722,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11394.03,23.858789,11524.299};
+					position[]={11995.854,-0.089542642,11590.477};
 					class args
 					{
 						items=10;
@@ -1783,7 +1792,7 @@ class Mission
 					vehicle="AGM_ModuleMedical";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
 				};
 			};
 		};
@@ -1795,13 +1804,13 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11393.984,23.889011,11526.223};
+					position[]={11996.039,1.8806872,11890.852};
 					id=113;
 					side="LOGIC";
 					vehicle="AGM_ModuleLSDVehicles";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
 				};
 			};
 		};
@@ -1813,7 +1822,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11395.861,23.8578,11524.257};
+					position[]={11996.195,-0.10104917,11491.396};
 					class args
 					{
 						items=2;
@@ -1835,7 +1844,424 @@ class Mission
 					vehicle="AGM_ModuleExplosive";
 					leader=1;
 					lock="UNLOCKED";
-					skill=0.60000002;
+					skill=0.2;
+				};
+			};
+		};
+		class Item20
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11995.833,0.091687493,11402.129};
+					special="NONE";
+					id=115;
+					side="LOGIC";
+					vehicle="DAC_Source_Intern";
+					leader=1;
+					skill=0.2;
+				};
+			};
+		};
+		class Item21
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12096.305,-0.19550145,11898.644};
+					special="NONE";
+					id=116;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_AI_Count_Level  = [[2,4],[3,6],[4,8],[6,12],[1,0]]";
+				};
+			};
+		};
+		class Item22
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12097.473,0.016358517,11599.566};
+					special="NONE";
+					id=117;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_AI_Spawn = [[10,5,5],[10,5,15],0,120,250,0]";
+				};
+			};
+		};
+		class Item23
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12095.136,-0.035659418,11398.623};
+					special="NONE";
+					id=118;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Del_PlayerBody = [0,0]";
+				};
+			};
+		};
+		class Item24
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12095.136,-0.011622801,11992.106};
+					special="NONE";
+					id=119;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_STRPlayers = [""RED_PLT11_CO"",""RED_PLT11_SGT"",""RED_PLT11_MEDIC"",""RED_PLT11_JTACFO"",""RED_PLT11_RM"",""RED_A11_SECCO"",""RED_A11_AR1"",""RED_A11_AAR1"",""RED_A11_GREN"",""RED_A11_FTL"",""RED_A11_AR2"",""RED_A11_AAR2"",""RED_A11_RMAT"",""RED_B11_SECCO"",""RED_B11_AR1"",""RED_B11_AAR1"",""RED_B11_GREN"",""RED_B11_FTL"",""RED_B11_AR2"",""RED_B11_AAR2"",""RED_B11_RMAT"",""RED_C11_SECCO"",""RED_C11_AR1"",""RED_C11_AAR1"",""RED_C11_GREN"",""RED_C11_FTL"",""RED_C11_AR2"",""RED_C11_AAR2"",""RED_C11_RMAT"",""RED_D11_SECCO"",""RED_D11_MMG1"",""RED_D11_MMG1"",""RED_D11_GREN1"",""RED_D11_FTL1"",""RED_D11_HWG"",""RED_D11_HWA1"",""RED_D11_HWA2"",""RED_D11_FTL2"",""RED_D11_MMG2"",""RED_D11_MMGASS2"",""RED_D11_GREN2"",""RED_JIP_1"",""RED_JIP_2"",""RED_JIP_3"",""RED_JIP_4"",""RED_JIP_5"",""RED_JIP_6"",""RED_JIP_7"",""RED_JIP_8"",""BLU_PLT11_CO"",""BLU_PLT11_SGT"",""BLU_PLT11_MEDIC"",""BLU_PLT11_JTACFO"",""BLU_PLT11_RM"",""BLU_A11_SECCO"",""BLU_A11_AR1"",""BLU_A11_AAR1"",""BLU_A11_GREN"",""BLU_A11_FTL"",""BLU_A11_AR2"",""BLU_A11_AAR2"",""BLU_A11_RMAT"",""BLU_B11_SECCO"",""BLU_B11_AR1"",""BLU_B11_AAR1"",""BLU_B11_GREN"",""BLU_B11_FTL"",""BLU_B11_AR2"",""BLU_B11_AAR2"",""BLU_B11_RMAT"",""BLU_C11_SECCO"",""BLU_C11_AR1"",""BLU_C11_AAR1"",""BLU_C11_GREN"",""BLU_C11_FTL"",""BLU_C11_AR2"",""BLU_C11_AAR2"",""BLU_C11_RMAT"",""BLU_D11_SECCO"",""BLU_D11_MMG1"",""BLU_D11_MMG1"",""BLU_D11_GREN1"",""BLU_D11_FTL1"",""BLU_D11_HWG"",""BLU_D11_HWA1"",""BLU_D11_HWA2"",""BLU_D11_FTL2"",""BLU_D11_MMG2"",""BLU_D11_MMGASS2"",""BLU_D11_GREN2"",""BLU_JIP_1"",""BLU_JIP_2"",""BLU_JIP_3"",""BLU_JIP_4"",""BLU_JIP_5"",""BLU_JIP_6"",""BLU_JIP_7"",""BLU_JIP_8"",""IND_RPILOT1"",""IND_RPILOT2"",""IND_RPILOT3"",""IND_RPILOT4"",""IND_RPILOT5"",""IND_FPILOT1"",""IND_FPILOT2"",""IND_FPILOT3"",""IND_FPILOT4"",""IND_FPILOT5""]";
+				};
+			};
+		};
+		class Item25
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12093.968,-0.070608892,11799.34};
+					special="NONE";
+					id=120;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Dyn_Weather  = [0,0,0,[0, 0, 0],0]";
+				};
+			};
+		};
+		class Item26
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12095.136,-0.12289721,11698.868};
+					special="NONE";
+					id=121;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Reduce_Value = [600,650,0.3] ";
+				};
+			};
+		};
+		class Item27
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12096.305,0.054284006,11497.926};
+					special="NONE";
+					id=122;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Delete_Value = [[180,150],[180,150],6000]";
+				};
+			};
+		};
+		class Item28
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12191.137,0.12893075,11893.907};
+					special="NONE";
+					id=123;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_AI_AddOn = 1";
+				};
+			};
+		};
+		class Item29
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12192.305,0.27646235,11594.83};
+					special="NONE";
+					id=124;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="if (isMultiplayer) then { DAC_Marker = 0; } else { DAC_Marker = 2; }; ";
+				};
+			};
+		};
+		class Item30
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12189.968,0.037086658,11393.887};
+					special="NONE";
+					id=125;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Join_Action  = false";
+				};
+			};
+		};
+		class Item31
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12189.968,-0.21283741,11987.37};
+					special="NONE";
+					id=126;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="if (isMultiplayer) then { DAC_Com_Values = [1,1,0,0]; } else { DAC_Com_Values = [1,2,0,0]; };";
+				};
+			};
+		};
+		class Item32
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12188.8,0.1916272,11794.604};
+					special="NONE";
+					id=127;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_AI_Level = 3";
+				};
+			};
+		};
+		class Item33
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12189.968,0.1102977,11694.132};
+					special="NONE";
+					id=128;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Res_Side = 1";
+				};
+			};
+		};
+		class Item34
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12191.137,0.20540139,11493.189};
+					special="NONE";
+					id=129;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_WP_Speed = 0.01";
+				};
+			};
+		};
+		class Item35
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12286.187,0.079458222,11895.39};
+					special="NONE";
+					id=130;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Player_Marker = false";
+				};
+			};
+		};
+		class Item36
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12287.354,-0.17792769,11596.313};
+					special="NONE";
+					id=131;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Auto_UnitCount = [8,10] ";
+				};
+			};
+		};
+		class Item37
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12285.018,0.11443078,11395.369};
+					special="NONE";
+					id=132;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_SaveDistance = [500,[""DAC_Save_Pos""]]";
+				};
+			};
+		};
+		class Item38
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12285.018,-0.026365101,11988.853};
+					special="NONE";
+					id=133;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Fast_Init  = false";
+				};
+			};
+		};
+		class Item39
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12283.85,0.13714913,11796.086};
+					special="NONE";
+					id=134;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Direct_Start = false";
+				};
+			};
+		};
+		class Item40
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12285.018,-0.083556712,11695.614};
+					special="NONE";
+					id=135;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Activate_Sound = false";
+				};
+			};
+		};
+		class Item41
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12286.187,0.039357733,11494.672};
+					special="NONE";
+					id=136;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Player_Support = [10,[4,2000,3,1000]]";
 				};
 			};
 		};
@@ -1854,21 +2280,18 @@ class Intro
 	randomSeed=15932239;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=6;
-		day=24;
-		hour=12;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2014;
+		month=1;
+		day=1;
+		hour=10;
 		minute=0;
-		startFogDecay=0.013;
-		forecastFogDecay=0.013;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroWin
@@ -1884,21 +2307,18 @@ class OutroWin
 	randomSeed=5804557;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=6;
-		day=24;
-		hour=12;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2014;
+		month=1;
+		day=1;
+		hour=10;
 		minute=0;
-		startFogDecay=0.013;
-		forecastFogDecay=0.013;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
 class OutroLoose
@@ -1914,20 +2334,17 @@ class OutroLoose
 	randomSeed=4178947;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=6;
-		day=24;
-		hour=12;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2014;
+		month=1;
+		day=1;
+		hour=10;
 		minute=0;
-		startFogDecay=0.013;
-		forecastFogDecay=0.013;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 };
