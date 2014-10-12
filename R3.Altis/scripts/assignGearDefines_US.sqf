@@ -115,7 +115,7 @@ _diverVest = "V_RebreatherB";
 _sniperVest = "V_Chestrig_rgr";
 // ============ rucks ============
 _plebRuck = "B_AssaultPack_rgr";
-_medRuck = "B_Kitbag_mcamo";
+_medRuck = "B_Carryall_mcamo";
 _assistantRuck = "B_Bergen_mcamo";
 _uavRuck = "B_UAV_01_backpack_F";
 _diverRuck = "B_AssaultPack_blk";
@@ -379,8 +379,8 @@ _addRuck = {
 			call _clearRuck;
 			sleep _delay;
 			(unitBackpack _unit) addItemCargoGlobal [_medOne,20];	// bandages
-			(unitBackpack _unit) addItemCargoGlobal [_medTwo,10];	// morphine
-			(unitBackpack _unit) addItemCargoGlobal [_medThree,10];	// epinephrine
+			(unitBackpack _unit) addItemCargoGlobal [_medTwo,16];	// morphine
+			(unitBackpack _unit) addItemCargoGlobal [_medThree,16];	// epinephrine
 			(unitBackpack _unit) addItemCargoGlobal [_medFour,6];	// bloodbag
 		};
 		case "fac" : {

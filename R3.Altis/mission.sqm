@@ -15,7 +15,8 @@ class Mission
 		"agm_medical",
 		"agm_explosives",
 		"dac_source",
-		"A3_Modules_F"
+		"A3_Modules_F",
+		"task_force_radio_items"
 	};
 	addOnsAuto[]=
 	{
@@ -31,6 +32,7 @@ class Mission
 		"agm_explosives",
 		"dac_source",
 		"A3_Modules_F",
+		"task_force_radio_items",
 		"a3_map_altis"
 	};
 	randomSeed=4822311;
@@ -55,7 +57,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=42;
+		items=43;
 		class Item0
 		{
 			side="WEST";
@@ -1632,7 +1634,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11996.415,0.10608446,11691.875};
+					position[]={11900.257,2.4481564e-005,11695.829};
 					class args
 					{
 						items=1;
@@ -1660,7 +1662,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11996.3,2.0248668,11991.024};
+					position[]={11900.142,9.6853285,11994.979};
 					class args
 					{
 						items=1;
@@ -1688,7 +1690,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11995.921,-0.2837804,11790.848};
+					position[]={11899.763,1.698429,11794.802};
 					class args
 					{
 						items=2;
@@ -1722,7 +1724,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11995.854,-0.089542642,11590.477};
+					position[]={11899.695,-0.10793167,11594.431};
 					class args
 					{
 						items=10;
@@ -1804,7 +1806,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11996.039,1.8806872,11890.852};
+					position[]={11899.881,10.386099,11894.806};
 					id=113;
 					side="LOGIC";
 					vehicle="AGM_ModuleLSDVehicles";
@@ -1822,7 +1824,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11996.195,-0.10104917,11491.396};
+					position[]={11900.037,-0.069424003,11495.351};
 					class args
 					{
 						items=2;
@@ -2262,6 +2264,70 @@ class Mission
 					leader=1;
 					skill=0.2;
 					init="DAC_Player_Support = [10,[4,2000,3,1000]]";
+				};
+			};
+		};
+		class Item42
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11898.173,-12.385987,11401.434};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="TeamLeaderRadio";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="RiflemanRadio";
+						};
+						class Item2
+						{
+							value="7";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="terrain_interception_coefficient";
+						};
+						class Item3
+						{
+							value="TaskForceRadio";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_name";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_password";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_sw_frequencies_for_side";
+						};
+						class Item6
+						{
+							value="1";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_lr_frequencies_for_side";
+						};
+					};
+					id=137;
+					side="LOGIC";
+					vehicle="tfar_ModuleTaskForceRadioEnforceUsage";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
 				};
 			};
 		};
