@@ -2305,7 +2305,7 @@ class Mission
 						};
 						class Item4
 						{
-							value="";
+							value="123";
 							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
 							typeName="radio_channel_password";
 						};
