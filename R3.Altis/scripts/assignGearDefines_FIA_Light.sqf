@@ -60,27 +60,27 @@ private [
 // ===============================
 // ======= General Weapons =======
 _rifleArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4_ris","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
-_rifleRandom = (floor(random ((count _rifleArray)-1)));
+_rifleRandom = (floor(random (count _rifleArray)));
 _rifle = _rifleArray select _rifleRandom;
 
 _rifleGLArray = ["hlc_rifle_aks74_GL","RH_m4a1_ris_m203","RH_m16a4gl","arifle_TRG21_GL_F"];
-_rifleGLRandom = (floor(random ((count _rifleGLArray)-1)));
+_rifleGLRandom = (floor(random (count _rifleGLArray)));
 _rifleGL = _rifleGLArray select _rifleGLRandom;
 
 _rifleScopedArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
-_rifleScopedRandom = (floor(random ((count _rifleScopedArray)-1)));
+_rifleScopedRandom = (floor(random (count _rifleScopedArray)));
 _rifleScoped = _rifleScopedArray select _rifleScopedRandom;
 
 _carbineArray = ["hlc_rifle_aks74u","RH_m4_ris","RH_m4a1_ris","RH_m4_ris","arifle_TRG20_F"];
-_carbineRandom = (floor(random ((count _carbineArray)-1)));
+_carbineRandom = (floor(random (count _carbineArray)));
 _carbine = _carbineArray select _carbineRandom;
 
 _dmrArray = ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_SLRchopmod","hlc_rifle_LAR","hlc_rifle_g3sg1","hlc_rifle_g3a3","srifle_EBR_F"];
-_dmrRandom = (floor(random ((count _dmrArray)-1)));
+_dmrRandom = (floor(random (count _dmrArray)));
 _dmr = _dmrArray select _dmrRandom;
 
 _smgArray = ["hlc_rifle_aks74u","RH_m4_ris","hlc_rifle_hk53","hgun_PDW2000_F"];
-_smgRandom = (floor(random ((count _smgArray)-1)));
+_smgRandom = (floor(random (count _smgArray)));
 _smg = _smgArray select _smgRandom;
 
 _autoRifle = "LMG_Mk200_F";
@@ -132,12 +132,12 @@ _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
 // ========== Uniforms ===========
 _plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1","U_NikosBody"];
-_uniformNumber = (floor(random ((count _plebUniforms)-1)));
+_uniformNumber = (floor(random (count _plebUniforms)));
 _plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
 _crewUniform = "U_B_CombatUniform_mcam_vest";
 // =========== Helmets ===========
 _plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
-_helmetNumber = (floor(random ((count _plebHelmets)-1)));
+_helmetNumber = (floor(random (count _plebHelmets)));
 _plebHelmet =  _plebHelmets select _helmetNumber; 
 // ============ Vests ============
 _plebVest = "V_Chestrig_oli";

@@ -93,12 +93,12 @@ _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
 // ========== Uniforms ===========
 _plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1","U_NikosBody"];
-_uniformNumber = (floor(random ((count _plebUniforms)-1)));
+_uniformNumber = (floor(random (count _plebUniforms)));
 _plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
 _crewUniform = "U_B_CombatUniform_mcam_vest";
 // =========== Helmets ===========
 _plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
-_helmetNumber = (floor(random ((count _plebHelmets)-1)));
+_helmetNumber = (floor(random (count _plebHelmets)));
 _plebHelmet =  _plebHelmets select _helmetNumber; 
 // ============ Vests ============
 _plebVest = "V_Chestrig_oli";
