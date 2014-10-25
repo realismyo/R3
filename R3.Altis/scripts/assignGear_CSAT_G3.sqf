@@ -38,7 +38,7 @@ private [
 _nightGear = false;					// Night vision goggles and IR strobes equipped.
 _scopes = false;					// Scopes replace regular attachments.
 _suppressors = false;				// Suppressors & SD mags where applicable.
-_camoPattern = "sof";				// Camo pattern in accordance with @TEC_CSAT camo patterns. Default: "arid". Available cases: "arid", "navy", "semiarid", "sof", "urban", "woodland". Requires lower case string value.
+_camoPattern = "arid";				// Camo pattern in accordance with @TEC_CSAT camo patterns. Default: "arid". Available cases: "arid", "navy", "semiarid", "sof", "urban", "woodland". Requires lower case string value.
 _underwaterWeapons = true;			// Divers assigned underwater rifles, if false then same rifle as everyone else. 
 // ===============================
 
