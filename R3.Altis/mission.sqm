@@ -57,7 +57,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=43;
+		items=49;
 		class Item0
 		{
 			side="WEST";
@@ -66,7 +66,7 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={11402.202,23.782827,11518.776};
+					position[]={14731.755,17.826189,16302.142};
 					special="NONE";
 					id=0;
 					side="WEST";
@@ -76,12 +76,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="BLU_PLT11_CO";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Platoon Commander";
 				};
 				class Item1
 				{
-					position[]={11403.983,23.787558,11518.774};
+					position[]={14733.602,17.826065,16302.048};
 					special="NONE";
 					id=1;
 					side="WEST";
@@ -90,12 +90,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.2;
 					text="BLU_PLT11_SGT";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Platoon Sergeant";
 				};
 				class Item2
 				{
-					position[]={11405.729,23.792212,11518.774};
+					position[]={14735.347,17.826065,16302.048};
 					special="NONE";
 					id=2;
 					side="WEST";
@@ -104,12 +104,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_PLT11_MEDIC";
-					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Platoon Medic";
 				};
 				class Item3
 				{
-					position[]={11407.547,23.797182,11518.78};
+					position[]={14737.165,17.826075,16302.056};
 					special="NONE";
 					id=3;
 					side="WEST";
@@ -118,12 +118,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_PLT11_JTACFO";
-					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 JTAC / FO";
 				};
 				class Item4
 				{
-					position[]={11409.216,23.803858,11518.78};
+					position[]={14738.834,17.827854,16302.056};
 					special="NONE";
 					id=4;
 					side="WEST";
@@ -131,7 +131,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_PLT11_RM";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Rifleman";
 				};
 			};
@@ -144,7 +144,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11402.155,23.758854,11516.686};
+					position[]={14731.708,17.823402,16300.052};
 					special="NONE";
 					id=5;
 					side="WEST";
@@ -154,12 +154,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_A11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.979,23.765263,11516.686};
+					position[]={14733.597,17.823278,16299.958};
 					special="NONE";
 					id=6;
 					side="WEST";
@@ -167,12 +167,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.763,23.769617,11516.647};
+					position[]={14735.381,17.823233,16299.923};
 					special="NONE";
 					id=7;
 					side="WEST";
@@ -180,12 +180,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11407.547,23.774439,11516.647};
+					position[]={14737.165,17.823233,16299.923};
 					special="NONE";
 					id=8;
 					side="WEST";
@@ -193,12 +193,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Grenadier";
 				};
 				class Item4
 				{
-					position[]={11409.216,23.781515,11516.686};
+					position[]={14738.834,17.825058,16299.958};
 					special="NONE";
 					id=9;
 					side="WEST";
@@ -206,12 +206,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Team Leader";
 				};
 				class Item5
 				{
-					position[]={11411.038,23.788803,11516.686};
+					position[]={14740.656,17.827488,16299.958};
 					special="NONE";
 					id=10;
 					side="WEST";
@@ -219,12 +219,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.706,23.795475,11516.686};
+					position[]={14742.324,17.829712,16299.958};
 					special="NONE";
 					id=11;
 					side="WEST";
@@ -232,12 +232,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11414.452,23.802059,11516.647};
+					position[]={14744.07,17.83,16299.923};
 					special="NONE";
 					id=12;
 					side="WEST";
@@ -245,7 +245,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_A11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Alpha Rifleman (AT)";
 				};
 			};
@@ -258,7 +258,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11402.194,23.732004,11514.435};
+					position[]={14731.747,17.820402,16297.802};
 					special="NONE";
 					id=13;
 					side="WEST";
@@ -268,12 +268,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_B11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Section Commander";
 				};
 				class Item1
 				{
-					position[]={11404.02,23.739305,11514.435};
+					position[]={14733.638,17.820278,16297.708};
 					special="NONE";
 					id=14;
 					side="WEST";
@@ -281,12 +281,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.842,23.746691,11514.479};
+					position[]={14735.46,17.820337,16297.751};
 					special="NONE";
 					id=15;
 					side="WEST";
@@ -294,12 +294,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11407.586,23.750582,11514.396};
+					position[]={14737.204,17.820227,16297.669};
 					special="NONE";
 					id=16;
 					side="WEST";
@@ -307,12 +307,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Grenadier";
 				};
 				class Item4
 				{
-					position[]={11409.255,23.757666,11514.435};
+					position[]={14738.872,17.822109,16297.708};
 					special="NONE";
 					id=17;
 					side="WEST";
@@ -320,12 +320,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Team Leader";
 				};
 				class Item5
 				{
-					position[]={11411.077,23.764957,11514.435};
+					position[]={14740.695,17.824539,16297.708};
 					special="NONE";
 					id=18;
 					side="WEST";
@@ -333,12 +333,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.745,23.771629,11514.435};
+					position[]={14742.363,17.826763,16297.708};
 					special="NONE";
 					id=19;
 					side="WEST";
@@ -346,12 +346,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11414.491,23.778202,11514.396};
+					position[]={14744.109,17.829041,16297.669};
 					special="NONE";
 					id=20;
 					side="WEST";
@@ -359,7 +359,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_B11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Bravo Rifleman (AT)";
 				};
 			};
@@ -372,7 +372,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11402.116,23.709347,11512.572};
+					position[]={14731.669,17.82,16295.94};
 					special="NONE";
 					id=21;
 					side="WEST";
@@ -382,12 +382,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_C11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.94,23.716644,11512.572};
+					position[]={14733.559,17.82,16295.847};
 					special="NONE";
 					id=22;
 					side="WEST";
@@ -395,12 +395,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.724,23.723312,11512.534};
+					position[]={14735.342,17.82,16295.812};
 					special="NONE";
 					id=23;
 					side="WEST";
@@ -408,12 +408,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11407.508,23.730404,11512.534};
+					position[]={14737.126,17.82,16295.812};
 					special="NONE";
 					id=24;
 					side="WEST";
@@ -421,12 +421,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Grenadier";
 				};
 				class Item4
 				{
-					position[]={11409.177,23.737492,11512.572};
+					position[]={14738.795,17.82,16295.847};
 					special="NONE";
 					id=25;
 					side="WEST";
@@ -434,12 +434,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Team Leader";
 				};
 				class Item5
 				{
-					position[]={11410.999,23.744781,11512.572};
+					position[]={14740.617,17.821955,16295.847};
 					special="NONE";
 					id=26;
 					side="WEST";
@@ -447,12 +447,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.667,23.751451,11512.572};
+					position[]={14742.285,17.824179,16295.847};
 					special="NONE";
 					id=27;
 					side="WEST";
@@ -460,12 +460,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11414.413,23.758028,11512.534};
+					position[]={14744.031,17.82646,16295.812};
 					special="NONE";
 					id=28;
 					side="WEST";
@@ -473,7 +473,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_C11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Charlie Rifleman (AT)";
 				};
 			};
@@ -486,7 +486,7 @@ class Mission
 				items=12;
 				class Item0
 				{
-					position[]={11402.272,23.68712,11510.439};
+					position[]={14731.825,17.822489,16293.808};
 					special="NONE";
 					id=29;
 					side="WEST";
@@ -496,12 +496,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="BLU_D11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Section Commander";
 				};
 				class Item1
 				{
-					position[]={11404.097,23.694416,11510.439};
+					position[]={14733.715,17.820093,16293.714};
 					special="NONE";
 					id=30;
 					side="WEST";
@@ -509,12 +509,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_MMG1";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Machinegunner";
 				};
 				class Item2
 				{
-					position[]={11405.88,23.701139,11510.401};
+					position[]={14735.497,17.82,16293.679};
 					special="NONE";
 					id=31;
 					side="WEST";
@@ -522,12 +522,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_MMGASS1";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item3
 				{
-					position[]={11407.664,23.708496,11510.401};
+					position[]={14737.282,17.82,16293.679};
 					special="NONE";
 					id=32;
 					side="WEST";
@@ -535,12 +535,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_GREN1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 				class Item4
 				{
-					position[]={11409.333,23.717808,11510.439};
+					position[]={14738.951,17.82,16293.714};
 					special="NONE";
 					id=33;
 					side="WEST";
@@ -548,12 +548,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_FTL1";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Team Leader";
 				};
 				class Item5
 				{
-					position[]={11411.155,23.725397,11510.439};
+					position[]={14740.772,17.82,16293.714};
 					special="NONE";
 					id=34;
 					side="WEST";
@@ -561,12 +561,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_HWG";
-					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Heavy Weapons Gunner";
 				};
 				class Item6
 				{
-					position[]={11412.823,23.732069,11510.439};
+					position[]={14742.441,17.821543,16293.714};
 					special="NONE";
 					id=35;
 					side="WEST";
@@ -574,12 +574,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_HWA1";
-					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Heavy Weapons Assistant";
 				};
 				class Item7
 				{
-					position[]={11414.569,23.738695,11510.401};
+					position[]={14744.188,17.823824,16293.679};
 					special="NONE";
 					id=36;
 					side="WEST";
@@ -587,12 +587,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_HWA2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 				class Item8
 				{
-					position[]={11416.313,23.749174,11510.401};
+					position[]={14745.932,17.826151,16293.679};
 					special="NONE";
 					id=37;
 					side="WEST";
@@ -600,12 +600,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_FTL2";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Team Leader";
 				};
 				class Item9
 				{
-					position[]={11417.903,23.759775,11510.401};
+					position[]={14747.521,17.82827,16293.679};
 					special="NONE";
 					id=38;
 					side="WEST";
@@ -613,12 +613,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_MMG2";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Machinegunner";
 				};
 				class Item10
 				{
-					position[]={11419.495,23.77039,11510.401};
+					position[]={14749.113,17.83,16293.679};
 					special="NONE";
 					id=39;
 					side="WEST";
@@ -626,12 +626,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_MMGASS2";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item11
 				{
-					position[]={11421.278,23.781921,11510.363};
+					position[]={14750.896,17.83,16293.638};
 					special="NONE";
 					id=40;
 					side="WEST";
@@ -639,7 +639,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_D11_GREN2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 			};
@@ -652,7 +652,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11402.159,23.664465,11508.578};
+					position[]={14731.712,17.825119,16291.948};
 					special="NONE";
 					id=41;
 					side="WEST";
@@ -661,12 +661,12 @@ class Mission
 					leader=1;
 					skill=0.2;
 					text="BLU_JIP_1";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item1
 				{
-					position[]={11403.905,23.673283,11508.537};
+					position[]={14733.522,17.822886,16291.812};
 					special="NONE";
 					id=42;
 					side="WEST";
@@ -674,12 +674,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_2";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item2
 				{
-					position[]={11405.729,23.681072,11508.576};
+					position[]={14735.347,17.820402,16291.851};
 					special="NONE";
 					id=43;
 					side="WEST";
@@ -687,12 +687,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_3";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item3
 				{
-					position[]={11407.513,23.687807,11508.537};
+					position[]={14737.131,17.82,16291.812};
 					special="NONE";
 					id=44;
 					side="WEST";
@@ -700,12 +700,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_4";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item4
 				{
-					position[]={11409.336,23.697529,11508.537};
+					position[]={14738.954,17.82,16291.812};
 					special="NONE";
 					id=45;
 					side="WEST";
@@ -713,12 +713,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_5";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item5
 				{
-					position[]={11410.926,23.70561,11508.499};
+					position[]={14740.544,17.82,16291.776};
 					special="NONE";
 					id=46;
 					side="WEST";
@@ -726,12 +726,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_6";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item6
 				{
-					position[]={11412.671,23.713354,11508.499};
+					position[]={14742.29,17.82,16291.776};
 					special="NONE";
 					id=47;
 					side="WEST";
@@ -739,12 +739,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_7";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item7
 				{
-					position[]={11414.223,23.719563,11508.499};
+					position[]={14743.841,17.820826,16291.776};
 					special="NONE";
 					id=48;
 					side="WEST";
@@ -752,7 +752,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="BLU_JIP_8";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_US.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 			};
@@ -765,7 +765,7 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={11401.621,23.955294,11534.952};
+					position[]={14384.564,17.827112,15936.203};
 					special="NONE";
 					id=49;
 					side="EAST";
@@ -775,12 +775,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="RED_PLT11_CO";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Platoon Commander";
 				};
 				class Item1
 				{
-					position[]={11403.402,23.950531,11534.95};
+					position[]={14386.346,17.830067,15936.203};
 					special="NONE";
 					id=50;
 					side="EAST";
@@ -789,26 +789,26 @@ class Mission
 					rank="SERGEANT";
 					skill=0.2;
 					text="RED_PLT11_SGT";
-					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Platoon Sergeant";
 				};
 				class Item2
 				{
-					position[]={11405.147,23.945877,11534.95};
+					position[]={14388.091,17.832394,15936.203};
 					special="NONE";
 					id=51;
 					side="EAST";
-					vehicle="O_Soldier_F";
+					vehicle="O_medic_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_PLT11_MEDIC";
-					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Platoon Medic";
 				};
 				class Item3
 				{
-					position[]={11406.966,23.94108,11534.956};
+					position[]={14389.909,17.834827,15936.211};
 					special="NONE";
 					id=52;
 					side="EAST";
@@ -817,12 +817,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_PLT11_JTACFO";
-					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 JTAC / FO";
 				};
 				class Item4
 				{
-					position[]={11408.635,23.936802,11534.956};
+					position[]={14391.578,17.837053,15936.211};
 					special="NONE";
 					id=53;
 					side="EAST";
@@ -830,7 +830,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_PLT11_RM";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Rifleman";
 				};
 			};
@@ -843,7 +843,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11401.574,23.937946,11532.861};
+					position[]={14384.518,17.824202,15934.113};
 					special="NONE";
 					id=54;
 					side="EAST";
@@ -853,12 +853,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_A11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.398,23.933832,11532.861};
+					position[]={14386.342,17.827274,15934.113};
 					special="NONE";
 					id=55;
 					side="EAST";
@@ -866,12 +866,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.182,23.928772,11532.823};
+					position[]={14388.126,17.829603,15934.074};
 					special="NONE";
 					id=56;
 					side="EAST";
@@ -879,12 +879,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11406.966,23.924013,11532.823};
+					position[]={14389.909,17.83198,15934.074};
 					special="NONE";
 					id=57;
 					side="EAST";
@@ -892,12 +892,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Grenadier";
 				};
 				class Item4
 				{
-					position[]={11408.635,23.924412,11532.861};
+					position[]={14391.578,17.834257,15934.113};
 					special="NONE";
 					id=58;
 					side="EAST";
@@ -905,12 +905,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Team Leader";
 				};
 				class Item5
 				{
-					position[]={11410.457,23.923561,11532.861};
+					position[]={14393.4,17.836687,15934.113};
 					special="NONE";
 					id=59;
 					side="EAST";
@@ -918,12 +918,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.125,23.919115,11532.861};
+					position[]={14395.068,17.838911,15934.113};
 					special="NONE";
 					id=60;
 					side="EAST";
@@ -931,12 +931,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11413.871,23.914303,11532.823};
+					position[]={14396.814,17.84,15934.074};
 					special="NONE";
 					id=61;
 					side="EAST";
@@ -944,7 +944,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_A11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Alpha Rifleman (AT)";
 				};
 			};
@@ -957,7 +957,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11401.613,23.916883,11530.61};
+					position[]={14384.557,17.821306,15931.863};
 					special="NONE";
 					id=62;
 					side="EAST";
@@ -967,12 +967,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_B11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.438,23.914452,11530.61};
+					position[]={14386.382,17.824327,15931.863};
 					special="NONE";
 					id=63;
 					side="EAST";
@@ -980,12 +980,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.221,23.910656,11530.572};
+					position[]={14388.164,17.826654,15931.824};
 					special="NONE";
 					id=64;
 					side="EAST";
@@ -993,12 +993,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11407.005,23.905897,11530.572};
+					position[]={14389.948,17.829033,15931.824};
 					special="NONE";
 					id=65;
 					side="EAST";
@@ -1006,12 +1006,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Grenadier";
 				};
 				class Item4
 				{
-					position[]={11408.674,23.906454,11530.61};
+					position[]={14391.617,17.83131,15931.863};
 					special="NONE";
 					id=66;
 					side="EAST";
@@ -1019,12 +1019,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Team Leader";
 				};
 				class Item5
 				{
-					position[]={11410.496,23.908884,11530.61};
+					position[]={14393.439,17.833738,15931.863};
 					special="NONE";
 					id=67;
 					side="EAST";
@@ -1032,12 +1032,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.164,23.910004,11530.61};
+					position[]={14395.107,17.835962,15931.863};
 					special="NONE";
 					id=68;
 					side="EAST";
@@ -1045,12 +1045,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11413.91,23.905195,11530.572};
+					position[]={14396.854,17.83824,15931.824};
 					special="NONE";
 					id=69;
 					side="EAST";
@@ -1058,7 +1058,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_B11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Bravo Rifleman (AT)";
 				};
 			};
@@ -1071,7 +1071,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11401.535,23.899609,11528.748};
+					position[]={14384.479,17.818611,15930};
 					special="NONE";
 					id=70;
 					side="EAST";
@@ -1081,12 +1081,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_C11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.359,23.897175,11528.748};
+					position[]={14386.303,17.821737,15930};
 					special="NONE";
 					id=71;
 					side="EAST";
@@ -1094,12 +1094,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_AR1";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item2
 				{
-					position[]={11405.143,23.894438,11528.71};
+					position[]={14388.086,17.824011,15929.961};
 					special="NONE";
 					id=72;
 					side="EAST";
@@ -1107,12 +1107,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_AAR1";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item3
 				{
-					position[]={11406.927,23.891209,11528.71};
+					position[]={14389.87,17.826391,15929.961};
 					special="NONE";
 					id=73;
 					side="EAST";
@@ -1120,12 +1120,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_GREN";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Grenadier";
 				};
 				class Item4
 				{
-					position[]={11408.596,23.891451,11528.748};
+					position[]={14391.539,17.82872,15930};
 					special="NONE";
 					id=74;
 					side="EAST";
@@ -1133,12 +1133,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_FTL";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Team Leader";
 				};
 				class Item5
 				{
-					position[]={11410.418,23.893881,11528.748};
+					position[]={14393.361,17.83115,15930};
 					special="NONE";
 					id=75;
 					side="EAST";
@@ -1146,12 +1146,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_AR2";
-					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Automatic Rifleman";
 				};
 				class Item6
 				{
-					position[]={11412.086,23.896105,11528.748};
+					position[]={14395.029,17.833372,15930};
 					special="NONE";
 					id=76;
 					side="EAST";
@@ -1159,12 +1159,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_AAR2";
-					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Assistant Automatic Rifleman";
 				};
 				class Item7
 				{
-					position[]={11413.832,23.897953,11528.71};
+					position[]={14396.775,17.8356,15929.961};
 					special="NONE";
 					id=77;
 					side="EAST";
@@ -1172,7 +1172,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_C11_RMAT";
-					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Charlie Rifleman (AT)";
 				};
 			};
@@ -1185,7 +1185,7 @@ class Mission
 				items=12;
 				class Item0
 				{
-					position[]={11401.691,23.879488,11526.615};
+					position[]={14384.635,17.813345,15927.867};
 					special="NONE";
 					id=78;
 					side="EAST";
@@ -1195,12 +1195,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.2;
 					text="RED_D11_SECCO";
-					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Section Commander";
 				};
 				class Item1
 				{
-					position[]={11403.516,23.877056,11526.615};
+					position[]={14386.458,17.816261,15927.867};
 					special="NONE";
 					id=79;
 					side="EAST";
@@ -1208,12 +1208,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_MMG1";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Machinegunner";
 				};
 				class Item2
 				{
-					position[]={11405.299,23.874331,11526.577};
+					position[]={14388.242,17.818533,15927.828};
 					special="NONE";
 					id=80;
 					side="EAST";
@@ -1221,12 +1221,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_MMGASS1";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item3
 				{
-					position[]={11407.083,23.87195,11526.577};
+					position[]={14390.026,17.820911,15927.828};
 					special="NONE";
 					id=81;
 					side="EAST";
@@ -1234,12 +1234,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_GREN1";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 				class Item4
 				{
-					position[]={11408.752,23.875774,11526.615};
+					position[]={14391.695,17.823244,15927.867};
 					special="NONE";
 					id=82;
 					side="EAST";
@@ -1247,12 +1247,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_FTL1";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Team Leader";
 				};
 				class Item5
 				{
-					position[]={11410.574,23.878204,11526.615};
+					position[]={14393.518,17.825674,15927.867};
 					special="NONE";
 					id=83;
 					side="EAST";
@@ -1260,12 +1260,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_HWG";
-					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Heavy Weapons Gunner";
 				};
 				class Item6
 				{
-					position[]={11412.242,23.880426,11526.615};
+					position[]={14395.186,17.827898,15927.867};
 					special="NONE";
 					id=84;
 					side="EAST";
@@ -1273,12 +1273,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_HWA1";
-					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Heavy Weapons Assistant";
 				};
 				class Item7
 				{
-					position[]={11413.988,23.882505,11526.577};
+					position[]={14396.932,17.830118,15927.828};
 					special="NONE";
 					id=85;
 					side="EAST";
@@ -1286,12 +1286,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_HWA2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 				class Item8
 				{
-					position[]={11415.732,23.885809,11526.577};
+					position[]={14398.676,17.832445,15927.828};
 					special="NONE";
 					id=86;
 					side="EAST";
@@ -1299,12 +1299,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_FTL2";
-					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Team Leader";
 				};
 				class Item9
 				{
-					position[]={11417.322,23.886312,11526.577};
+					position[]={14400.266,17.834564,15927.828};
 					special="NONE";
 					id=87;
 					side="EAST";
@@ -1312,12 +1312,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_MMG2";
-					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Machinegunner";
 				};
 				class Item10
 				{
-					position[]={11418.914,23.886312,11526.577};
+					position[]={14401.857,17.836687,15927.828};
 					special="NONE";
 					id=88;
 					side="EAST";
@@ -1325,12 +1325,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_MMGASS2";
-					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Assistant Machinegunner";
 				};
 				class Item11
 				{
-					position[]={11420.697,23.886158,11526.539};
+					position[]={14403.641,17.83897,15927.793};
 					special="NONE";
 					id=89;
 					side="EAST";
@@ -1338,7 +1338,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_D11_GREN2";
-					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSATCamo.sqf"";";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_CSAT.sqf"";";
 					description="1-1 Delta Grenadier";
 				};
 			};
@@ -1351,7 +1351,7 @@ class Mission
 				items=8;
 				class Item0
 				{
-					position[]={11401.655,23.860332,11524.943};
+					position[]={14384.599,17.808788,15926.195};
 					special="NONE";
 					id=90;
 					side="EAST";
@@ -1360,12 +1360,12 @@ class Mission
 					leader=1;
 					skill=0.2;
 					text="RED_JIP_1";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item1
 				{
-					position[]={11403.439,23.861555,11524.943};
+					position[]={14386.383,17.811703,15926.195};
 					special="NONE";
 					id=91;
 					side="EAST";
@@ -1373,12 +1373,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_2";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item2
 				{
-					position[]={11405.185,23.859228,11524.943};
+					position[]={14388.128,17.81403,15926.195};
 					special="NONE";
 					id=92;
 					side="EAST";
@@ -1386,12 +1386,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_3";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item3
 				{
-					position[]={11406.931,23.856565,11524.907};
+					position[]={14389.874,17.816261,15926.16};
 					special="NONE";
 					id=93;
 					side="EAST";
@@ -1399,12 +1399,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_4";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item4
 				{
-					position[]={11408.637,23.859982,11524.867};
+					position[]={14391.58,17.818432,15926.121};
 					special="NONE";
 					id=94;
 					side="EAST";
@@ -1412,12 +1412,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_5";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item5
 				{
-					position[]={11410.305,23.866192,11524.867};
+					position[]={14393.248,17.820658,15926.121};
 					special="NONE";
 					id=95;
 					side="EAST";
@@ -1425,12 +1425,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_6";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item6
 				{
-					position[]={11412.012,23.868469,11524.867};
+					position[]={14394.955,17.822933,15926.121};
 					special="NONE";
 					id=96;
 					side="EAST";
@@ -1438,12 +1438,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_7";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 				class Item7
 				{
-					position[]={11413.563,23.870537,11524.867};
+					position[]={14396.507,17.825001,15926.121};
 					special="NONE";
 					id=97;
 					side="EAST";
@@ -1451,7 +1451,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="RED_JIP_8";
-					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSATCamo.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_CSAT.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
 					description="RESERVED FOR JIP";
 				};
 			};
@@ -1464,7 +1464,7 @@ class Mission
 				items=10;
 				class Item0
 				{
-					position[]={11422.408,23.8652,11521.3};
+					position[]={14541.427,17.901136,16096.923};
 					special="NONE";
 					id=98;
 					side="GUER";
@@ -1474,12 +1474,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.2;
 					text="IND_RPILOT1";
-					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Rotary Wing Pilot";
 				};
 				class Item1
 				{
-					position[]={11423.844,23.866993,11521.3};
+					position[]={14542.862,17.903049,16096.923};
 					special="NONE";
 					id=99;
 					side="GUER";
@@ -1488,12 +1488,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_RPILOT2";
-					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Rotary Wing Pilot";
 				};
 				class Item2
 				{
-					position[]={11425.162,23.86875,11521.3};
+					position[]={14544.181,17.904808,16096.923};
 					special="NONE";
 					id=100;
 					side="GUER";
@@ -1502,12 +1502,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_RPILOT3";
-					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Rotary Wing Pilot";
 				};
 				class Item3
 				{
-					position[]={11426.521,23.870564,11521.3};
+					position[]={14545.54,17.906618,16096.923};
 					special="NONE";
 					id=101;
 					side="GUER";
@@ -1516,12 +1516,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_RPILOT4";
-					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Rotary Wing Pilot";
 				};
 				class Item4
 				{
-					position[]={11427.878,23.872223,11521.262};
+					position[]={14546.896,17.908377,16096.886};
 					special="NONE";
 					id=102;
 					side="GUER";
@@ -1530,12 +1530,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_RPILOT5";
-					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""rotarypilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Rotary Wing Pilot";
 				};
 				class Item5
 				{
-					position[]={11429.274,23.873367,11521.262};
+					position[]={14548.293,17.91,16096.886};
 					special="NONE";
 					id=103;
 					side="GUER";
@@ -1544,12 +1544,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.2;
 					text="IND_FPILOT1";
-					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Fixed Wing Pilot";
 				};
 				class Item6
 				{
-					position[]={11430.748,23.873367,11521.262};
+					position[]={14549.767,17.91,16096.886};
 					special="NONE";
 					id=104;
 					side="GUER";
@@ -1558,12 +1558,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_FPILOT2";
-					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Fixed Wing Pilot";
 				};
 				class Item7
 				{
-					position[]={11432.183,23.873367,11521.262};
+					position[]={14551.201,17.91,16096.886};
 					special="NONE";
 					id=105;
 					side="GUER";
@@ -1572,12 +1572,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_FPILOT3";
-					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Fixed Wing Pilot";
 				};
 				class Item8
 				{
-					position[]={11433.616,23.873262,11521.223};
+					position[]={14552.635,17.91,16096.847};
 					special="NONE";
 					id=106;
 					side="GUER";
@@ -1586,12 +1586,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_FPILOT4";
-					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Fixed Wing Pilot";
 				};
 				class Item9
 				{
-					position[]={11434.898,23.873262,11521.223};
+					position[]={14553.917,17.91,16096.847};
 					special="NONE";
 					id=107;
 					side="GUER";
@@ -1600,7 +1600,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.2;
 					text="IND_PILOT5";
-					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_US.sqf"";";
+					init="nul = [this,""fixedpilot""] execVM ""scripts\assignGear_NATO.sqf"";";
 					description="Fixed Wing Pilot";
 				};
 			};
@@ -1613,7 +1613,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11402.123,23.64006,11506.561};
+					position[]={14731.676,17.827858,16289.929};
 					special="NONE";
 					id=108;
 					side="WEST";
@@ -1628,13 +1628,663 @@ class Mission
 		};
 		class Item14
 		{
+			side="GUER";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={14636.799,18.049999,16204.818};
+					special="NONE";
+					id=109;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_PLT11_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.575,18.049999,16204.8};
+					special="NONE";
+					id=110;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="IND_PLT11_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14640.353,18.049999,16204.81};
+					special="NONE";
+					id=111;
+					side="GUER";
+					vehicle="I_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT11_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14642.024,18.049999,16204.877};
+					special="NONE";
+					id=112;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT11_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.724,18.049999,16204.866};
+					special="NONE";
+					id=113;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_PLT11_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+			};
+		};
+		class Item15
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={14636.672,18.049999,16201.64};
+					special="NONE";
+					id=114;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_A11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.339,18.049999,16201.716};
+					special="NONE";
+					id=115;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14640.063,18.049999,16201.771};
+					special="NONE";
+					id=116;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14641.73,18.049999,16201.771};
+					special="NONE";
+					id=117;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.34,18.049999,16201.825};
+					special="NONE";
+					id=118;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item5
+				{
+					position[]={14645.011,18.049999,16201.825};
+					special="NONE";
+					id=119;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item6
+				{
+					position[]={14646.624,18.049999,16201.771};
+					special="NONE";
+					id=120;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item7
+				{
+					position[]={14648.29,18.049999,16201.828};
+					special="NONE";
+					id=121;
+					side="GUER";
+					vehicle="I_Soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+			};
+		};
+		class Item16
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={14636.562,18.049999,16198.192};
+					special="NONE";
+					id=122;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_B11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.229,18.049999,16198.269};
+					special="NONE";
+					id=123;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14639.952,18.049999,16198.324};
+					special="NONE";
+					id=124;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14641.62,18.049999,16198.323};
+					special="NONE";
+					id=125;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.229,18.049999,16198.378};
+					special="NONE";
+					id=126;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item5
+				{
+					position[]={14644.9,18.049999,16198.378};
+					special="NONE";
+					id=127;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item6
+				{
+					position[]={14646.514,18.049999,16198.324};
+					special="NONE";
+					id=128;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item7
+				{
+					position[]={14648.18,18.049999,16198.381};
+					special="NONE";
+					id=129;
+					side="GUER";
+					vehicle="I_Soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+			};
+		};
+		class Item17
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={14637.062,18.049999,16194.857};
+					special="NONE";
+					id=130;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_C11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.729,18.049999,16194.934};
+					special="NONE";
+					id=131;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14640.452,18.049999,16194.989};
+					special="NONE";
+					id=132;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14642.12,18.049999,16194.988};
+					special="NONE";
+					id=133;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.729,18.049999,16195.043};
+					special="NONE";
+					id=134;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item5
+				{
+					position[]={14645.4,18.049999,16195.043};
+					special="NONE";
+					id=135;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item6
+				{
+					position[]={14647.014,18.049999,16194.989};
+					special="NONE";
+					id=136;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item7
+				{
+					position[]={14648.68,18.049999,16195.046};
+					special="NONE";
+					id=137;
+					side="GUER";
+					vehicle="I_Soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+			};
+		};
+		class Item18
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={14636.747,18.049999,16191.949};
+					special="NONE";
+					id=138;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_D11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.414,18.049999,16192.025};
+					special="NONE";
+					id=139;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14640.138,18.049999,16192.081};
+					special="NONE";
+					id=140;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14641.806,18.049999,16192.08};
+					special="NONE";
+					id=141;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.415,18.049999,16192.135};
+					special="NONE";
+					id=142;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_FTL1";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item5
+				{
+					position[]={14645.086,18.049999,16192.135};
+					special="NONE";
+					id=143;
+					side="GUER";
+					vehicle="I_support_MG_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_HWG";
+					init="nul = [this,""hmggun""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item6
+				{
+					position[]={14646.699,18.049999,16192.081};
+					special="NONE";
+					id=144;
+					side="GUER";
+					vehicle="I_support_AMG_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_HWA1";
+					init="nul = [this,""hmgass""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item7
+				{
+					position[]={14648.365,18.049999,16192.138};
+					special="NONE";
+					id=145;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_HWA2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item8
+				{
+					position[]={14650.016,18.049999,16192.131};
+					special="NONE";
+					id=146;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item9
+				{
+					position[]={14651.687,18.049999,16192.131};
+					special="NONE";
+					id=147;
+					side="GUER";
+					vehicle="I_Soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item10
+				{
+					position[]={14653.3,18.049999,16192.077};
+					special="NONE";
+					id=148;
+					side="GUER";
+					vehicle="I_Soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+				class Item11
+				{
+					position[]={14654.966,18.049999,16192.134};
+					special="NONE";
+					id=149;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf"";";
+				};
+			};
+		};
+		class Item19
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={14637.159,18.049999,16188.893};
+					special="NONE";
+					id=150;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.2;
+					text="IND_JIP_1";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item1
+				{
+					position[]={14638.826,18.049999,16188.969};
+					special="NONE";
+					id=151;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_2";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item2
+				{
+					position[]={14640.55,18.049999,16189.024};
+					special="NONE";
+					id=152;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_3";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item3
+				{
+					position[]={14642.218,18.049999,16189.023};
+					special="NONE";
+					id=153;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_4";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item4
+				{
+					position[]={14643.827,18.049999,16189.078};
+					special="NONE";
+					id=154;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_5";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item5
+				{
+					position[]={14645.498,18.049999,16189.078};
+					special="NONE";
+					id=155;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_6";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item6
+				{
+					position[]={14647.111,18.049999,16189.024};
+					special="NONE";
+					id=156;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_7";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+				class Item7
+				{
+					position[]={14648.777,18.049999,16189.081};
+					special="NONE";
+					id=157;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_JIP_8";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; nul = [this] execVM ""scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf"";";
+				};
+			};
+		};
+		class Item20
+		{
 			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={11900.257,2.4481564e-005,11695.829};
+					position[]={11900.027,-1.8574445e-005,11701.08};
 					class args
 					{
 						items=1;
@@ -1645,7 +2295,7 @@ class Mission
 							typeName="PlayerNamesViewDistance";
 						};
 					};
-					id=109;
+					id=158;
 					side="LOGIC";
 					vehicle="AGM_ModuleInteraction";
 					leader=1;
@@ -1654,7 +2304,7 @@ class Mission
 				};
 			};
 		};
-		class Item15
+		class Item21
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1662,7 +2312,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11900.142,9.6853285,11994.979};
+					position[]={11899.912,9.6610956,12000.229};
 					class args
 					{
 						items=1;
@@ -1673,7 +2323,7 @@ class Mission
 							typeName="Action";
 						};
 					};
-					id=110;
+					id=159;
 					side="LOGIC";
 					vehicle="AGM_ModuleCheckPBOs";
 					leader=1;
@@ -1682,7 +2332,7 @@ class Mission
 				};
 			};
 		};
-		class Item16
+		class Item22
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1690,7 +2340,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11899.763,1.698429,11794.802};
+					position[]={11899.533,2.2729406,11800.053};
 					class args
 					{
 						items=2;
@@ -1707,7 +2357,7 @@ class Mission
 							typeName="CoefRecover";
 						};
 					};
-					id=111;
+					id=160;
 					side="LOGIC";
 					vehicle="AGM_ModuleFatigue";
 					leader=1;
@@ -1716,7 +2366,7 @@ class Mission
 				};
 			};
 		};
-		class Item17
+		class Item23
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1724,7 +2374,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11899.695,-0.10793167,11594.431};
+					position[]={11899.466,-0.021531736,11599.682};
 					class args
 					{
 						items=10;
@@ -1756,7 +2406,7 @@ class Mission
 						{
 							value="1";
 							parentCls="AGM_ModuleMedical";
-							typeName="PunishNonMedics";
+							typeName="";
 						};
 						class Item5
 						{
@@ -1789,7 +2439,7 @@ class Mission
 							typeName="AllowChatWhileUnconscious";
 						};
 					};
-					id=112;
+					id=161;
 					side="LOGIC";
 					vehicle="AGM_ModuleMedical";
 					leader=1;
@@ -1798,7 +2448,7 @@ class Mission
 				};
 			};
 		};
-		class Item18
+		class Item24
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1806,8 +2456,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11899.881,10.386099,11894.806};
-					id=113;
+					position[]={11899.651,10.549528,11900.057};
+					id=162;
 					side="LOGIC";
 					vehicle="AGM_ModuleLSDVehicles";
 					leader=1;
@@ -1816,7 +2466,7 @@ class Mission
 				};
 			};
 		};
-		class Item19
+		class Item25
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1824,7 +2474,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11900.037,-0.069424003,11495.351};
+					position[]={11899.808,-0.023214206,11500.602};
 					class args
 					{
 						items=2;
@@ -1841,125 +2491,12 @@ class Mission
 							typeName="PunishNonSpecialists";
 						};
 					};
-					id=114;
+					id=163;
 					side="LOGIC";
 					vehicle="AGM_ModuleExplosive";
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.2;
-				};
-			};
-		};
-		class Item20
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={11995.833,0.091687493,11402.129};
-					special="NONE";
-					id=115;
-					side="LOGIC";
-					vehicle="DAC_Source_Intern";
-					leader=1;
-					skill=0.2;
-				};
-			};
-		};
-		class Item21
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12096.305,-0.19550145,11898.644};
-					special="NONE";
-					id=116;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.2;
-					init="DAC_AI_Count_Level  = [[2,4],[3,6],[4,8],[6,12],[1,0]]";
-				};
-			};
-		};
-		class Item22
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12097.473,0.016358517,11599.566};
-					special="NONE";
-					id=117;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.2;
-					init="DAC_AI_Spawn = [[10,5,5],[10,5,15],0,120,250,0]";
-				};
-			};
-		};
-		class Item23
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12095.136,-0.035659418,11398.623};
-					special="NONE";
-					id=118;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.2;
-					init="DAC_Del_PlayerBody = [0,0]";
-				};
-			};
-		};
-		class Item24
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12095.136,-0.011622801,11992.106};
-					special="NONE";
-					id=119;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.2;
-					init="DAC_STRPlayers = [""RED_PLT11_CO"",""RED_PLT11_SGT"",""RED_PLT11_MEDIC"",""RED_PLT11_JTACFO"",""RED_PLT11_RM"",""RED_A11_SECCO"",""RED_A11_AR1"",""RED_A11_AAR1"",""RED_A11_GREN"",""RED_A11_FTL"",""RED_A11_AR2"",""RED_A11_AAR2"",""RED_A11_RMAT"",""RED_B11_SECCO"",""RED_B11_AR1"",""RED_B11_AAR1"",""RED_B11_GREN"",""RED_B11_FTL"",""RED_B11_AR2"",""RED_B11_AAR2"",""RED_B11_RMAT"",""RED_C11_SECCO"",""RED_C11_AR1"",""RED_C11_AAR1"",""RED_C11_GREN"",""RED_C11_FTL"",""RED_C11_AR2"",""RED_C11_AAR2"",""RED_C11_RMAT"",""RED_D11_SECCO"",""RED_D11_MMG1"",""RED_D11_MMG1"",""RED_D11_GREN1"",""RED_D11_FTL1"",""RED_D11_HWG"",""RED_D11_HWA1"",""RED_D11_HWA2"",""RED_D11_FTL2"",""RED_D11_MMG2"",""RED_D11_MMGASS2"",""RED_D11_GREN2"",""RED_JIP_1"",""RED_JIP_2"",""RED_JIP_3"",""RED_JIP_4"",""RED_JIP_5"",""RED_JIP_6"",""RED_JIP_7"",""RED_JIP_8"",""BLU_PLT11_CO"",""BLU_PLT11_SGT"",""BLU_PLT11_MEDIC"",""BLU_PLT11_JTACFO"",""BLU_PLT11_RM"",""BLU_A11_SECCO"",""BLU_A11_AR1"",""BLU_A11_AAR1"",""BLU_A11_GREN"",""BLU_A11_FTL"",""BLU_A11_AR2"",""BLU_A11_AAR2"",""BLU_A11_RMAT"",""BLU_B11_SECCO"",""BLU_B11_AR1"",""BLU_B11_AAR1"",""BLU_B11_GREN"",""BLU_B11_FTL"",""BLU_B11_AR2"",""BLU_B11_AAR2"",""BLU_B11_RMAT"",""BLU_C11_SECCO"",""BLU_C11_AR1"",""BLU_C11_AAR1"",""BLU_C11_GREN"",""BLU_C11_FTL"",""BLU_C11_AR2"",""BLU_C11_AAR2"",""BLU_C11_RMAT"",""BLU_D11_SECCO"",""BLU_D11_MMG1"",""BLU_D11_MMG1"",""BLU_D11_GREN1"",""BLU_D11_FTL1"",""BLU_D11_HWG"",""BLU_D11_HWA1"",""BLU_D11_HWA2"",""BLU_D11_FTL2"",""BLU_D11_MMG2"",""BLU_D11_MMGASS2"",""BLU_D11_GREN2"",""BLU_JIP_1"",""BLU_JIP_2"",""BLU_JIP_3"",""BLU_JIP_4"",""BLU_JIP_5"",""BLU_JIP_6"",""BLU_JIP_7"",""BLU_JIP_8"",""IND_RPILOT1"",""IND_RPILOT2"",""IND_RPILOT3"",""IND_RPILOT4"",""IND_RPILOT5"",""IND_FPILOT1"",""IND_FPILOT2"",""IND_FPILOT3"",""IND_FPILOT4"",""IND_FPILOT5""]";
-				};
-			};
-		};
-		class Item25
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12093.968,-0.070608892,11799.34};
-					special="NONE";
-					id=120;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.2;
-					init="DAC_Dyn_Weather  = [0,0,0,[0, 0, 0],0]";
 				};
 			};
 		};
@@ -1971,14 +2508,13 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12095.136,-0.12289721,11698.868};
+					position[]={11995.604,-0.0048649106,11407.38};
 					special="NONE";
-					id=121;
+					id=164;
 					side="LOGIC";
-					vehicle="Logic";
+					vehicle="DAC_Source_Intern";
 					leader=1;
 					skill=0.2;
-					init="DAC_Reduce_Value = [600,650,0.3] ";
 				};
 			};
 		};
@@ -1990,14 +2526,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12096.305,0.054284006,11497.926};
+					position[]={12096.075,-0.023610253,11903.895};
 					special="NONE";
-					id=122;
+					id=165;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Delete_Value = [[180,150],[180,150],6000]";
+					init="DAC_AI_Count_Level  = [[2,4],[3,6],[4,8],[6,12],[1,0]]";
 				};
 			};
 		};
@@ -2009,14 +2545,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12191.137,0.12893075,11893.907};
+					position[]={12097.243,-0.0068589603,11604.817};
 					special="NONE";
-					id=123;
+					id=166;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_AI_AddOn = 1";
+					init="DAC_AI_Spawn = [[10,5,5],[10,5,15],0,120,250,0]";
 				};
 			};
 		};
@@ -2028,14 +2564,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12192.305,0.27646235,11594.83};
+					position[]={12094.906,0.00059147738,11403.874};
 					special="NONE";
-					id=124;
+					id=167;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="if (isMultiplayer) then { DAC_Marker = 0; } else { DAC_Marker = 2; }; ";
+					init="DAC_Del_PlayerBody = [0,0]";
 				};
 			};
 		};
@@ -2047,14 +2583,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12189.968,0.037086658,11393.887};
+					position[]={12094.906,-0.008282938,11997.357};
 					special="NONE";
-					id=125;
+					id=168;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Join_Action  = false";
+					init="DAC_STRPlayers = [""RED_PLT11_CO"",""RED_PLT11_SGT"",""RED_PLT11_MEDIC"",""RED_PLT11_JTACFO"",""RED_PLT11_RM"",""RED_A11_SECCO"",""RED_A11_AR1"",""RED_A11_AAR1"",""RED_A11_GREN"",""RED_A11_FTL"",""RED_A11_AR2"",""RED_A11_AAR2"",""RED_A11_RMAT"",""RED_B11_SECCO"",""RED_B11_AR1"",""RED_B11_AAR1"",""RED_B11_GREN"",""RED_B11_FTL"",""RED_B11_AR2"",""RED_B11_AAR2"",""RED_B11_RMAT"",""RED_C11_SECCO"",""RED_C11_AR1"",""RED_C11_AAR1"",""RED_C11_GREN"",""RED_C11_FTL"",""RED_C11_AR2"",""RED_C11_AAR2"",""RED_C11_RMAT"",""RED_D11_SECCO"",""RED_D11_MMG1"",""RED_D11_MMG1"",""RED_D11_GREN1"",""RED_D11_FTL1"",""RED_D11_HWG"",""RED_D11_HWA1"",""RED_D11_HWA2"",""RED_D11_FTL2"",""RED_D11_MMG2"",""RED_D11_MMGASS2"",""RED_D11_GREN2"",""RED_JIP_1"",""RED_JIP_2"",""RED_JIP_3"",""RED_JIP_4"",""RED_JIP_5"",""RED_JIP_6"",""RED_JIP_7"",""RED_JIP_8"",""BLU_PLT11_CO"",""BLU_PLT11_SGT"",""BLU_PLT11_MEDIC"",""BLU_PLT11_JTACFO"",""BLU_PLT11_RM"",""BLU_A11_SECCO"",""BLU_A11_AR1"",""BLU_A11_AAR1"",""BLU_A11_GREN"",""BLU_A11_FTL"",""BLU_A11_AR2"",""BLU_A11_AAR2"",""BLU_A11_RMAT"",""BLU_B11_SECCO"",""BLU_B11_AR1"",""BLU_B11_AAR1"",""BLU_B11_GREN"",""BLU_B11_FTL"",""BLU_B11_AR2"",""BLU_B11_AAR2"",""BLU_B11_RMAT"",""BLU_C11_SECCO"",""BLU_C11_AR1"",""BLU_C11_AAR1"",""BLU_C11_GREN"",""BLU_C11_FTL"",""BLU_C11_AR2"",""BLU_C11_AAR2"",""BLU_C11_RMAT"",""BLU_D11_SECCO"",""BLU_D11_MMG1"",""BLU_D11_MMG1"",""BLU_D11_GREN1"",""BLU_D11_FTL1"",""BLU_D11_HWG"",""BLU_D11_HWA1"",""BLU_D11_HWA2"",""BLU_D11_FTL2"",""BLU_D11_MMG2"",""BLU_D11_MMGASS2"",""BLU_D11_GREN2"",""BLU_JIP_1"",""BLU_JIP_2"",""BLU_JIP_3"",""BLU_JIP_4"",""BLU_JIP_5"",""BLU_JIP_6"",""BLU_JIP_7"",""BLU_JIP_8"",""IND_RPILOT1"",""IND_RPILOT2"",""IND_RPILOT3"",""IND_RPILOT4"",""IND_RPILOT5"",""IND_FPILOT1"",""IND_FPILOT2"",""IND_FPILOT3"",""IND_FPILOT4"",""IND_FPILOT5""]";
 				};
 			};
 		};
@@ -2066,14 +2602,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12189.968,-0.21283741,11987.37};
+					position[]={12093.738,0.00017568003,11804.591};
 					special="NONE";
-					id=126;
+					id=169;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="if (isMultiplayer) then { DAC_Com_Values = [1,1,0,0]; } else { DAC_Com_Values = [1,2,0,0]; };";
+					init="DAC_Dyn_Weather  = [0,0,0,[0, 0, 0],0]";
 				};
 			};
 		};
@@ -2085,14 +2621,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12188.8,0.1916272,11794.604};
+					position[]={12094.906,-0.0054794601,11704.119};
 					special="NONE";
-					id=127;
+					id=170;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_AI_Level = 3";
+					init="DAC_Reduce_Value = [600,650,0.3] ";
 				};
 			};
 		};
@@ -2104,14 +2640,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12189.968,0.1102977,11694.132};
+					position[]={12096.075,0.011758182,11503.177};
 					special="NONE";
-					id=128;
+					id=171;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Res_Side = 1";
+					init="DAC_Delete_Value = [[180,150],[180,150],6000]";
 				};
 			};
 		};
@@ -2123,14 +2659,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12191.137,0.20540139,11493.189};
+					position[]={12190.907,-0.0060915062,11899.158};
 					special="NONE";
-					id=129;
+					id=172;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_WP_Speed = 0.01";
+					init="DAC_AI_AddOn = 1";
 				};
 			};
 		};
@@ -2142,14 +2678,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12286.187,0.079458222,11895.39};
+					position[]={12192.075,0.010875139,11600.081};
 					special="NONE";
-					id=130;
+					id=173;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Player_Marker = false";
+					init="if (isMultiplayer) then { DAC_Marker = 0; } else { DAC_Marker = 2; }; ";
 				};
 			};
 		};
@@ -2161,14 +2697,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12287.354,-0.17792769,11596.313};
+					position[]={12189.738,0.016308088,11399.138};
 					special="NONE";
-					id=131;
+					id=174;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Auto_UnitCount = [8,10] ";
+					init="DAC_Join_Action  = false";
 				};
 			};
 		};
@@ -2180,14 +2716,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12285.018,0.11443078,11395.369};
+					position[]={12189.738,-0.017303975,11992.621};
 					special="NONE";
-					id=132;
+					id=175;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_SaveDistance = [500,[""DAC_Save_Pos""]]";
+					init="if (isMultiplayer) then { DAC_Com_Values = [1,1,0,0]; } else { DAC_Com_Values = [1,2,0,0]; };";
 				};
 			};
 		};
@@ -2199,14 +2735,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12285.018,-0.026365101,11988.853};
+					position[]={12188.57,0.019131083,11799.854};
 					special="NONE";
-					id=133;
+					id=176;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Fast_Init  = false";
+					init="DAC_AI_Level = 3";
 				};
 			};
 		};
@@ -2218,14 +2754,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12283.85,0.13714913,11796.086};
+					position[]={12189.738,0.017289896,11699.383};
 					special="NONE";
-					id=134;
+					id=177;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Direct_Start = false";
+					init="DAC_Res_Side = 1";
 				};
 			};
 		};
@@ -2237,14 +2773,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12285.018,-0.083556712,11695.614};
+					position[]={12190.907,0.02401682,11498.44};
 					special="NONE";
-					id=135;
+					id=178;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Activate_Sound = false";
+					init="DAC_WP_Speed = 0.01";
 				};
 			};
 		};
@@ -2256,14 +2792,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12286.187,0.039357733,11494.672};
+					position[]={12285.957,-0.00076618418,11900.641};
 					special="NONE";
-					id=136;
+					id=179;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.2;
-					init="DAC_Player_Support = [10,[4,2000,3,1000]]";
+					init="DAC_Player_Marker = false";
 				};
 			};
 		};
@@ -2275,7 +2811,121 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11898.173,-12.385987,11401.434};
+					position[]={12287.124,-0.0071295565,11601.564};
+					special="NONE";
+					id=180;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Auto_UnitCount = [8,10] ";
+				};
+			};
+		};
+		class Item43
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12284.788,0.016138082,11400.62};
+					special="NONE";
+					id=181;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_SaveDistance = [500,[""DAC_Save_Pos""]]";
+				};
+			};
+		};
+		class Item44
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12284.788,0.0013871733,11994.104};
+					special="NONE";
+					id=182;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Fast_Init  = false";
+				};
+			};
+		};
+		class Item45
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12283.62,0.0027701128,11801.337};
+					special="NONE";
+					id=183;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Direct_Start = false";
+				};
+			};
+		};
+		class Item46
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12284.788,0.0081481514,11700.865};
+					special="NONE";
+					id=184;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Activate_Sound = false";
+				};
+			};
+		};
+		class Item47
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12285.957,-0.0052391062,11499.923};
+					special="NONE";
+					id=185;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.2;
+					init="DAC_Player_Support = [10,[4,2000,3,1000]]";
+				};
+			};
+		};
+		class Item48
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11897.943,-0.012344264,11406.685};
 					class args
 					{
 						items=7;
@@ -2322,7 +2972,7 @@ class Mission
 							typeName="same_lr_frequencies_for_side";
 						};
 					};
-					id=137;
+					id=186;
 					side="LOGIC";
 					vehicle="tfar_ModuleTaskForceRadioEnforceUsage";
 					leader=1;

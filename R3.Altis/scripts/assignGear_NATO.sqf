@@ -5,49 +5,53 @@ by AGeNT
 - Covers most standard RIFM platoon roles, if you want to add more just ask me or do so by observation of how the others work.
 - Current Loadouts: "pltld", "pltmed", ""pltfac", "pltuavop", "secco", "sectl", "ar", "aar", "rm", "rmat", "rmsc", "dm", "gren", "mmg", "mmgass", "rotarypilot", "fixedpilot", "crewmander", "crewman", "hmggun", "hmgass", "gmggun", "gmgass", "hatgun", "hatammo", "aagun", "aaammo", "divertl", "diver", "sniper", "spotter"
 - Adapted for Arma 3, still technically WIP. Report any and all issues to Agent via the forums, steam, ts etc.
-- Current Side, Faction: BLUFOR, AAF
+- Current Side, Faction: BLUFOR, NATO
 - Required Mods: @AGM, @task_force_radio
 
 ===== Using this Script =====
 - In their current state, the scripts will not work for AI. In fact a whole different script will be required.
 
 - If called from unit init field, needs follow the following format, with the desired loadout as a lower case string value (in "").
-- nul = [this,"loadout"] execVM "scripts\assignGear_AAF.sqf";
-e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_AAF.sqf";
-- This would equip a AAF platoon leader with the gear defined below.
+- nul = [this,"loadout"] execVM "scripts\assignGear_NATO.sqf";
+e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_NATO.sqf";
+- This would equip a NATO platoon leader with the gear defined below.
 - All available loadout options are annotated above.
 
-- You may include up to three extra paramters for this script, corresponding with variables in the script, in the following format:
-- nul = [this,"loadout",nightGear,scopes,suppressors] execVM "scripts\assignGear_AAF.sqf";
-e.g. - nul = [this,"pltld",false,false,true] execVM "scripts\assignGear_AAF.sqf";
-- This example would equip a AAF platoon leader with no night gear, no scope and a suppressor.
+- You may include up to five extra paramters for this script, corresponding with variables in the script, in the following format:
+- nul = [this,"loadout",nightGear,scopes,suppressors,"camopattern"] execVM "scripts\assignGear_NATO.sqf";
+e.g. - nul = [this,"pltld",true,false,true,true,"ctrg"] execVM "scripts\assignGear_NATO.sqf";
+- This example would equip a NATO CTRG platoon leader with 3GL rounds, no night gear, a scope, a suppresssed weapon and CTRG equipment.
 - This system allows for individual cases - you may still change the variables below for a 'global' effect.
 
 - Additional cases can be added below to support additional roles.
-- Check the assignGearDefines_AAF.sqf for defined variables, alter them in that script. 
-- The variables at the beginning of this script can influence what gear players will receive, they should be fairly straightforward
+- Check the assignGearDefines_NATO.sqf for defined variables, alter them in that script. 
+- The variables at the beginning of the defines script influence what gear players will receive, they should be fairly straightforward.
 =============================
 */ 
 
 private [
-"_nightGear","_scopes","_camoPattern","_underwaterWeapons",
+"_3GLs","_nightGear","_scopes","_suppressors","_camoPattern","_underwaterWeapons",
 "_delay","_unit","_loadout"
 ];
 
 // ==== gear script variables ====
-_nightGear = false;					// night vision goggles and IR strobes equipped
-_scopes = false;					// scopes replace regular attachments
-_suppressors = false;				// suppressors & SD mags where applicable
-_underwaterWeapons = true;			// divers assigned underwater rifles, if false then same rifle as everyone else. 
+_3GLs = false;						// 3GL rounds instead of regular 1GL rounds.
+_nightGear = false;					// Night vision goggles and IR strobes equipped.
+_scopes = false;					// Scopes replace regular attachments.
+_suppressors = false;				// Suppressors & SD mags where applicable.
+_camoPattern = "us";				// Camo pattern for NATO forces. Default: "us". Available cases: "us", "ctrg". Requires lower case string value.
+_underwaterWeapons = true;			// Divers assigned underwater rifles, if false then same rifle as everyone else. 
 // ===============================
 
 // variable assignment
 _delay = 0.1;
 _unit = _this select 0;
 _loadout = toLower (_this select 1);
-if (count _this > 2) then { if (typeName (_this select 2) == "BOOL") then { _nightGear = _this select 2; }; };
-if (count _this > 3) then { if (typeName (_this select 3) == "BOOL") then { _scopes = _this select 3; }; };
-if (count _this > 4) then { if (typeName (_this select 4) == "BOOL") then { _suppressors = _this select 4; }; };
+if (count _this > 2) then { if (typeName (_this select 2) == "BOOL") then { _3GLs = _this select 2; }; };
+if (count _this > 3) then { if (typeName (_this select 3) == "BOOL") then { _nightGear = _this select 3; }; };
+if (count _this > 4) then { if (typeName (_this select 4) == "BOOL") then { _scopes = _this select 4; }; };
+if (count _this > 5) then { if (typeName (_this select 5) == "BOOL") then { _suppressors = _this select 5; }; };
+if (count _this > 6) then { if (typeName (_this select 6) == "STRING") then { _camoPattern = toLower(_this select 6); }; };
 
 // waits until mission has started, make sure unit exists, or wait until it does
 waitUntil {time > 1};																			
@@ -62,7 +66,7 @@ if (!(local _unit)) exitWith {};
 if (isMultiplayer && isServer) exitWith {};
 
 // faction specific script with all of the variables
-#include "assignGearDefines_AAF.sqf";
+#include "assignGearDefines_NATO.sqf";
 
 // gear removal
 if (_plebUniform != "") then { removeUniform _unit; };
@@ -87,9 +91,15 @@ switch (_loadout) do {
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,1];
-		_unit addMagazines [_glSmokeTwo,1];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		};
 		_unit addWeapon _rifleGL;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
@@ -119,8 +129,13 @@ switch (_loadout) do {
 		_unit addMagazines [_rifleGLMag,9];
 		_unit addMagazine _designatorBat;
 		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
-		_unit addMagazines [_glSmokeOne,5];
-		_unit addMagazines [_glSmokeTwo,5];
+		if (_3GLs) then {
+			_unit addMagazines [_glSmokeOne,2];
+			_unit addMagazines [_glSmokeTwo,2];
+		} else {
+			_unit addMagazines [_glSmokeOne,5];
+			_unit addMagazines [_glSmokeTwo,5];
+		};
 		_unit addWeapon _rifleGL;
 		["fac"] call _addRuck;
 		["general"] call _addAttachments;
@@ -151,9 +166,15 @@ switch (_loadout) do {
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,1];
-		_unit addMagazines [_glSmokeTwo,1];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		};
 		_unit addWeapon _rifleGL;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
@@ -167,9 +188,15 @@ switch (_loadout) do {
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,1];
-		_unit addMagazines [_glSmokeTwo,1];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		};
 		_unit addWeapon _rifleGL;
 		["tl"] call _addRuck;
 		["general"] call _addAttachments;
@@ -179,7 +206,7 @@ switch (_loadout) do {
 	case "ar" : {
 		["pleb"] call _addClothes;
 		call _addBasics;
-		_unit addMagazines [_autoRifleMag,3];
+		_unit addMagazines [_autoRifleMag,5];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _autoRifle;
 		["ar"] call _addRuck;
@@ -248,9 +275,15 @@ switch (_loadout) do {
 		call _addBasics;
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,1];
-		_unit addMagazines [_glSmokeTwo,1];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		};
 		_unit addWeapon _rifleGL;
 		["gren"] call _addRuck;
 		["general"] call _addAttachments;
@@ -480,9 +513,15 @@ switch (_loadout) do {
 		{ _unit addItem _x } foreach _sniperItems;
 		_unit addMagazines [_rifleGLMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
-		_unit addMagazines [_glExplody,5];
-		_unit addMagazines [_glSmokeOne,2];
-		_unit addMagazines [_glSmokeTwo,2];
+		if (_3GLs) then {
+			_unit addMagazines [_glExplody,3];
+			_unit addMagazines [_glSmokeOne,1];
+			_unit addMagazines [_glSmokeTwo,1];
+		} else {
+			_unit addMagazines [_glExplody,5];
+			_unit addMagazines [_glSmokeOne,2];
+			_unit addMagazines [_glSmokeTwo,2];
+		};
 		_unit addWeapon _rifleGL;
 		["spotter"] call _addRuck;
 		["suppgeneral"] call _addAttachments;
@@ -503,8 +542,8 @@ switch (_loadout) do {
 	};
 };
 
-[_unit,"TFAegis"] call bis_fnc_setUnitInsignia;
+[_unit,"111thID"] call bis_fnc_setUnitInsignia;
 _unit selectWeapon (primaryWeapon _unit);
 _unit switchMove "AmovPercMstpSlowWrflDnon";
 sleep _delay;
-_unit GroupChat format ["%1 completed gear assign", name _unit];
+_unit groupChat format ["%1 completed gear assign", name _unit];

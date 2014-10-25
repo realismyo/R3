@@ -12,21 +12,23 @@
 // ===============================
 // ========== Variables ==========
 // ===============================
+
 private [
-"_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_mmg","_smg","_pistol",
+"_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
-"_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_mmgMag","_smgMag","_pistolMag",
+"_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniform","_rpilotUniform","_fpilotUniform","_crewUniform","_diverUniform","_sniperUniform",
 "_goggles","_divingGoggles",
 "_plebHelmet","_rotaryPilotHelmet","_fixedPilotHelmet","_crewmanHelmet",
 "_plebVest","_glVest","_medVest","_pilotVest","_crewVest","_diverVest","_sniperVest",
-"_plebRuck","_medRuck","_assistantRuck","_uavRuck","_diverRuck","_sniperRuck","_radioRuck",
+"_plebRuck","_medRuck","_assistantRuck","_uavRuck","_diverRuck","_sniperRuck",
 "_medOne","_medTwo","_medThree","_medFour",
 "_rifleDiver","_rifleDiverMagOne","_rifleDiverMagTwo",
 "_lat","_latMag",
+"_airRadioRuck","_radioRuck","_diverRadioRuck",
 "_binos","_radio",
-"_airRadioRuck","_facItems","_facSmokes",
+"_facItems","_facSmokes",
 "_uavTool","_uavBat",
 "_hatLaunch","_hatMag","_aaLaunch","_aaMag",
 "_boltRifle","_boltRifleMag","_sniperItems",
@@ -46,7 +48,7 @@ private [
 // ===============================
 // =========== Defines ===========
 // ===============================
-// ======= general weapons =======
+// ======= General Weapons =======
 _rifle = "arifle_Mk20_F";
 _rifleGL = "arifle_Mk20_GL_F";
 _rifleScoped = "arifle_Mk20_F";
@@ -56,13 +58,13 @@ _dmr = "srifle_EBR_F";
 _mmg = "LMG_Zafir_F";
 _smg = "hgun_PDW2000_F";
 _pistol = "hgun_ACPC2_F";
-// ===== general throwables ======
+// ===== General Throwables ======
 _grenade = "HandGrenade";
 _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
-// ====== general magazines ======
+// ====== General Magazines ======
 _rifleMag = "30Rnd_556x45_Stanag";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGLMag = "30Rnd_556x45_Stanag";
@@ -74,30 +76,27 @@ _dmrMag = "20Rnd_762x51_Mag";
 _mmgMag = "150Rnd_762x51_Box";
 _smgMag = "30Rnd_9x21_Mag";
 _pistolMag = "9Rnd_45ACP_Mag";
-// ========== gl rounds ==========
+// ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
 _glSmokeOne = "1Rnd_SmokeGreen_Grenade_shell";
 _glSmokeTwo = "1Rnd_SmokeRed_Grenade_shell";
 _glFlareOne = "UGL_FlareWhite_F";
 _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
-// ========== clothing ===========
-// ========== uniforms ===========
+// ========== Clothing ===========
+// ========== Uniforms ===========
 _plebUniform = "U_I_CombatUniform";	// leave as "" for default
 _rpilotUniform = "U_I_HeliPilotCoveralls";
 _fpilotUniform = "U_I_pilotCoveralls";
 _crewUniform = "U_I_CombatUniform";
 _diverUniform = "U_I_Wetsuit";
 _sniperUniform = "U_I_GhillieSuit";
-// =========== goggles ===========
-_goggles = "";	// leave as "" for default
-_divingGoggles = "G_I_Diving";
-// =========== helmets ===========
+// =========== Helmets ===========
 _plebHelmet = "H_HelmetIA_net";
 _rotaryPilotHelmet = "H_PilotHelmetHeli_I";
 _fixedPilotHelmet = "H_PilotHelmetFighter_I";
 _crewmanHelmet = "H_HelmetCrew_I";
-// ============ vests ============
+// ============ Vests ============
 _plebVest = "V_PlateCarrierIA1_dgtl";
 _glVest = "V_PlateCarrierIAGL_dgtl";
 _medVest = "V_PlateCarrierIA1_dgtl";
@@ -105,22 +104,31 @@ _pilotVest = "V_TacVest_khk";
 _crewVest = "V_TacVest_khk";
 _diverVest = "V_RebreatherB";
 _sniperVest = "V_Chestrig_oli";
-// ============ rucks ============
+// ============ Rucks ============
 _plebRuck = "B_AssaultPack_dgtl";
 _medRuck = "B_Carryall_oli";
 _assistantRuck = "B_Bergen_rgr";
 _uavRuck = "I_UAV_01_backpack_F";
 _diverRuck = "B_AssaultPack_blk";
 _sniperRuck = "B_AssaultPack_dgtl";
+// =========== goggles ===========
+_goggles = "";	// leave as "" for default
+_divingGoggles = "G_I_Diving";
+// ========= Radio Rucks =========
+_airRadioRuck = "tf_anarc164";
 _radioRuck = "tf_anprc155";
-// ======== medical items ========
+_diverRadioRuck = "tf_anprc155";
+// ======== Medical Gear =========
 _medOne = "AGM_Bandage";
 _medTwo = "AGM_Morphine";
 _medThree = "AGM_Epipen";
 _medFour = "AGM_Bloodbag";
 // ===============================
-// ====== specialist items =======
-// ============ diver ============
+// ====== Equipment/Items ========
+// ========== General ============
+_binos = "Binocular";
+_radio = "tf_anprc148jem";
+// ============ Diver ============
 if (_underwaterWeapons) then { 
 	_rifleDiver = "arifle_SDAR_F"; 
 } else { 
@@ -133,44 +141,40 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagOne = "30Rnd_556x45_Stanag";
 	_rifleDiverMagTwo = "30Rnd_556x45_Stanag";
 };
-// ============ lat ==============
+// ============ LAT ==============
 _lat = "launch_NLAW_F";
 _latMag = "NLAW_F";
-// =========== misc ==============
-_binos = "Binocular";
-_radio = "tf_anprc148jem";
-// ============ fac ==============
-_airRadioRuck = "tf_anarc164";
+// ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
 // =========== UAV ===============
 _uavTool = "I_UavTerminal";
 _uavBat = "AGM_UAVBattery";
-// ========== anti-tank ==========
+// ============= HAT =============
 _hatLaunch = "launch_I_Titan_short_F";
 _hatMag = "Titan_AT";
-// ========== anti-air ===========
+// ========== Anti-Air ===========
 _aaLaunch = "launch_I_Titan_F";
 _aaMag = "Titan_AA";
-// ========== sniper =============
+// ========== Sniper =============
 _boltRifle = "srifle_GM6_LRPS_F";
 _boltRifleMag = "5Rnd_127x108_Mag";
 _sniperItems = ["AGM_ItemKestrel"];
-// ======== rangefinders =========
+// ======== Rangefinder ==========
 _rangeFinder = "AGM_Vector";	// Rangefinder
 _rangeFinderBat = "";			// no batteries as of yet
-// ========= laser des ===========
+// ========= Laser Des ===========
 _designator = "LaserDesignator";
 _designatorBat = "LaserBatteries";
-// ========== hmg team ===========
+// ========== HMG Team ===========
 _hmgBarrel = "I_HMG_01_weapon_F";
 _hmgTripod = "I_HMG_01_support_F";
 _hmgMag = "";	// no magazines as of yet
-// ========== gmg team ===========
+// ========== GMG Team ===========
 _gmgBarrel = "I_GMG_01_weapon_F";
 _gmgTripod = "I_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
-// =========== tools =============
+// =========== Tools =============
 _nightVision = "NVGoggles_INDEP";
 _basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
 _basicItems = ["AGM_EarBuds"];
@@ -179,7 +183,7 @@ _secTools = ["itemGPS"];
 _secItems = [];
 _pltTools = ["itemGPS"];
 _pltItems = [];
-// ======== attachments ==========
+// ======== Attachments ==========
 _generalAttachments = ["optic_ACO_grn","acc_flashlight"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];
 _autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
@@ -249,11 +253,14 @@ if ((!isNil "_nightGear") && _nightGear) then {
 	_test = _scoped_mmgAttachments find "acc_flashlight";
 	if (_test != -1) then {_scoped_mmgAttachments set [_test,"acc_pointer_IR"]};
 };
+
 // ===============================
 // ========== Functions ==========
 // ===============================
+
 // Adds basic clothes/vest/helmet etc. to a unit
 // Possible Cases: leader, medic, pleb, assistant, gren, rpilot, fpilot, crew, diver, sniper
+// Example: ["leader"] call _addClothes;
 _addClothes = {
 	private ["_type"];
 	_type = toLower (_this select 0);
@@ -322,6 +329,7 @@ _addClothes = {
 
 // Adds the basic items and tools of the loadouts to a unitBackpack
 // No cases, just generic items. Adds binocular item depeding on loadout
+// Example: call _addBasics;
 _addBasics = {
 	sleep _delay;
 	{ _unit linkItem _x } foreach _basicTools; 		// add and assign each of the basic tools
@@ -336,6 +344,8 @@ _addBasics = {
 	if (_loadout in ["aar","mmgass","crewmander"]) then { _unit addWeapon _binos; };
 };
 
+// Empties a unit's ruck
+// Example: call _clearRuck;
 _clearRuck = {
 	clearWeaponCargoGlobal (unitBackpack _unit);
 	clearMagazineCargoGlobal (unitBackpack _unit);
@@ -347,6 +357,7 @@ _clearRuck = {
 // Adds a backpack and cargo to that backpack.
 // Note that these cases are mostly similar to the unit's loadout case.
 // Possible Cases: plt, medic, fac, uavop, secco, tl, ar, aar, rm, rmat, dmr, gren, mmg, mmgass, hat, aa, crew, aircrew, hmggun, hmgass, gmggun, gmgass, diver, sniper, spotter
+// Example: ["plt"] call _addRuck;
 _addRuck = {
 	private ["_pack"];
 	_pack = _this select 0;
@@ -499,6 +510,14 @@ _addRuck = {
 		case "gmgass" : {
 			_unit addBackpack _gmgTripod;
 		};
+		case "divertl" : {
+			_unit addBackpack _diverRadioRuck;
+			call _clearRuck;
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleDiverMagOne,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleDiverMagTwo,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_grenade,2];
+			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
+		};
 		case "diver" : {
 			_unit addBackpack _diverRuck;
 			call _clearRuck;
@@ -515,7 +534,7 @@ _addRuck = {
 			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
 		};
 		case "spotter" : {
-			_unit addBackpack _sniperRuck;
+			_unit addBackpack _radioRuck;
 			call _clearRuck;
 			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,4];
 			(unitBackpack _unit) addItemCargoGlobal [_medOne,8];	// bandages
@@ -531,6 +550,8 @@ _addRuck = {
 
 // Addition of Attachments to a Unit's weapon
 // Note that pistol attachments are done regardless of what is called
+// Possible Cases: general, dmr, ar, mmg, sniper, diver, scopedgeneral, scopedar, scopedmmg, suppgeneral, suppdmr, suppar, suppmmg, scuppgeneral, scuppar, scuppmmg
+// Example: ["general"] call _addRuck;
 _addAttachments = {
 	private ["_type","_primaryAttachments","_handgunAttachments"];
 	_type =  toLower (_this select 0);
@@ -539,7 +560,9 @@ _addAttachments = {
 	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
 	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
 	switch (_type) do {
-
+		// ===============================
+		// ===== General Attachments =====
+		// ===============================
 		case "general" : {
 			if (!isNil "_generalAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _generalAttachments;
@@ -590,8 +613,9 @@ _addAttachments = {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
 			};
 		};
-		
-		// Scoped - Redundant if '_scopes' is true
+		// ===================================================
+		// ===== Scoped - Redundant if '_scopes' is true =====
+		// ===================================================
 		case "scopedgeneral" : {
 			if (!isNil "_scoped_rifleAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments;
@@ -601,8 +625,8 @@ _addAttachments = {
 			};
 		};
 		case "scopedar" : {
-			if (!isNil "_suppressed_autoRifleAttachments") then {
-				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_autoRifleAttachments;
+			if (!isNil "_scoped_autoRifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_autoRifleAttachments;
 			};
 			if (!isNil "_pistolAttachments") then {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
@@ -616,8 +640,9 @@ _addAttachments = {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
 			};
 		};
-		
-		// Suppressed - Redundant if '_suppressors' is true
+		// ============================================================
+		// ===== Suppressed - Redundant if '_suppressors' is true =====
+		// ============================================================
 		case "suppgeneral" : {
 			if (!isNil "_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _generalAttachments; };
 			if (!isNil "_suppressed_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_generalAttachments; };
@@ -628,8 +653,14 @@ _addAttachments = {
 			if (!isNil "_dmrAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _dmrAttachments;
 			};
+			if (!isNil "_suppressed_dmrAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_dmrAttachments;
+			};
 			if (!isNil "_pistolAttachments") then {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then { 
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; 
 			};
 		};
 		case "suppar" : {
@@ -645,8 +676,9 @@ _addAttachments = {
 			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
 			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
 		};
-		
-		// Scoped & Suppressed - Redundant if both '_suppressors' and '_scopes' are true
+		// =========================================================================================
+		// ===== Scoped & Suppressed - Redundant if both '_suppressors' and '_scopes' are true =====
+		// =========================================================================================
 		case "scuppgeneral" : {
 			if (!isNil "_scoped_rifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments; };
 			if (!isNil "_suppressed_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_generalAttachments; };
@@ -666,6 +698,7 @@ _addAttachments = {
 			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
 			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
 		};
+		// =========================================================================================
 		default {
 			_unit groupChat format ["Incorrect attachment call for unit: %1",_unit];
 		};
@@ -673,6 +706,7 @@ _addAttachments = {
 };
 
 // Basic Meds for the unit
+// Example: call _IFAK;
 _IFAK = {
 	if (!isNull (unitBackpack _unit) && !(_loadout in ["pltuavop"])) then {
 		(unitBackpack _unit) addItemCargoGlobal [_medOne,4];

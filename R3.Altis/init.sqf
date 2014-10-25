@@ -4,9 +4,21 @@
 // https://community.bistudio.com/wiki/init.sqf
 // ====================================================================================
 
-tf_no_auto_long_range_radio = true; // gear scripts adds radios
-if (!isServer && isNull player) then { isJIP = true; } else { isJIP = false; };
-if (!isDedicated) then { waitUntil { !isNull player && isPlayer player }; };
+if (hasInterface && isNull player) then { isJIP = true; } else { isJIP = false; };
+
+// ====================================================================================
+// R3 - Settings for MURK
+// See first_group.sqf for the actual trigger condition, middle of the file
+
+first_group = false;
+second_group = false;
+third_group = false;
+fourth_group = false;
+fifth_group = false;
+
+// ====================================================================================
+
+if (hasInterface) then { waitUntil { !isNull player && isPlayer player }; };
 
 // ====================================================================================
 // =============================== CONFIGURABLE VARIABLES =============================
@@ -19,21 +31,11 @@ if (!isDedicated) then { waitUntil { !isNull player && isPlayer player }; };
 
 f_param_mission_timer = (paramsArray select 0);
 
-// ====================================================================================
-// R3 - Settings for MURK
-// See first_group.sqf for the actual trigger condition, middle of the file
-
-first_group = false;
-second_group = false;
-third_group = false;
-fourth_group = false;
-fifth_group = false;
-
 //=====================================================================================
 // R3 - JIP Menu Option
 // Change the assign gear script to the one your are using in the mission.sqm on your units to give JIP users the same loadout.
 
-f_fnc_assignGear = compile preprocessfilelinenumbers "scripts\assignGear_US.sqf";
+f_fnc_assignGear = compile preprocessfilelinenumbers "scripts\assignGear_NATO.sqf";
 
 //=====================================================================================
 // R3 - Briefing Variable

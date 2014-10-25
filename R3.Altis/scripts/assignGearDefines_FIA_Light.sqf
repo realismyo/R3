@@ -6,18 +6,21 @@
 
 - Default behaviour DOES NOT replace goggles (aside from divers), players will have their default goggles.
 - Make sure you test locally to ensure your loadouts work.
-- Current Side, Faction: BLUFOR, FIA
-- Required Mods: @AGM, @task_force_radio
+- Current Side, Faction: BLUFOR, FIA, Random 'light' weapons.
+- Required Mods: @AGM, @task_force_radio, @HLCMods_Core, @HLCMods_AK, @HLCMods_G3, @HLCMods_FAL, @RH_M4_A3
 */
 // ===============================
 // ========== Variables ==========
 // ===============================
 
 private [
+"_rifleArray","_rifleGLArray","_rifleScopedArray","_carbineArray","_dmrArray","_smgArray",
+"_rifleMagArray","_rifleTracerMagArray","_rifleGLMagArray","_rifleScopedMagArray","_carbineMagArray","_dmrMagArray","_smgMagArray",
+"_rifleRandom","_rifleGLRandom","_rifleScopedRandom","_carbineRandom","_dmrRandom","_smgRandom",
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
-"_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
+"_glRoundsArray","_glRounds","_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniforms","_uniformNumber","_plebUniform","_crewUniform",
 "_plebHelmets","_helmetNumber","_plebHelmet",
 "_plebVest","_glVest","_medVest",
@@ -42,11 +45,13 @@ private [
 "_hmgBarrel","_hmgTripod","_hmgMag",
 "_gmgBarrel","_gmgTripod","_gmgMag",
 "_nightVision","_basicTools","_basicItems","_autoItem","_secTools","_secItems","_pltTools","_pltItems",
-"_generalAttachments","_autoRifleAttachments","_mmgAttachments",
-"_sniperAttachments","_pistolAttachments",
-"_scoped_rifleAttachments","_dmrAttachments","_scoped_autoRifleAttachments","_scoped_mmgAttachments",
-"_suppressed_generalAttachments","_suppressed_dmrAttachments","_suppressed_autoRifleAttachments","_suppressed_mmgAttachments",
-"_suppressed_pistolAttachments",
+"_rifleAttachmentArray","_rifleAttachments","_rifleGLAttachmentArray","_rifleGLAttachments","_rifleScopedAttachmentArray","_rifleScopedAttachments","_carbineAttachmentArray","_carbineAttachments","_dmrAttachmentArray","_dmrAttachments",
+"_autoRifleAttachments","_mmgAttachments","_sniperAttachments","_pistolAttachments",
+"_scoped_rifleAttachmentArray","_scoped_rifleAttachments","_scoped_rifleGLAttachmentArray","_scoped_rifleGLAttachments","_scoped_rifleScopedAttachmentArray","_scoped_rifleScopedAttachments","_scoped_carbineAttachmentArray","_scoped_carbineAttachments",
+"_scoped_autoRifleAttachments","_scoped_mmgAttachments","_scoped_pistolAttachments",
+"_suppressed_rifleAttachmentArray","_suppressed_rifleAttachments","_suppressed_rifleGLAttachmentArray","_suppressed_rifleGLAttachments","_suppressed_rifleScopedAttachmentArray","_suppressed_rifleScopedAttachments",
+"_suppressed_carbineAttachmentArray","_suppressed_carbineAttachments","_suppressed_dmrAttachmentArray","_suppressed_carbineAttachments",
+"_suppressed_autoRifleAttachments","_suppressed_mmgAttachments","_suppressed_pistolAttachments",
 "_addClothes","_addBasics","_clearRuck","_addRuck","_addAttachments","_IFAK"
 ];
 
@@ -54,14 +59,32 @@ private [
 // =========== Defines ===========
 // ===============================
 // ======= General Weapons =======
-_rifle = "arifle_TRG21_F";
-_rifleGL = "arifle_TRG21_GL_F";
-_rifleScoped = "arifle_TRG21_F";
+_rifleArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4_ris","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
+_rifleRandom = (floor(random ((count _rifleArray)-1)));
+_rifle = _rifleArray select _rifleRandom;
+
+_rifleGLArray = ["hlc_rifle_aks74_GL","RH_m4a1_ris_m203","RH_m16a4gl","arifle_TRG21_GL_F"];
+_rifleGLRandom = (floor(random ((count _rifleGLArray)-1)));
+_rifleGL = _rifleGLArray select _rifleGLRandom;
+
+_rifleScopedArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
+_rifleScopedRandom = (floor(random ((count _rifleScopedArray)-1)));
+_rifleScoped = _rifleScopedArray select _rifleScopedRandom;
+
+_carbineArray = ["hlc_rifle_aks74u","RH_m4_ris","RH_m4a1_ris","RH_m4_ris","arifle_TRG20_F"];
+_carbineRandom = (floor(random ((count _carbineArray)-1)));
+_carbine = _carbineArray select _carbineRandom;
+
+_dmrArray = ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_SLRchopmod","hlc_rifle_LAR","hlc_rifle_g3sg1","hlc_rifle_g3a3","srifle_EBR_F"];
+_dmrRandom = (floor(random ((count _dmrArray)-1)));
+_dmr = _dmrArray select _dmrRandom;
+
+_smgArray = ["hlc_rifle_aks74u","RH_m4_ris","hlc_rifle_hk53","hgun_PDW2000_F"];
+_smgRandom = (floor(random ((count _smgArray)-1)));
+_smg = _smgArray select _smgRandom;
+
 _autoRifle = "LMG_Mk200_F";
-_carbine = "arifle_TRG20_F";
-_dmr = "srifle_EBR_F";
 _mmg = "LMG_Zafir_F";
-_smg = "hgun_PDW2000_F";
 _pistol = "hgun_ACPC2_F";
 // ===== General Throwables ======
 _grenade = "HandGrenade";
@@ -70,21 +93,37 @@ _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
 // ====== General Magazines ======
-_rifleMag = "30Rnd_556x45_Stanag";
-_rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleGLMag = "30Rnd_556x45_Stanag";
-_rifleScopedMag = "30Rnd_556x45_Stanag";
+_rifleMagArray = ["hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleMag = _rifleMagArray select _rifleRandom;
+
+_rifleTracerMagArray = ["hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red"];
+_rifleTracerMag = _rifleTracerMagArray select _rifleRandom;
+
+_rifleGLMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleGLMag = _rifleGLMagArray select _rifleGLRandom;
+
+_rifleScopedMagArray = ["hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleScopedMag = _rifleScopedMagArray select _rifleScopedRandom;
+
+_carbineMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_carbineMag = _carbineMagArray select _carbineRandom;
+
+_dmrMagArray = ["hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_G3","20Rnd_762x51_Mag"];
+_dmrMag = _dmrMagArray select _dmrRandom;
+
+_smgMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","hlc_30rnd_556x45_b_HK33","30Rnd_9x21_Mag"];
+_smgMag = _smgMagArray select _smgRandom;
+
 _autoRifleMag = "200Rnd_65x39_cased_Box";
 _autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
-_carbineMag = "30Rnd_556x45_Stanag";
-_dmrMag = "20Rnd_762x51_Mag";
 _mmgMag = "150Rnd_762x51_Box";
-_smgMag = "30Rnd_9x21_Mag";
 _pistolMag = "9Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
-_glExplody = "1Rnd_HE_Grenade_shell";
-_glSmokeOne = "1Rnd_SmokeGreen_Grenade_shell";
-_glSmokeTwo = "1Rnd_SmokeRed_Grenade_shell";
+_glRoundsArray = [["hlc_VOG25_AK","hlc_GRD_green","hlc_GRD_red"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"]];
+_glRounds = _glRoundsArray select _rifleGLRandom;
+_glExplody = _glRounds select 0;
+_glSmokeOne = _glRounds select 1;
+_glSmokeTwo = _glRounds select 2;
 _glFlareOne = "UGL_FlareWhite_F";
 _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
@@ -205,51 +244,108 @@ _secItems = [];
 _pltTools = ["itemGPS"];
 _pltItems = [];
 // ======== Attachments ==========
-_generalAttachments = ["optic_ACO_grn","acc_flashlight"];
-_dmrAttachments = ["optic_MRCO","acc_flashlight"];
+_rifleAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["hlc_optic_kobra","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
+_rifleAttachments = _rifleAttachmentArray select _rifleRandom;
+
+_rifleGLAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
+_rifleGLAttachments = _rifleGLAttachmentArray select _rifleGLRandom;
+
+_rifleScopedAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_rifleScopedAttachments = _rifleScopedAttachmentArray select _rifleScopedRandom;
+
+_carbineAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
+_carbineAttachments = _carbineAttachmentArray select _carbineRandom;
+
+_dmrAttachmentArray = [["hlc_optic_suit","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["optic_MRCO","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["HLC_Optic_ZFSG1","acc_flashlight"],["HLC_Optic_ZFSG1","acc_flashlight"],["optic_MRCO","acc_flashlight"]];
+_dmrAttachments = _dmrAttachmentArray select _dmrRandom;
+
 _autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
 _mmgAttachments = ["optic_ACO_grn","acc_flashlight"];
-
 _sniperAttachments = ["optic_LRPS"];
-_pistolAttachments = ["optic_MRD"];
+_pistolAttachments = [];
 
-_scoped_rifleAttachments = ["optic_MRCO","acc_flashlight"];
+
+_scoped_rifleAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleAttachments = _scoped_rifleAttachmentArray select _rifleRandom;
+
+_scoped_rifleGLAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleGLAttachments = _scoped_rifleGLAttachmentArray select _rifleGLRandom;
+
+_scoped_rifleScopedAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleScopedAttachments = _scoped_rifleScopedAttachmentArray select _rifleScopedRandom;
+
+_scoped_carbineAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_carbineAttachments = _scoped_carbineAttachmentArray select _carbineRandom;
+
 _scoped_autoRifleAttachments = ["optic_MRCO","acc_flashlight"];
 _scoped_mmgAttachments = ["optic_MRCO","acc_flashlight"];
+_scoped_pistolAttachments = [];
 
-_suppressed_generalAttachments = ["muzzle_snds_M"];
-_suppressed_dmrAttachments = ["muzzle_snds_B"];
+
+_suppressed_rifleAttachmentArray = [["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleAttachments = _suppressed_rifleAttachmentArray select _rifleRandom;
+
+_suppressed_rifleGLAttachmentArray = [["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleGLAttachments = _suppressed_rifleGLAttachmentArray select _rifleGLRandom;
+
+_suppressed_rifleScopedAttachmentArray = [["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleScopedAttachments = _suppressed_rifleScopedAttachmentArray select _rifleScopedRandom;
+
+_suppressed_carbineAttachmentArray = [["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_carbineAttachments = _suppressed_carbineAttachmentArray select _carbineRandom;
+
+_suppressed_dmrAttachmentArray = [["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_G3"],["muzzle_snds_B"]];
+_suppressed_dmrAttachments = _suppressed_dmrAttachmentArray select _dmrRandom;
+
 _suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
 _suppressed_mmgAttachments = [];
-
 _suppressed_pistolAttachments = ["muzzle_snds_acp"];
+
 // ===============================
 // ===== Variable Processing =====
 // ===============================
 if ((!isNil "_suppressors") && _suppressors) then {
-	_rifleMag = "AGM_30Rnd_556x45_Stanag_SD";
-	_rifleGLMag = "AGM_30Rnd_556x45_Stanag_SD";
-	_rifleScopedMag = "AGM_30Rnd_556x45_Stanag_SD";
-	_carbineMag = "AGM_30Rnd_556x45_Stanag_SD";
+	_rifleSDMagArray = ["hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleMag = _rifleSDMagArray select _rifleRandom;
+	
+	_rifleGLSDMagArray = ["hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleGLMag = _rifleGLSDMagArray select _rifleGLRandom;
+	
+	_rifleScopedSDMagArray = ["hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleScopedMag = _rifleScopedSDMagArray select _rifleScopedRandom;
+	
+	_carbineSDMagArray = ["hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_carbineMag = _carbineSDMagArray select _carbineRandom;
 	if (!_underwaterWeapons) then { 
 		_rifleDiverMagOne = "AGM_30Rnd_556x45_Stanag_SD";
 		_rifleDiverMagTwo = "AGM_30Rnd_556x45_Stanag_SD";
 	};
 };
 if ((!isNil "_scopes") && _scopes) then {
-	_generalAttachments = _scoped_rifleAttachments;
+	_rifleAttachments = _scoped_rifleAttachments;
+	_rifleGLAttachments = _scoped_rifleGLAttachments;
+	_carbineAttachments = _scoped_carbineAttachments;
 	_autoRifleAttachments = _scoped_autoRifleAttachments;
 	_mmgAttachments = _scoped_mmgAttachments;
+	_pistolAttachments = _scoped_pistolAttachments;
 };
 if ((!isNil "_suppressors") && _suppressors) then {
-	_generalAttachments = _generalAttachments + _suppressed_generalAttachments;
+	_rifleAttachments = _rifleAttachments + _suppressed_rifleAttachments;
+	_rifleGLAttachments = _rifleGLAttachments + _suppressed_rifleGLAttachments;
+	_rifleScopedAttachments = _rifleScopedAttachments + _suppressed_rifleScopedAttachments;
+	_carbineAttachments = _carbineAttachments + _suppressed_carbineAttachments;
 	_dmrAttachments = _dmrAttachments + _suppressed_dmrAttachments;
 	_autoRifleAttachments = _autoRifleAttachments + _suppressed_autoRifleAttachments;
 	_mmgAttachments = _mmgAttachments + _suppressed_mmgAttachments;
-	_scoped_rifleAttachments = _scoped_rifleAttachments + _suppressed_generalAttachments;
+	_pistolAttachments = _pistolAttachments + _suppressed_pistolAttachments;
+	
+	_scoped_rifleAttachments = _scoped_rifleAttachments + _suppressed_rifleAttachments;
+	_scoped_rifleGLAttachments = _scoped_rifleGLAttachments + _suppressed_rifleGLAttachments;
+	_scoped_rifleScopedAttachments = _scoped_rifleScopedAttachments + _suppressed_rifleScopedAttachments;
+	_scoped_carbineAttachments = _scoped_carbineAttachments + _suppressed_carbineAttachments;
 	_scoped_autoRifleAttachments = _scoped_autoRifleAttachments + _suppressed_autoRifleAttachments;
 	_scoped_mmgAttachments = _scoped_mmgAttachments + _suppressed_mmgAttachments;
-	_pistolAttachments = _pistolAttachments + _suppressed_pistolAttachments;
+	_scoped_pistolAttachments = _scoped_pistolAttachments + _suppressed_pistolAttachments;
 };
 if ((!isNil "_nightGear") && _nightGear) then { 
 	_basicItems = _basicItems + ["AGM_IR_Strobe_Item"]; 
@@ -258,23 +354,72 @@ if ((!isNil "_nightGear") && _nightGear) then {
 	_basicTools = _basicTools + [_nightVision]; 
 };
 if ((!isNil "_nightGear") && _nightGear) then { 
-	private "_test";
-	_test = _generalAttachments find "acc_flashlight";
-	if (_test != -1) then {_generalAttachments set [_test,"acc_pointer_IR"]};
-	_test = _dmrAttachments find "acc_flashlight";
-	if (_test != -1) then {_dmrAttachments set [_test,"acc_pointer_IR"]};
+	private "_test";	
+	// ========================================
+	{
+		_test = _rifleAttachments find "acc_flashlight";
+		if (_test != -1) then {_rifleAttachments set [_test,"acc_pointer_IR"]};
+		_test = _rifleAttachments find "RH_SFM952V";
+		if (_test != -1) then {_rifleAttachments set [_test,"RH_peq2"]};
+	} forEach _rifleAttachments;
+	{
+		_test = _rifleGLAttachments find "acc_flashlight";
+		if (_test != -1) then {_rifleGLAttachments set [_test,"acc_pointer_IR"]};
+		_test = _rifleGLAttachments find "RH_SFM952V";
+		if (_test != -1) then {_rifleGLAttachments set [_test,"RH_peq2"]};
+	} forEach _rifleGLAttachments;
+	{
+		_test = _rifleScopedAttachments find "acc_flashlight";
+		if (_test != -1) then {_rifleScopedAttachments set [_test,"acc_pointer_IR"]};
+		_test = _rifleScopedAttachments find "RH_SFM952V";
+		if (_test != -1) then {_rifleScopedAttachments set [_test,"RH_peq2"]};
+	} forEach _rifleScopedAttachments;
+	{
+		_test = _carbineAttachments find "acc_flashlight";
+		if (_test != -1) then {_carbineAttachments set [_test,"acc_pointer_IR"]};
+		_test = _carbineAttachments find "RH_SFM952V";
+		if (_test != -1) then {_carbineAttachments set [_test,"RH_peq2"]};
+	} forEach _carbineAttachments;
+	{
+		_test = _dmrAttachments find "acc_flashlight";
+		if (_test != -1) then {_dmrAttachments set [_test,"acc_pointer_IR"]};
+	} forEach _dmrAttachments;
+	// ========================================
+	{
+		_test = _scoped_rifleAttachments find "acc_flashlight";
+		if (_test != -1) then {_scoped_rifleAttachments set [_test,"acc_pointer_IR"]};
+		_test = _scoped_rifleAttachments find "RH_SFM952V";
+		if (_test != -1) then {_scoped_rifleAttachments set [_test,"RH_peq2"]};
+	} forEach _scoped_rifleAttachments;
+	{
+		_test = _scoped_rifleGLAttachments find "acc_flashlight";
+		if (_test != -1) then {_scoped_rifleGLAttachments set [_test,"acc_pointer_IR"]};
+		_test = _scoped_rifleGLAttachments find "RH_SFM952V";
+		if (_test != -1) then {_scoped_rifleGLAttachments set [_test,"RH_peq2"]};
+	} forEach _scoped_rifleGLAttachments;
+	{
+		_test = _scoped_rifleScopedAttachments find "acc_flashlight";
+		if (_test != -1) then {_scoped_rifleScopedAttachments set [_test,"acc_pointer_IR"]};
+		_test = _scoped_rifleScopedAttachments find "RH_SFM952V";
+		if (_test != -1) then {_scoped_rifleScopedAttachments set [_test,"RH_peq2"]};
+	} forEach _scoped_rifleScopedAttachments;
+	{
+		_test = _scoped_rifleScopedAttachments find "acc_flashlight";
+		if (_test != -1) then {_scoped_carbineAttachments set [_test,"acc_pointer_IR"]};
+		_test = _scoped_rifleScopedAttachments find "RH_SFM952V";
+		if (_test != -1) then {_scoped_carbineAttachments set [_test,"RH_peq2"]};
+	} forEach _scoped_carbineAttachments;
+	// ========================================
 	_test = _autoRifleAttachments find "acc_flashlight";
 	if (_test != -1) then {_autoRifleAttachments set [_test,"acc_pointer_IR"]};
 	_test = _mmgAttachments find "acc_flashlight";
 	if (_test != -1) then {_mmgAttachments set [_test,"acc_pointer_IR"]};
-	_test = _scoped_rifleAttachments find "acc_flashlight";
-	if (_test != -1) then {_scoped_rifleAttachments set [_test,"acc_pointer_IR"]};
 	_test = _scoped_autoRifleAttachments find "acc_flashlight";
 	if (_test != -1) then {_scoped_autoRifleAttachments set [_test,"acc_pointer_IR"]};
 	_test = _scoped_mmgAttachments find "acc_flashlight";
 	if (_test != -1) then {_scoped_mmgAttachments set [_test,"acc_pointer_IR"]};
+	// ========================================
 };
-
 // ===============================
 // ========== Functions ==========
 // ===============================
@@ -575,8 +720,7 @@ _addRuck = {
 
 // Addition of Attachments to a Unit's weapon
 // Note that pistol attachments are done regardless of what is called
-// Possible Cases: general, dmr, ar, mmg, sniper, diver, scopedgeneral, scopedar, scopedmmg, suppgeneral, suppdmr, suppar, suppmmg, scuppgeneral, scuppar, scuppmmg
-// Example: ["general"] call _addRuck;
+// Example: ["rifle"] call _addRuck;
 _addAttachments = {
 	private ["_type","_primaryAttachments","_handgunAttachments"];
 	_type =  toLower (_this select 0);
@@ -588,9 +732,33 @@ _addAttachments = {
 		// ===============================
 		// ===== General Attachments =====
 		// ===============================
-		case "general" : {
-			if (!isNil "_generalAttachments") then {
-				{ _unit addPrimaryWeaponItem _x } forEach _generalAttachments;
+		case "rifle" : {
+			if (!isNil "_rifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _rifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
+		case "riflegl" : {
+			if (!isNil "_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _rifleGLAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
+		case "riflescoped" : {
+			if (!isNil "_scoped_rifleScopedAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleScopedAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
+		case "carbine" : {
+			if (!isNil "_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _carbineAttachments;
 			};
 			if (!isNil "_pistolAttachments") then {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
@@ -641,9 +809,25 @@ _addAttachments = {
 		// ===================================================
 		// ===== Scoped - Redundant if '_scopes' is true =====
 		// ===================================================
-		case "scopedgeneral" : {
+		case "scopedrifle" : {
 			if (!isNil "_scoped_rifleAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
+		case "scopedriflegl" : {
+			if (!isNil "_scoped_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleGLAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
+		case "scopedcarbine" : {
+			if (!isNil "_scoped_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_carbineAttachments;
 			};
 			if (!isNil "_pistolAttachments") then {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
@@ -665,63 +849,207 @@ _addAttachments = {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
 			};
 		};
+		case "scopeddiver" : {
+			if (!_underwaterWeapons) then { 
+				if (!isNil "_scoped_rifleAttachments") then {
+					{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments;
+				};
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+		};
 		// ============================================================
 		// ===== Suppressed - Redundant if '_suppressors' is true =====
 		// ============================================================
-		case "suppgeneral" : {
-			if (!isNil "_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _generalAttachments; };
-			if (!isNil "_suppressed_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_generalAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+		case "supprifle" : {
+			if (!isNil "_rifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _rifleAttachments;
+			};
+			if (!isNil "_suppressed_rifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "suppriflegl" : {
+			if (!isNil "_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _rifleGLAttachments;
+			};
+			if (!isNil "_suppressed_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleGLAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "suppriflescoped" : {
+			if (!isNil "_rifleScopedAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _rifleScopedAttachments;
+			};
+			if (!isNil "_suppressed_rifleScopedAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleScopedAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "suppcarbine" : {
+			if (!isNil "_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _carbineAttachments;
+			};
+			if (!isNil "_suppressed_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_carbineAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
 		case "suppdmr" : {
 			if (!isNil "_dmrAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _dmrAttachments;
 			};
-			if (!isNil "_pistolAttachments") then {
-				{ _unit addHandgunItem _x } forEach _pistolAttachments;
-			};
-			if (!isNil "_suppressed_pistolAttachments") then { 
-				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; 
-			};
 			if (!isNil "_suppressed_dmrAttachments") then {
 				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_dmrAttachments;
 			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
 		case "suppar" : {
-			if (!isNil "_autoRifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _autoRifleAttachments; };
-			if (!isNil "_suppressed_autoRifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_autoRifleAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+			if (!isNil "_autoRifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _autoRifleAttachments;
+			};
+			if (!isNil "_suppressed_autoRifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_autoRifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
-		// Suppressed MMG - not possible yet.
-		case "suppmmg" : {
-			if (!isNil "_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _mmgAttachments; };
-			if (!isNil "_suppressed_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_mmgAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+		case "suppdiver" : {
+			if (!_underwaterWeapons) then { 
+				if (!isNil "_rifleAttachments") then {
+					{ _unit addPrimaryWeaponItem _x } forEach _rifleAttachments;
+				};
+				if (!isNil "_suppressed_rifleAttachments") then {
+					{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleAttachments;
+				};
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
 		// =========================================================================================
 		// ===== Scoped & Suppressed - Redundant if both '_suppressors' and '_scopes' are true =====
-		// =========================================================================================
-		case "scuppgeneral" : {
-			if (!isNil "_scoped_rifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments; };
-			if (!isNil "_suppressed_generalAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_generalAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+		// =========================================================================================		
+		case "scupprifle" : {
+			if (!isNil "_scoped_rifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments;
+			};
+			if (!isNil "_suppressed_rifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "scuppriflegl" : {
+			if (!isNil "_scoped_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleGLAttachments;
+			};
+			if (!isNil "_suppressed_rifleGLAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleGLAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "scupprifleccoped" : {
+			if (!isNil "_scoped_rifleScopedAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleScopedAttachments;
+			};
+			if (!isNil "_suppressed_rifleScopedAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleScopedAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
+		};
+		case "scuppcarbine" : {
+			if (!isNil "_scoped_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_carbineAttachments;
+			};
+			if (!isNil "_suppressed_carbineAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_carbineAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
 		case "scuppar" : {
-			if (!isNil "_scoped_autoRifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _scoped_autoRifleAttachments; };
-			if (!isNil "_suppressed_autoRifleAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_autoRifleAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+			if (!isNil "_scoped_autoRifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _scoped_autoRifleAttachments;
+			};
+			if (!isNil "_suppressed_autoRifleAttachments") then {
+				{ _unit addPrimaryWeaponItem _x } forEach _suppressed_autoRifleAttachments;
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
-		// Scoed & Suppressed MMG - not possible yet.
-		case "scuppmmg" : {
-			if (!isNil "_scoped_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _scoped_mmgAttachments; };
-			if (!isNil "_suppressed_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_mmgAttachments; };
-			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
-			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
+		case "scuppdiver" : {
+			if (!_underwaterWeapons) then { 
+				if (!isNil "_scoped_rifleAttachments") then {
+					{ _unit addPrimaryWeaponItem _x } forEach _scoped_rifleAttachments;
+				};
+				if (!isNil "_suppressed_rifleAttachments") then {
+					{ _unit addPrimaryWeaponItem _x } forEach _suppressed_rifleAttachments;
+				};
+			};
+			if (!isNil "_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _pistolAttachments;
+			};
+			if (!isNil "_suppressed_pistolAttachments") then {
+				{ _unit addHandgunItem _x } forEach _suppressed_pistolAttachments;
+			};
 		};
 		// =========================================================================================
 		default {

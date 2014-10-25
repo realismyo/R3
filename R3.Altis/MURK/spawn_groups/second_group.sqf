@@ -18,10 +18,10 @@
 // - First basic script, place units in the editor and link to a spawn trigger
 //------------------------------------------------------------------------------------------------------
 // General usage (init): nul = [this,"SPAWNTYPE",LIVES,DELAY] execVM "SCRIPT_GROUP_NAME.sqf";
-// Example: nul = [this,"once"] execVM "group_one.sqf"; ---- Will spawn the editor unit based on the trigger in group_one script
-// Example: nul = [this,"repeated",4,30] execVM "group_one.sqf"; ---- Will spawn the editor unit based on the trigger in group_one script, then respawn it 4 times with a 30 second delay upon death
-// Example: nul = [this,"wave",5,60] execVM "group_one.sqf"; ---- Will spawn the editor unit once based on the trigger in group_one script, then respawn the entire group (regardless of deaths) 5 times 60 seconds between
-// Example: nul = [this,"reset",5] execVM "group_one.sqf"; ---- Will spawn the editor unit once based on the trigger in group_one script, then reset the trigger after a preset time (20 seconds default). The unit will be created when trigger is true again, maximum number of lives.
+// Example: nul = [this,"once"] execVM "murk\spawn_groups\second_group.sqf"; ---- Will spawn the editor unit based on the trigger in second_group script
+// Example: nul = [this,"repeated",4,30] execVM "murk\spawn_groups\second_group.sqf"; ---- Will spawn the editor unit based on the trigger in second_group script, then respawn it 4 times with a 30 second delay upon death
+// Example: nul = [this,"wave",5,60] execVM "murk\spawn_groups\second_group.sqf"; ---- Will spawn the editor unit once based on the trigger in second_group script, then respawn the entire group (regardless of deaths) 5 times 60 seconds between
+// Example: nul = [this,"reset",5] execVM "murk\spawn_groups\second_group.sqf"; ---- Will spawn the editor unit once based on the trigger in second_group script, then reset the trigger after a preset time (20 seconds default). The unit will be created when trigger is true again, maximum number of lives.
 // -----------------------------------------------------------------------------------------------------
 
 if !(player == HC) exitWith {};

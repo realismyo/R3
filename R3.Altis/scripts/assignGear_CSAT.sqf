@@ -3,53 +3,72 @@ Gear Assign Script for Arma 3
 by AGeNT
 
 - Covers most standard RIFM platoon roles, if you want to add more just ask me or do so by observation of how the others work.
-- Current Loadouts: pltld, pltmed, pltfac, pltuavop, secco, sectl, ar, aar, rm, rmat, rmsc, dm, gren, mmg, mmgass, rotarypilot, fixedpilot, crewmander, crewman, hmggun, hmgass, gmggun, gmgass, hatgun, hatammo, aagun, aaammo, divertl, diver, sniper, spotter
+- Current Loadouts: "pltld", "pltmed", ""pltfac", "pltuavop", "secco", "sectl", "ar", "aar", "rm", "rmat", "rmsc", "dm", "gren", "mmg", "mmgass", "rotarypilot", "fixedpilot", "crewmander", "crewman", "hmggun", "hmgass", "gmggun", "gmgass", "hatgun", "hatammo", "aagun", "aaammo", "divertl", "diver", "sniper", "spotter"
 - Adapted for Arma 3, still technically WIP. Report any and all issues to Agent via the forums, steam, ts etc.
-- Current Side, Faction: OPFOR, CSAT (CAMO)
+- Current Side, Faction: OPFOR, CSAT
+- Required Mods: @AGM, @task_force_radio, @TEC_CSAT
 
-===== Using the Scripts =====
-- In their current state, the scripts will not work for AI, simply for testing purposes. In fact a whole different script will be required.
-- If called from unit init field, needs to look similar to below, with the desired loadout in ""
-- nul = [this,"desiredloadouthere"] execVM "scripts\assignGear_CSATCamo.sqf";
-e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_CSATCamo.sqf";
+===== Using this Script =====
+- In their current state, the scripts will not work for AI. In fact a whole different script will be required.
+
+- If called from unit init field, needs follow the following format, with the desired loadout as a lower case string value (in "").
+- nul = [this,"loadout"] execVM "scripts\assignGear_CSAT.sqf";
+e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_CSAT.sqf";
+- This would equip a CSAT platoon leader with the gear defined below.
+- All available loadout options are annotated above.
+
+- You may include up to four extra paramters for this script, corresponding with variables in the script, in the following format:
+- nul = [this,"loadout",nightGear,scopes,suppressors,"camopattern"] execVM "scripts\assignGear_CSAT.sqf";
+e.g. - nul = [this,"pltld",true,false,true,"navy"] execVM "scripts\assignGear_CSAT.sqf";
+- This example would equip a CSAT platoon leader with night gear, no scope, a suppresssed weapon and navy camo equipment.
+- This system allows for individual cases - you may still change the variables below for a 'global' effect.
 
 - Additional cases can be added below to support additional roles.
-- Check the assignGearDefines_FACTION.sqf for defined variables, alter them in that script. 
-- The variables at the beginning of this script can influence what gear players will receive, they should be fairly straightforward
+- Check the assignGearDefines_CSAT.sqf for defined variables, alter them in that script. 
+- The variables at the beginning of the defines script influence what gear players will receive, they should be fairly straightforward.
 =============================
 */ 
 
 private [
-"_delay","_unit","_loadout",
-"_underwaterWeapons","_nightGear","_scopes","_suppressors"
+"_nightGear","_scopes","_suppressors","_camoPattern","_underwaterWeapons",
+"_delay","_unit","_loadout"
 ];
 
 // ==== gear script variables ====
-_underwaterWeapons = true;			// divers assigned underwater rifles, if false then same rifle as everyone else. 
-_nightGear = false;					// night vision goggles and IR strobes equipped
-_scopes = false;					// scopes replace regular attachments
-_suppressors = false;				// suppressors & SD mags where applicable
+_nightGear = false;					// Night vision goggles and IR strobes equipped.
+_scopes = false;					// Scopes replace regular attachments.
+_suppressors = false;				// Suppressors & SD mags where applicable.
+_camoPattern = "arid";				// Camo pattern in accordance with @TEC_CSAT camo patterns. Default: "arid". Available cases: "arid", "navy", "semiarid", "sof", "urban", "woodland". Requires lower case string value.
+_underwaterWeapons = true;			// Divers assigned underwater rifles, if false then same rifle as everyone else. 
 // ===============================
 
 // variable assignment
 _delay = 0.1;
 _unit = _this select 0;
 _loadout = toLower (_this select 1);
+if (count _this > 2) then { if (typeName (_this select 2) == "BOOL") then { _nightGear = _this select 2; }; };
+if (count _this > 3) then { if (typeName (_this select 3) == "BOOL") then { _scopes = _this select 3; }; };
+if (count _this > 4) then { if (typeName (_this select 4) == "BOOL") then { _suppressors = _this select 4; }; };
+if (count _this > 5) then { if (typeName (_this select 5) == "STRING") then { _camoPattern = toLower(_this select 5); }; };
 
-if (!(local _unit)) exitWith {};							// script needs to run on the unit/player's computer. 
-if (isMultiplayer && isServer) exitWith {};
+// waits until mission has started, make sure unit exists, or wait until it does
+waitUntil {time > 1};																			
+if (_unit != _unit) then { waitUntil { !isNull _unit; }; };
+if (!isDedicated && isMultiplayer) then { waitUntil { !isNull _unit && isPlayer _unit; }; };
 
-#include "assignGearDefines_CSATCamo.sqf";					// faction specific script with all of the variables
-
-waitUntil {time > 1};										// waits until mission has started
-
-if (_unit != _unit) then { waitUntil {!isNull _unit}; };	// make sure unit exists, or wait until it does
+// disable AI stuffs
 if !(isPlayer _unit) then { {_unit disableAI _x} forEach ["TARGET","AUTOTARGET","MOVE","FSM","ANIM"]; };
 
-if (_plebUniform != "") then { removeUniform _unit; };
-if (_goggles != "") then { removeGoggles _unit; };
+// script needs to run on the unit/player's computer. 
+if (!(local _unit)) exitWith {};						
+if (isMultiplayer && isServer) exitWith {};
+
+// faction specific script with all of the variables
+#include "assignGearDefines_CSAT.sqf";					
 
 // gear removal
+if (_plebUniform != "") then { removeUniform _unit; };
+if (_goggles != "") then { removeGoggles _unit; };
 removeAllItems _unit;
 removeAllWeapons _unit; 
 removeAllAssignedItems _unit;
@@ -57,16 +76,18 @@ removeVest _unit;
 removeHeadgear _unit;
 removeBackpack _unit;
 
-switch (_loadout) do {									// case switch for desired loadout
-	
-	// -- Platoon HQ Roles --
-	// plt leader gear, doubles as plt sgt
+// case switch for desired loadout
+switch (_loadout) do {									
+	// ================================
+	// ======= Platoon HQ Roles =======
+	// PltCO gear, doubles as PltSGT
 	case "pltld" : {
 		["leader"] call _addClothes;
 		call _addBasics;
 		{ _unit linkItem _x } foreach _pltTools;
 		{ _unit addItem _x } foreach _pltItems;
-		_unit addMagazines [_rifleGLMag,9];
+		_unit addMagazines [_rifleGLMag,7];
+		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addMagazines [_glExplody,5];
 		_unit addMagazines [_glSmokeOne,1];
@@ -97,7 +118,8 @@ switch (_loadout) do {									// case switch for desired loadout
 		call _addBasics;
 		{ _unit linkItem _x } foreach _pltTools;
 		{ _unit addItem _x } foreach _facItems;
-		_unit addMagazines [_rifleGLMag,9];
+		_unit addMagazines [_rifleGLMag,7];
+		_unit addMagazines [_rifleTracerMag,2];
 		_unit addMagazine _designatorBat;
 		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		_unit addMagazines [_glSmokeOne,5];
@@ -121,15 +143,16 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		call _IFAK;
 	};
-	
-	// -- Section Roles --
-	// section leader
+	// ================================
+	// ======== Section Roles =========
+	// Section Commander
 	case "secco" : {
 		["leader"] call _addClothes;
 		call _addBasics;
 		{ _unit linkItem _x } foreach _secTools;
 		{ _unit addItem _x } foreach _secItems;
-		_unit addMagazines [_rifleGLMag,9];
+		_unit addMagazines [_rifleGLMag,7];
+		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addMagazines [_glExplody,5];
 		_unit addMagazines [_glSmokeOne,1];
@@ -144,7 +167,8 @@ switch (_loadout) do {									// case switch for desired loadout
 		["leader"] call _addClothes;
 		call _addBasics;
 		{ _unit linkItem _x } foreach _secTools;
-		_unit addMagazines [_rifleGLMag,9];
+		_unit addMagazines [_rifleGLMag,7];
+		_unit addMagazines [_rifleTracerMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addMagazines [_glExplody,5];
 		_unit addMagazines [_glSmokeOne,1];
@@ -169,7 +193,7 @@ switch (_loadout) do {									// case switch for desired loadout
 	case "aar" : {
 		["assistant"] call _addClothes;
 		call _addBasics;
-		_unit addMagazines [_rifleMag,11];
+		_unit addMagazines [_rifleMag,9];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["aar"] call _addRuck;
@@ -239,7 +263,7 @@ switch (_loadout) do {									// case switch for desired loadout
 	case "mmg" : {
 		["pleb"] call _addClothes;
 		call _addBasics;
-		_unit addMagazines [_mmgMag,4];
+		_unit addMagazines [_mmgMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _mmg;
 		["mmg"] call _addRuck;
@@ -257,9 +281,9 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		call _IFAK;
 	};
-	
-	// -- Vehicle Crews --
-	// pilot
+	// ================================
+	// ======== Vehicle Crews =========
+	// Rotary Wing Pilot
 	case "rotarypilot" : {
 		["rpilot"] call _addClothes;
 		call _addBasics;
@@ -271,6 +295,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
+	// Fixed Wing Pilot
 	case "fixedpilot" : {
 		["fpilot"] call _addClothes;
 		call _addBasics;
@@ -282,7 +307,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
-	// crewmans
+	// Crew Commander
 	case "crewmander" : {
 		["crew"] call _addClothes;
 		call _addBasics;
@@ -295,8 +320,9 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
-	// crewmans
+	// Crewman
 	case "crewman" : {
 		["crew"] call _addClothes;
 		call _addBasics;
@@ -307,9 +333,10 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
-
-	// -- Static Weapons Teams --
+	// ================================
+	// ===== Static Weapons Teams =====
 	// HMG Gunner
 	case "hmggun" : {
 		["pleb"] call _addClothes;
@@ -321,6 +348,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
 	// HMG Assistant
 	case "hmgass" : {
@@ -333,6 +361,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
 	// GMG Gunner
 	case "gmggun" : {
@@ -345,6 +374,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
 	// GMG Assistant
 	case "gmgass" : {
@@ -357,9 +387,10 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
+		call _IFAK;
 	};
-	
-	// -- Launcher Teams --
+	// ================================
+	// ======== Launcher Teams ========
 	// HAT Gunner
 	case "hatgun" : {
 		["pleb"] call _addClothes;
@@ -408,8 +439,8 @@ switch (_loadout) do {									// case switch for desired loadout
 		["general"] call _addAttachments;
 		call _IFAK;
 	};
-	
-	// -- Extra Roles --
+	// ================================
+	// ========== Extra Roles =========
 	// Diver Team Leader
 	case "divertl" : {
 		["diver"] call _addClothes;
@@ -420,7 +451,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		_unit addMagazines [_rifleDiverMagTwo,3];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifleDiver;
-		["diver"] call _addRuck;
+		["divertl"] call _addRuck;
 		["diver"] call _addAttachments;
 		call _IFAK;
 	};
@@ -466,7 +497,7 @@ switch (_loadout) do {									// case switch for desired loadout
 		["suppgeneral"] call _addAttachments;
 		_unit setVariable ["AGM_IsMedic", true, true];
 	};
-	
+	// ================================
 	// if undefined or incorrectly defined, give hint and assign standard rifleman gear
 	default {
 		_unit sideChat format ["No or incorrectly defined loadout for unit: %1",_unit];
@@ -481,7 +512,8 @@ switch (_loadout) do {									// case switch for desired loadout
 	};
 };
 
+[_unit,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
 _unit selectWeapon (primaryWeapon _unit);
 _unit switchMove "AmovPercMstpSlowWrflDnon";
 sleep _delay;
-_unit GroupChat format ["%1 completed gear assign", name _unit];
+_unit groupChat format ["%1 completed gear assign", name _unit];
