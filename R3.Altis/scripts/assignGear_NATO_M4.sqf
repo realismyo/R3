@@ -51,7 +51,7 @@ if (count _this > 2) then { if (typeName (_this select 2) == "BOOL") then { _nig
 if (count _this > 3) then { if (typeName (_this select 3) == "BOOL") then { _scopes = _this select 3; }; };
 if (count _this > 4) then { if (typeName (_this select 4) == "BOOL") then { _suppressors = _this select 4; }; };
 if (count _this > 5) then { if (typeName (_this select 5) == "STRING") then { _camoPattern = toLower(_this select 5); }; };
-if (count _this > 6) then { if (typeName (_this select 6) == "STRING") then { _camoPattern = toLower(_this select 6); }; };
+if (count _this > 6) then { if (typeName (_this select 6) == "STRING") then { _variant = toLower(_this select 6); }; };
 
 // waits until mission has started, make sure unit exists, or wait until it does
 waitUntil {time > 1};																			
