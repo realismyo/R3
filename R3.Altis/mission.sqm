@@ -2287,12 +2287,18 @@ class Mission
 					position[]={11900.027,-1.8574445e-005,11701.08};
 					class args
 					{
-						items=1;
+						items=2;
 						class Item0
 						{
 							value="5";
 							parentCls="AGM_ModuleInteraction";
 							typeName="PlayerNamesViewDistance";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="AGM_ModuleInteraction";
+							typeName="ShowNamesForAI";
 						};
 					};
 					id=158;
@@ -2377,66 +2383,78 @@ class Mission
 					position[]={11899.466,-0.021531736,11599.682};
 					class args
 					{
-						items=10;
+						items=12;
 						class Item0
 						{
 							value="1";
 							parentCls="AGM_ModuleMedical";
-							typeName="CoefBleeding";
+							typeName="CoefDamage";
 						};
 						class Item1
 						{
 							value="1";
 							parentCls="AGM_ModuleMedical";
-							typeName="CoefPain";
+							typeName="CoefBleeding";
 						};
 						class Item2
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefPain";
+						};
+						class Item3
+						{
+							value="2";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefNonMedic";
+						};
+						class Item4
 						{
 							value="-1";
 							parentCls="AGM_ModuleMedical";
 							typeName="MaxUnconsciousnessTime";
 						};
-						class Item3
+						class Item5
 						{
 							value="1";
 							parentCls="AGM_ModuleMedical";
 							typeName="AllowNonmedics";
 						};
-						class Item4
-						{
-							value="1";
-							parentCls="AGM_ModuleMedical";
-							typeName="";
-						};
-						class Item5
+						class Item6
 						{
 							value="0";
 							parentCls="AGM_ModuleMedical";
 							typeName="RequireDiagnosis";
 						};
-						class Item6
+						class Item7
 						{
 							value="0";
 							parentCls="AGM_ModuleMedical";
 							typeName="PreventInstaDeath";
 						};
-						class Item7
+						class Item8
 						{
 							value="0";
 							parentCls="AGM_ModuleMedical";
 							typeName="PreventDeathWhileUnconscious";
 						};
-						class Item8
+						class Item9
 						{
 							value="0";
 							parentCls="AGM_ModuleMedical";
 							typeName="SingleBandage";
 						};
-						class Item9
+						class Item10
 						{
 							value="0";
 							parentCls="AGM_ModuleMedical";
 							typeName="AllowChatWhileUnconscious";
+						};
+						class Item11
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="EnableOverdosing";
 						};
 					};
 					id=161;

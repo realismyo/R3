@@ -30,7 +30,7 @@ e.g. - nul = [this,"pltld",false,false,true] execVM "scripts\assignGear_FIA.sqf"
 */ 
 
 private [
-"_nightGear","_scopes","_camoPattern","_underwaterWeapons",
+"_nightGear","_scopes","_suppressors","_underwaterWeapons",
 "_delay","_unit","_loadout"
 ];
 
