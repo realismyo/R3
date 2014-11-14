@@ -18,7 +18,7 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniform","_crewUniform",
+"_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
 "_plebHelmet",
 "_plebVest","_glVest","_medVest",
 "_plebRuck","_medRuck","_assistantRuck","_uavRuck",
@@ -62,7 +62,7 @@ _carbine = "acr_a3_CZ805_A2";
 _dmr = "srifle_EBR_F";
 _mmg = "hlc_lmg_M60E4";
 _smg = "SMG_02_F";
-_pistol = "";
+_pistol = "hgun_ACPC2_F";
 // ===== General Throwables ======
 _grenade = "HandGrenade";
 _smoke = "SmokeShell";
@@ -80,7 +80,7 @@ _carbineMag = "30Rnd_556x45_Stanag";
 _dmrMag = "20Rnd_762x51_Mag";
 _mmgMag = "hlc_100Rnd_762x51_B_M60E4";
 _smgMag = "30Rnd_9x21_Mag";
-_pistolMag = "16Rnd_9x21_Mag";
+_pistolMag = "9Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
 _glSmokeOne = "1Rnd_SmokeGreen_Grenade_shell";
@@ -94,7 +94,9 @@ _glFlareTwo = "UGL_FlareYellow_F";
 switch (_camoPattern) do {
 	case "woodland" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_ACR_A3_CombatUniform";
+		_plebUniformArray = ["U_ACR_A3_CombatUniform","U_ACR_A3_CombatUniform_vest","U_ACR_A3_CombatUniform","U_ACR_A3_SweaterUniform_vz95","U_ACR_A3_CombatUniform"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_ACR_A3_CombatUniform_vest";
 		_rpilotUniform = "U_ACR_A3_HeliPilotCoveralls_rgr";
 		// =========== Helmets ===========
@@ -118,8 +120,62 @@ switch (_camoPattern) do {
 	};
 	case "desert" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_ACR_A3_CombatUniform_Des";
+		_plebUniformArray = ["U_ACR_A3_CombatUniform_Des","U_ACR_A3_CombatUniform_Des_vest","U_ACR_A3_CombatUniform_Des","U_ACR_A3_SweaterUniform_des","U_ACR_A3_CombatUniform_Des"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_ACR_A3_CombatUniform_Des_vest";
+		_rpilotUniform = "U_ACR_A3_HeliPilotCoveralls_khk";
+		// =========== Helmets ===========
+		_plebHelmet = "H_ACR_A3_HelmetIA_vz95_des";
+		// ============ Vests ============
+		_plebVest = "V_ACR_A3_PlateCarrier1_khk";
+		_glVest = "V_ACR_A3_PlateCarrier2_khk";
+		_medVest = "V_ACR_A3_PlateCarrier1_khk";
+		_pilotVest = "V_TacVest_khk";
+		_crewVest = "V_TacVest_khk";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "B_Carryall_cbr";
+		_assistantRuck = "B_Carryall_cbr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ========= Sniper Team =========
+		_sniperUniform = "U_ACR_A3_SniperGhillie_Des";
+		_sniperVest = "V_Chestrig_khk";
+		_sniperRuck = "B_AssaultPack_rgr";
+		// ===============================
+	};
+	case "moutwood" : {
+		// ========== Uniforms ===========
+		_plebUniformArray = ["U_ACR_A3_CombatUniform_MOUT","U_ACR_A3_CombatUniform_MOUT_vest","U_ACR_A3_CombatUniform_MOUT"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
+		_crewUniform = "U_ACR_A3_CombatUniform_MOUT_vest";
+		_rpilotUniform = "U_ACR_A3_HeliPilotCoveralls_rgr";
+		// =========== Helmets ===========
+		_plebHelmet = "H_ACR_A3_HelmetIA_vz95";
+		// ============ Vests ============
+		_plebVest = "V_ACR_A3_PlateCarrier1_vz95";
+		_glVest = "V_ACR_A3_PlateCarrier2_vz95";
+		_medVest = "V_ACR_A3_PlateCarrier1_vz95";
+		_pilotVest = "V_TacVest_oli";
+		_crewVest = "V_TacVest_oli";
+		// ============ Rucks ============
+		_plebRuck = "ACR_A3_Backpack_Kitbag_vz95";
+		_medRuck = "ACR_A3_Backpack_Carryall_vz95";
+		_assistantRuck = "ACR_A3_Backpack_Carryall_vz95";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ========= Sniper Team =========
+		_sniperUniform = "U_ACR_A3_SniperGhillie";
+		_sniperVest = "V_Chestrig_rgr";
+		_sniperRuck = "ACR_A3_Backpack_Kitbag_vz95";
+		// ===============================
+	};
+	case "moutdes" : {
+		// ========== Uniforms ===========
+		_plebUniformArray = ["U_ACR_A3_CombatUniform_MOUT_Des","U_ACR_A3_CombatUniform_MOUT_Des_vest","U_ACR_A3_CombatUniform_MOUT_Des"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
+		_crewUniform = "U_ACR_A3_CombatUniform_MOUT_Des_vest";
 		_rpilotUniform = "U_ACR_A3_HeliPilotCoveralls_khk";
 		// =========== Helmets ===========
 		_plebHelmet = "H_ACR_A3_HelmetIA_vz95_des";
@@ -142,7 +198,9 @@ switch (_camoPattern) do {
 	};
 	default {
 		// ========== Uniforms ===========
-		_plebUniform = "U_ACR_A3_CombatUniform";
+		_plebUniformArray = ["U_ACR_A3_CombatUniform","U_ACR_A3_CombatUniform_vest","U_ACR_A3_CombatUniform"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_ACR_A3_CombatUniform_vest";
 		_rpilotUniform = "U_ACR_A3_HeliPilotCoveralls_rgr";
 		// =========== Helmets ===========
@@ -185,7 +243,7 @@ _goggles = "";	// leave as "" for default
 _divingGoggles = "G_B_Diving";
 // ========= Radio Rucks =========
 _airRadioRuck = "tf_anarc210";
-_radioRuck = "tf_rt1523g";
+_radioRuck = "tf_rt1523g_black";
 // ======== Medical Gear =========
 _medOne = "AGM_Bandage";
 _medTwo = "AGM_Morphine";
@@ -244,13 +302,13 @@ _gmgTripod = "B_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles_OPFOR";
-_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","AGM_Altimeter"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["optic_Aco","acc_flashlight"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];

@@ -16,7 +16,7 @@ f_var_JIP_state = 2;
 createDialog "KitPicker";
 waitUntil {f_var_JIP_state == 3};
 _loadout = (player getVariable "f_var_JIP_loadout");
-[player,_loadout] call f_fnc_assignGear;
+[player,_loadout] call r_fnc_assignGear;
 
 // ====================================================================================
 // REMOVE REINFORCEMENT OPTIONS ACTION TO PLAYER ACTION MENU

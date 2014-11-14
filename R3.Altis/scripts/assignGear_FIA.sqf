@@ -1,10 +1,10 @@
 /* 
 Gear Assign Script for Arma 3
-by AGeNT
+by Mr. Agnet
 
 - Covers most standard RIFM platoon roles, if you want to add more just ask me or do so by observation of how the others work.
 - Current Loadouts: "pltld", "pltmed", ""pltfac", "pltuavop", "secco", "sectl", "ar", "aar", "rm", "rmat", "rmsc", "dm", "gren", "mmg", "mmgass", "rotarypilot", "fixedpilot", "crewmander", "crewman", "hmggun", "hmgass", "gmggun", "gmgass", "hatgun", "hatammo", "aagun", "aaammo", "divertl", "diver", "sniper", "spotter"
-- Adapted for Arma 3, still technically WIP. Report any and all issues to Agent via the forums, steam, ts etc.
+- Adapted for Arma 3, still technically WIP. Report any and all issues to Mr. Agnet via the forums, steam, ts etc.
 - Current Side, Faction: BLUFOR, FIA
 - Required Mods: @AGM, @task_force_radio
 

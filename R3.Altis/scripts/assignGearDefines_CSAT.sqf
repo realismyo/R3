@@ -18,7 +18,7 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniform","_crewUniform",
+"_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
 "_plebHelmet",
 "_plebVest","_glVest","_medVest",
 "_plebRuck","_medRuck","_assistantRuck","_uavRuck",
@@ -94,7 +94,9 @@ _glFlareTwo = "UGL_FlareYellow_F";
 switch (_camoPattern) do {
 	case "arid" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Arid";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Arid","TEC_U_O_Arid_Shortsleeve","TEC_U_O_Arid"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Arid_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Arid";
@@ -111,7 +113,9 @@ switch (_camoPattern) do {
 	};
 	case "navy" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Navy";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Navy","TEC_U_O_Navy_Shortsleeve","TEC_U_O_Navy"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Navy_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Booniehat_Navy";
@@ -128,7 +132,9 @@ switch (_camoPattern) do {
 	};
 	case "semiarid" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Semiarid";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Semiarid","TEC_U_O_Semiarid_Shortsleeve","TEC_U_O_Semiarid"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Semiarid_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Semiarid";
@@ -145,7 +151,9 @@ switch (_camoPattern) do {
 	};
 	case "sof" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_SOF";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_SOF","TEC_U_O_SOF_Shortsleeve","TEC_U_O_SOF"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_SOF_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Arid";
@@ -162,7 +170,9 @@ switch (_camoPattern) do {
 	};
 	case "urban" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Urban";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Urban","TEC_U_O_Urban_Shortsleeve","TEC_U_O_Urban"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Urban_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Urban";
@@ -182,7 +192,9 @@ switch (_camoPattern) do {
 	};
 	case "woodland" : {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Woodland";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Woodland","TEC_U_O_Woodland_Shortsleeve","TEC_U_O_Woodland"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Woodland_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Woodland";
@@ -199,7 +211,9 @@ switch (_camoPattern) do {
 	};
 	default {
 		// ========== Uniforms ===========
-		_plebUniform = "TEC_U_O_Arid";	// leave as "" for default
+		_plebUniformArray = ["TEC_U_O_Arid","TEC_U_O_Arid_Shortsleeve","TEC_U_O_Arid"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "TEC_U_O_Arid_Shortsleeve";
 		// =========== Helmets ===========
 		_plebHelmet = "TEC_H_Penah_Arid";
@@ -301,13 +315,13 @@ _gmgTripod = "O_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles_OPFOR";
-_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","AGM_Altimeter"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["optic_ACO_grn","acc_flashlight"];
 _dmrAttachments = ["optic_Arco","acc_flashlight"];

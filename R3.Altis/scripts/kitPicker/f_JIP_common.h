@@ -6,8 +6,7 @@
 #define CT_COMBO 4
 #define NOSOUND {"", 0, 1}
 
-class CommonSettings
-{
+class CommonSettings {
     sizeEx = 0.03921;
     colorText[] = {0.97, 0.78,0.13, 1};
     colorFocused[] = {0.97, 0.78,0.13, 1};

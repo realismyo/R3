@@ -47,8 +47,7 @@
 #define COL_GRAY			{0.2, 0.2, 0.2, 1}
 
 
-class KEGsRscText 
-{
+class KEGsRscText {
 	access = ReadAndWrite;
 	type = 0;
 	idc = -1;
@@ -66,8 +65,7 @@ class KEGsRscText
 };
 
 
-class KEGsRscListBox 
-{
+class KEGsRscListBox {
 	access = ReadAndWrite;
 	type = 5;
 	style = 0;
@@ -96,8 +94,7 @@ class KEGsRscListBox
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
 	
-	class ScrollBar 
-	{
+	class ScrollBar {
 		color[] = {1, 1, 1, 0.6};
 		colorActive[] = {1, 1, 1, 1};
 		colorDisabled[] = {1, 1, 1, 0.3};
@@ -107,8 +104,7 @@ class KEGsRscListBox
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
 	
-	class ListScrollBar
-	{
+	class ListScrollBar {
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 		autoScrollDelay = 5;

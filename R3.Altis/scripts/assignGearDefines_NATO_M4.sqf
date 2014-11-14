@@ -18,7 +18,7 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniform","_crewUniform",
+"_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
 "_plebHelmet",
 "_plebVest","_glVest","_medVest",
 "_plebRuck","_medRuck","_assistantRuck","_uavRuck",
@@ -62,8 +62,8 @@ switch (_variant) do {
 		_autoRifle = "LMG_Mk200_F";
 		_carbine = "RH_m4a1_ris";
 		_dmr = "hlc_rifle_falosw";
-		_mmg = "LMG_Zafir_F";
-		_smg = "RH_m4a1_ris";
+		_mmg = "hlc_lmg_M60E4";
+		_smg = "hlc_rifle_hk53";
 		_pistol = "hgun_Pistol_heavy_01_F";
 	};
 	case "m16" : {
@@ -73,8 +73,8 @@ switch (_variant) do {
 		_autoRifle = "LMG_Mk200_F";
 		_carbine = "RH_m4a1_ris";
 		_dmr = "hlc_rifle_falosw";
-		_mmg = "LMG_Zafir_F";
-		_smg = "RH_m4a1_ris";
+		_mmg = "hlc_lmg_M60E4";
+		_smg = "hlc_rifle_hk53";
 		_pistol = "hgun_Pistol_heavy_01_F";
 	};
 };
@@ -85,16 +85,16 @@ _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
 // ====== General Magazines ======
-_rifleMag = "30rnd_556x45_STANAG";
+_rifleMag = "30Rnd_556x45_STANAG";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleGLMag = "30rnd_556x45_STANAG";
-_rifleScopedMag = "30rnd_556x45_STANAG";
+_rifleGLMag = "30Rnd_556x45_STANAG";
+_rifleScopedMag = "RH_30Rnd_556x45_Mk262";
 _autoRifleMag = "200Rnd_65x39_cased_Box";
 _autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
 _carbineMag = "30rnd_556x45_STANAG";
 _dmrMag = "hlc_20Rnd_762x51_B_fal";
-_mmgMag = "150Rnd_762x51_Box";
-_smgMag = "30rnd_556x45_STANAG";
+_mmgMag = "hlc_100Rnd_762x51_B_M60E4";
+_smgMag = "hlc_30Rnd_556x45_b_HK33";
 _pistolMag = "11Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
@@ -109,7 +109,9 @@ _glFlareTwo = "UGL_FlareYellow_F";
 switch (_camoPattern) do {
 	case "us" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CombatUniform_mcam";	// leave as "" for default
+		_plebUniformArray = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CombatUniform_mcam_vest";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -126,7 +128,9 @@ switch (_camoPattern) do {
 	};
 	case "ctrg" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CTRG_1";	// leave as "" for default
+		_plebUniformArray = ["U_B_CTRG_1","U_B_CTRG_3","U_B_CTRG_1"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CTRG_3";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -143,7 +147,9 @@ switch (_camoPattern) do {
 	};
 	default {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CombatUniform_mcam";	// leave as "" for default
+		_plebUniformArray = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CombatUniform_mcam_vest";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -246,13 +252,13 @@ _gmgTripod = "B_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles";
-_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","AGM_Altimeter"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["RH_t1","RH_SFM952V"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];
@@ -545,8 +551,8 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
-			(unitBackpack _unit) addMagazineCargoGlobal [_mmgMag,2];		
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_mmgMag,3];		
 		};
 		case "hat" : {
 			_unit addBackpack _assistantRuck;

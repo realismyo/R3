@@ -1,8 +1,8 @@
 /*
 Mission Briefing
-by AGeNT
+by Mr. Agnet
 - Handles the briefing notes that players will have available during the mission.
-- BLUFOR Specific Script, if 'agent_var_separateBriefings' is defined and set to TRUE in the init.sqf, this will run for BLUFOR players.
+- BLUFOR Specific Script, if 'r_var_brief_separateBriefings' is defined and set to TRUE in the init.sqf, this will run for BLUFOR players.
 ========== Usage ==========
 - Some basic HTML works placed inside the briefing text, such as <br/> for new line.
 

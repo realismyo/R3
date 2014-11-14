@@ -47,7 +47,7 @@ if (!f_var_JIP_FirstMenu && isNull _corpse) exitWith {};
 if (!f_var_JIP_GearMenu) then {
 	if (typeName (_unit getVariable "f_var_assignGear") == typeName "") then {
 		_loadout = (_unit getVariable "f_var_assignGear");
-		[_loadout,player] call f_fnc_assignGear;
+		[_loadout,player] call r_fnc_assignGear;
 	};
 };
 

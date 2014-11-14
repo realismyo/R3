@@ -1,12 +1,12 @@
 // Spectating Script for ArmA 3
 // by Kegetys 
-// updated for ArmA3 by Ollem
+// updated for ArmA 3 by Ollem
 
 private ["_target", "_killer", "_seagull", "_markers", "_KEGsNextRun", "_name", "_setOriginalSide", "_OriginalSide", "_RatingDelta",
 		"_ehVehicles", "_t", "_disp", "_cCamera", "_cTarget", "_cName", "_cCamerasBG", "_cTargetsBG", "_cMap", "_cMapFull", "_cDebug",
 		"_pos", "_foo", "_nNoDialog", "_lastUpdateMarkers", "_lastUpdateMarkerTypes", "_lastUpdateTags", "_allUnits", "_allVehicles",
 		"_newUnits", "_newVehicles", "_fh", "_kh", "_waitUnits", "_m", "_s", "_rate", "_doMarkerTypes", "_mapFull", "_mappos", 
-		"_markedVehicles", "_i", "_u", "_type", "_icon", "_map", "_tt", "_bpos", "_bird", "_KEGs_EH_Indx", "_KEGs_EHF_Indx","_nextTarget"];
+		"_markedVehicles", "_i", "_u", "_type", "_icon", "_map", "_tt", "_bpos", "_bird", "_KEGs_EH_Indx", "_KEGs_EHF_Indx","_nextTarget","_layer"];
 
 disableSerialization;
 
@@ -16,8 +16,13 @@ VM_scriptName="specta";
 VM_SpectatorCamerasEnabled = False;
 
 f_var_debugMode = 0;
+r_var_isSpectating = true;
+
 
 cutText ["Initializing Spectator Script...","BLACK IN", 2];
+
+_layer = "BIS_fnc_respawnSpectator" call bis_fnc_rscLayer;
+_layer cutrsc ["RscSpectator","plain"];
 
 // Globals etc.
 vm_count = 0; 						// Debug loop counter
@@ -31,13 +36,10 @@ KEGsEHlist = [];
 KEGsEHFlist = [];
 
 // set focus to killer else player
-if ( !(isNil "_target") && { ( alive _target ) } ) then 
-{
+if ( !(isNil "_target") && { ( alive _target ) } ) then {
 	//diag_log format ["Target: %1", _target];
 	KEGs_target = _target;
-}
-else
-{
+} else {
 	//diag_log format ["No Killer: %1", player];
 	//if ( (isNil "KEGs_target") || { !(alive KEGs_target) } ) then { KEGs_target = player; };
 	if ( isNil "KEGs_target" ) then { KEGs_target = player; };
@@ -79,8 +81,8 @@ KEGs1stGunner = false; 				// Gunner view on 1st person camera?
 KEGsNeedUpdateLB = false;
 mouseDeltaX = 0;
 mouseDeltaY = 0;
-sdistance = 5; // camera distance
-fangle  = 0; // Free camera angle
+sdistance = 5; 						// camera distance
+fangle  = 0; 						// Free camera angle
 fangleY = 15;
 //KEGs_flybydst = 35; 				// Distance of flyby camera (adjusted based on target speed)
 szoom = 0.976;
@@ -115,22 +117,18 @@ KEGsShowCombatMode = compile preprocessFileLineNumbers "scripts\spectator\specta
 KEGsShowUnitLocator = compile preprocessFileLineNumbers "scripts\spectator\specta_locator.sqf";
 
 // Unit sides shown - Show all if sides not set
-if(isNil "KEGsShownSides") then {
-	KEGsShownSides = [west, east, resistance, civilian];
-};
+if(isNil "KEGsShownSides") then { KEGsShownSides = [west, east, resistance, civilian]; };
 
 // In an effort to compensate for Renegades (players with ratings of less than -2000) we will add this Renegage fix
 // Renegade Fix add function _setOriginalSide - ViperMaul 
-VM_CheckOriginalSide =  
-{
+VM_CheckOriginalSide = {
 	private ["_unit", "_OriginalSide", "_RatingDelta"];
 
 	_unit = _this;
 	
 	_OriginalSide = _unit getVariable ["KEG_OriginalSide",  sideLogic];	
 	
-	if ( _OriginalSide == sideLogic ) then
-	{
+	if ( _OriginalSide == sideLogic ) then {
 		_RatingDelta = abs(Rating _unit);
 		_unit addRating _RatingDelta; 
 		_unit setVariable ["KEG_OriginalSide",(side _unit)];
@@ -189,7 +187,7 @@ KEGscam_chase camSetTarget KEGscam_target;
 //KEGscam_target camsettarget KEGs_target;
 //KEGscam_target camsetrelpos[0,-0.1,0.20]
 
-//--- Create Cam Marker
+// --- Create Cam Marker ---
 KEGS_camMarker = createMarkerLocal ["KEGS_camMarker", getPos KEGscam_free];
 KEGS_camMarker setMarkerTypeLocal "mil_start";
 KEGS_camMarker setMarkerColorLocal "colorpink";
@@ -227,7 +225,12 @@ lbClear KEGs_cLBTargets;
 onMapSingleClick "[""MapClick"",_pos] call spectate_events";
 
 // Spawn thread to display help reminder after a few seconds
-[] spawn {sleep(3);if(dialog) then {cutText["\n\n\n\n\nPress F1 for help","PLAIN DOWN", 0.75]}};
+[] spawn {
+	sleep(3);
+	if(dialog) then {
+		cutText["\n\n\n\n\nPress F1 for help","PLAIN DOWN", 0.75]
+	};
+};
 
 KEGs_camSelLast = 0;
 mouseLastX = 0.5;
@@ -247,8 +250,7 @@ KEGs_cspeedy = 0;
 KEGs_tbase = 0.1;
 
 // Initialize the arrays and the listboxes.
-	CheckNewUnits = 
-		{
+	CheckNewUnits = {
 			private["_vm_CheckNewUnitsNumber"];
 			CheckNewUnitsReady = false;
 			RefreshListReady = false;
@@ -273,12 +275,10 @@ KEGs_tbase = 0.1;
 				} count _allVehicles;
 			};			
 			
-			if(count _newUnits > 0) then 
-			{
+			if(count _newUnits > 0) then {
 				_waitUnits = [];
 				{
-					if !( _x getVariable ["KEG_SPECT", false] ) then
-					{
+					if !( _x getVariable ["KEG_SPECT", false] ) then {
 						// If variable not found, set it, thus unit is tagged for next update cycle
 						// This way, (re)spawned units have some time to fully initialize. Name arma.rpt Error fix.
 						_x setVariable ["KEG_SPECT", true];
@@ -334,8 +334,7 @@ KEGs_tbase = 0.1;
 		};  // End of Spawn CheckNewUnits
 		  
 
-KEGs_fnc_MovementCameraLoop = 
-	{
+KEGs_fnc_MovementCameraLoop = {
 		private ["_bb", "_nextTarget", "_foo", "_name", "_targetSpeed", "_KEGs_targetPos", "_actionCam", "_checkTarget", "_hstr", "_d", "_z", "_cMapFull", "_camMove", "_comSpeed", "_coef", "_zCoef", "_camPos", "_dX", "_dY", "_dZ", "_dir", "_pos"  ];
 		_cMapFull = 55014;
 		_CameraLoop_count = 0;
@@ -343,8 +342,7 @@ KEGs_fnc_MovementCameraLoop =
 		
 		_nextTarget = time;		
 		
-		While { VM_SpectatorCamerasEnabled  } do 
-		{			
+		While { VM_SpectatorCamerasEnabled  } do {			
 			_actionCam = false;
 			
 			if ( 
@@ -353,8 +351,7 @@ KEGs_fnc_MovementCameraLoop =
 					{ !(KEGs_autoTarget == KEGs_target) } && 
 					{ (alive KEGs_autoTarget) } &&
 					{ ( !KEGsAIfilter || isPlayer KEGs_AutoTarget ) }
-				) then 
-			{
+				) then {
 				//diag_log format ["%1 - switch to new auto target: %2 (old target: %3)", time, name KEGs_autoTarget, name KEGs_target];
 				KEGs_target = KEGs_AutoTarget;
 				_nextTarget = time + (random 10 max 4 min 6);
@@ -369,8 +366,7 @@ KEGs_fnc_MovementCameraLoop =
 			};
 	
 			//while { sleep 0.05; ( ( !(isPlayer KEGs_target) || ((isPlayer KEGs_target) && { (alive KEGs_target) } )) && { KEGsNextRun } ); } do  
-			if ( !(isNull KEGs_target) && { (alive KEGs_target) } ) then
-			{	
+			if ( !(isNull KEGs_target) && { (alive KEGs_target) } ) then {	
 				_KEGs_target = KEGs_target;
 				
 				_KEGs_targetPos = (vehicle _KEGs_target modelToWorld [0,0,0]);
@@ -389,28 +385,12 @@ KEGs_fnc_MovementCameraLoop =
 					_stance = stance _KEGs_target;
 				};
 				
-				switch ( _stance ) do
-				{
-					case "STAND": 
-					{
-						_foo = 2.10;
-					};
-					case "CROUCH":
-					{
-						_foo = 1.50;
-					};
-					case "PRONE":
-					{
-						_foo = 0.5;
-					};
-					case "VEHICLE":
-					{
-						_foo = 2.6;
-					};						
-					default 
-					{
-						_foo = 2;
-					};
+				switch ( _stance ) do{
+					case "STAND": { _foo = 2.10; };
+					case "CROUCH":{ _foo = 1.50; };
+					case "PRONE":{ _foo = 0.5; };
+					case "VEHICLE":{ _foo = 2.6; };						
+					default { _foo = 2; };
 				};
 
 				//if (KEGs_cameraNames select KEGs_cameraIdx == "Lock-on") then 
@@ -423,8 +403,7 @@ KEGs_fnc_MovementCameraLoop =
 				//KEGscam_target camSetPos[KEGs_cxpos, KEGs_cypos, KEGs_czpos+(_foo*0.7)];
 				KEGscam_target camSetPos[(_KEGs_targetPos select 0), (_KEGs_targetPos select 1), (_KEGs_targetPos select 2)+(_foo*0.7)];
 				
-				if( (vehicle KEGs_target) distance KEGscam_target > 650 ) then
-				{ 
+				if( (vehicle KEGs_target) distance KEGscam_target > 650 ) then { 
 					_comSpeed = 0;
 				};
 				
@@ -458,8 +437,7 @@ KEGs_fnc_MovementCameraLoop =
 			
 			//player target got killed		
 			//if ( (isNull KEGs_target) || { !(alive KEGs_target) } ) then 
-			if ( (isNull KEGs_target) ) then 
-			{
+			if ( (isNull KEGs_target) ) then {
 				private ["_newCheckUnits", "_foundUnit", "_s1", "_s2"];
 				
 				diag_log format ["WARNING - KEGs_target no longer found - waiting for new target"];
@@ -499,12 +477,10 @@ KEGs_fnc_MovementCameraLoop =
 				} count _allVehicles;
 			};
 			
-			if(count _newUnits > 0) then 
-			{
+			if(count _newUnits > 0) then {
 				_waitUnits = [];
 				{
-					if !( _x getVariable ["KEG_SPECT", false] ) then					
-					{
+					if !( _x getVariable ["KEG_SPECT", false] ) then {
 						// If variable not found, set it, thus unit is tagged for next update cycle
 						// This way, (re)spawned units have some time to fully initialize. Name arma.rpt Error fix.
 						_x setVariable ["KEG_SPECT", true];
@@ -565,25 +541,19 @@ KEGs_fnc_MovementCameraLoop =
 
 EndLoadingScreen;		
 
-		
-		
-while{ dialog } do 
-{
+while{ dialog } do {
 		// Request listbox update every 20 seconds to update dead units or jip player names (
-		if(time - KEGs_lastAutoUpdateLB > 20 && (RefreshListReady) && (CheckNewUnitsReady)) then 
-		{
+		if(time - KEGs_lastAutoUpdateLB > 20 && (RefreshListReady) && (CheckNewUnitsReady)) then {
 			KEGs_lastAutoUpdateLB = time;
 			KEGsNeedUpdateLB = true;
 		};	
 	
-		if(KEGsNeedUpdateLB && RefreshListReady && (CheckNewUnitsReady)) then 
-		{
+		if(KEGsNeedUpdateLB && RefreshListReady && (CheckNewUnitsReady)) then {
 			[] spawn RefreshPlayerList;
 		};
 	
 		// Check for new units every 20 seconds
-		if((time - lastCheckNewUnits > 20)  && (CheckNewUnitsReady) ) then 
-		{
+		if((time - lastCheckNewUnits > 20)  && (CheckNewUnitsReady) ) then {
 			lastCheckNewUnits = time;
 			RefreshListReady = false;
 			[] spawn CheckNewUnits;
@@ -595,22 +565,19 @@ while{ dialog } do
 		if(count _markers > 100) then {_rate = 5}; // Update large number of markers less often // modified from 7.5 - norrin/ViperMaul
 		if(count _markers > 200) then {_rate = 0.5}; // Update large number of markers less often // added - norrin/ViperMaul
 		
-		if(time - _lastUpdateMarkers > (1/_rate)) then 
-		{
+		if(time - _lastUpdateMarkers > (1/_rate)) then {
 			_lastUpdateMarkers = time;
 		
 			if (!NORRN_noMarkersUpdates) then //added check to remove marker updates - norrin
 			{
 				// setMarkerTypeLocal is very slow, call it only once per second
 				_doMarkerTypes = false;
-				if(time - _lastUpdateMarkerTypes > 1) then 
-				{
+				if(time - _lastUpdateMarkerTypes > 1) then {
 					_lastUpdateMarkerTypes = time;
 					_doMarkerTypes = true; // Allow update marker types
 				};
 				
-				if(ctrlVisible _cMapFull) then 
-				{
+				if(ctrlVisible _cMapFull) then {
 					// Position camera in the middle of full map, for sound and
 					// smoother marker motion (distant objects appear less smooth)
 					_mapFull = _disp displayctrl _cMapFull;
@@ -621,27 +588,22 @@ while{ dialog } do
 				};
 				
 				_markedVehicles = []; // Keep track of vehicles with markers to avoid multiple markers for one vehicle
-				for "_i" from 0 to ((count _markers)-1) do 
-				{
+				for "_i" from 0 to ((count _markers)-1) do {
 					_m = _markers select _i;
 					_u = (deathCam select _i);
 					_m setMarkerPosLocal ((vehicle _u modelToWorld [0,0,0]));
 					
 					_OriginalSide = _u getVariable ["KEG_OriginalSide", side _u]; 
-					if(!((_OriginalSide) in KEGsShownSides)) then 
-					{
+					if(!((_OriginalSide) in KEGsShownSides)) then {
 						// We arent' supposed to show this side unit - hide marker
 						if(_doMarkerTypes) then {_m setMarkerTypeLocal "empty"};
 					}
 					else 
 					{ 				
-						if(KEGsMarkerNames or KEGsMinimapZoom < 0.15) then 
-						{
+						if(KEGsMarkerNames or KEGsMinimapZoom < 0.15) then {
 							// Set full screen map marker types - Also zoomed minimap
-							if(ctrlVisible _cMapFull) then 
-							{
-								switch(KEGsMarkerType) do 
-								{
+							if(ctrlVisible _cMapFull) then {
+								switch(KEGsMarkerType) do {
 									case 0: {	// No text
 										_m setMarkerTextLocal "";
 									};
@@ -745,7 +707,7 @@ while{ dialog } do
 
 //StartLoadingScreen ["EXITING SPECTATOR MODE..."];
 
-VM_SpectatorCamerasEnabled = False;
+VM_SpectatorCamerasEnabled = false;
 
 //diag_log format ["Exiting Spectator mode: script running: %1", !(scriptDone KEGs_mainLoop)];
 terminate KEGs_mainLoop;
@@ -754,6 +716,8 @@ waitUntil { scriptDone KEGs_mainLoop };
 
 // Dialog closed with esc key
 titleText["","BLACK IN", 0.5];
+
+r_var_isSpectating = false;
 
 // Destroy cameras, markers, particlesources, etc.
 camDestroy KEGscam_target;

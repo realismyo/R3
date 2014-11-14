@@ -10,6 +10,7 @@ KitPickInit = {
     USEBUTTON ctrlEnable false;
 
     private "_idx";
+	
 	// Command Roles
 	COMBO lbAdd "--Platoon HQ Roles--";
     _idx = COMBO lbAdd "Platoon Commander"; COMBO lbSetData [_idx, "pltld"];
@@ -17,6 +18,7 @@ KitPickInit = {
     _idx = COMBO lbAdd "Platoon FAC"; COMBO lbSetData [_idx, "pltfac"];
     _idx = COMBO lbAdd "Platoon UAV Operator"; COMBO lbSetData [_idx, "pltuavop"];
     _idx = COMBO lbAdd "Platoon Medic"; COMBO lbSetData [_idx, "pltmed"];
+	
 	// General Section Roles
     COMBO lbAdd "--Section Roles--";
     _idx = COMBO lbAdd "Section Commander"; COMBO lbSetData [_idx, "secco"];
@@ -28,12 +30,14 @@ KitPickInit = {
 	_idx = COMBO lbAdd "Grenadier"; COMBO lbSetData [_idx, "gren"];
     _idx = COMBO lbAdd "Machinegunner"; COMBO lbSetData [_idx, "mmg"];
     _idx = COMBO lbAdd "Asst. Machinegunner"; COMBO lbSetData [_idx, "mmgass"];
+	
 	// Vehicle Crew Roles
     COMBO lbAdd "--Crew Roles--";
     _idx = COMBO lbAdd "Crew Commander"; COMBO lbSetData [_idx, "crewmander"];
     _idx = COMBO lbAdd "Crewman"; COMBO lbSetData [_idx, "crewman"];
     _idx = COMBO lbAdd "Rotary Wing Pilot"; COMBO lbSetData [_idx, "rotarypilot"];
     _idx = COMBO lbAdd "Fixed Wing Pilot"; COMBO lbSetData [_idx, "fixedpilot"];
+	
 	// CSW and Heavy Weapon Team Roles
     COMBO lbAdd "--Weapons Team Roles--";
     _idx = COMBO lbAdd "HAT Gunner"; COMBO lbSetData [_idx, "hatgun"];
@@ -44,6 +48,7 @@ KitPickInit = {
 	_idx = COMBO lbAdd "HMG Assistant"; COMBO lbSetData [_idx, "hmgass"];
 	_idx = COMBO lbAdd "GMG Gunner"; COMBO lbSetData [_idx, "gmggun"];
 	_idx = COMBO lbAdd "GMG Assistant"; COMBO lbSetData [_idx, "gmgass"];
+	
 	// Special Roles
 	COMBO lbAdd "--Specialist Roles--";
 	_idx = COMBO lbAdd "Scoped Rifleman"; COMBO lbSetData [_idx, "rmsc"];

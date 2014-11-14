@@ -1,7 +1,6 @@
 #include "f_JIP_common.h"
 
-class KitPicker
-{
+class KitPicker {
     idd = -1;
     movingEnable = 1;
     enableSimulation = 1;
@@ -9,10 +8,8 @@ class KitPicker
 
     onLoad = "if (isNil 'KitPickInit') then {call compile preprocessFileLineNumbers 'scripts\kitPicker\f_JIP_kitPicker.sqf'}; _this call KitPickInit;";
 
-    class controlsBackground
-    {
-        class BG : CommonSettings
-        {
+    class controlsBackground {
+        class BG : CommonSettings {
             idc = -1;
             type = CT_STATIC;
             moving = 1;
@@ -21,8 +18,7 @@ class KitPicker
             x = SafeZoneX + 0.2;
             y = SafeZoneY + 0.2;
         };
-        class Prefix : CommonSettings
-        {
+        class Prefix : CommonSettings {
             idc = -1;
             type = CT_STATIC;
             moving = 1;
@@ -34,10 +30,8 @@ class KitPicker
         };
     }
 
-    class controls
-    {
-        class KitList : CommonSettings
-        {
+    class controls {
+        class KitList : CommonSettings {
             idc = 1;
             type = CT_COMBO;
             x = SafeZoneX + 0.23;
@@ -57,8 +51,7 @@ class KitPicker
             soundCollapse[] = NOSOUND;
 
             maxHistoryDelay = 1.0;
-            class ComboScrollBar
-            {
+            class ComboScrollBar {
                 color[] = {1, 1, 1, 0.6};
                 colorActive[] = {1, 1, 1, 1};
                 colorDisabled[] = {1, 1, 1, 0.3};
@@ -86,8 +79,7 @@ class KitPicker
         };
 */
 
-        class AcceptButton : CommonSettings
-        {
+        class AcceptButton : CommonSettings {
             idc = 3;
             type = CT_BUTTON;
             w = 0.2;

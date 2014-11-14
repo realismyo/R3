@@ -6,7 +6,7 @@ without having to necessarily explain each and every step, and also to be there 
 
 ===== Usage =====
 
-- R3's init.sqf includes the variable 'agent_var_separateBriefings'.
+- R3's init.sqf includes the variable 'r_var_separateBriefings'.
 - Set this to TRUE to run a different briefing script for the different sides (BLUFOR, OPFOR, INDEPENDENT and CIVILIAN).
 - Set this to FALSE to run the same briefing script for ALL of the different sides.
 

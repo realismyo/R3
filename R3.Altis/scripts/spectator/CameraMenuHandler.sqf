@@ -17,8 +17,7 @@ _cCamera = 55002;
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------
 	// Check for listbox selections
-	if(KEGs_camSelLast != lbCurSel KEGs_cLBCameras) then 
-	{
+	if(KEGs_camSelLast != lbCurSel KEGs_cLBCameras) then {
 		_KEGs_cs = lbCurSel KEGs_cLBCameras;
 		if(_KEGs_cs == KEGs_cLbSeparator) then {
 			_KEGs_cs = KEGs_camSelLast;
@@ -47,26 +46,24 @@ _cCamera = 55002;
 		if(_KEGs_cs == KEGs_cLbToggleAiFilter) then {
 			KEGsAIfilter = !KEGsAIfilter;
 			_KEGs_cs = KEGs_camSelLast;				
-			KEGsNeedUpdateLB = true; // Request listbox update
+			KEGsNeedUpdateLB = true; 	// Request listbox update
 			//_debugPlayer globalchat "toggle AI filter";
 		};
 		
 		// Special for toggling Unknown (Dead) Players
-		if(_KEGs_cs == KEGs_cLbToggleDeadFilter) then 
-		{
+		if(_KEGs_cs == KEGs_cLbToggleDeadFilter) then {
 			KEGsDeadFilter = !KEGsDeadFilter;
 			_KEGs_cs = KEGs_camSelLast;				
-			KEGsNeedUpdateLB = true; // Request listbox update
-//			_debugPlayer globalchat "toggle Unknown (Dead) filter";
+			KEGsNeedUpdateLB = true; 	// Request listbox update
+			//_debugPlayer globalchat "toggle Unknown (Dead) filter";
 		};
 		
 		// Special for toggling Unknown (Dead) Players
-		if(_KEGs_cs == KEGs_cLbToggleCombatActionFilter) then 
-		{
+		if(_KEGs_cs == KEGs_cLbToggleCombatActionFilter) then {
 			KEGsCombatActionFilter = !KEGsCombatActionFilter;
 			_KEGs_cs = KEGs_camSelLast;				
-			KEGsNeedUpdateLB = true; // Request listbox update
-//			_debugPlayer globalchat "toggle Unknown (Dead) filter";
+			KEGsNeedUpdateLB = true; 	// Request listbox update
+			//_debugPlayer globalchat "toggle Unknown (Dead) filter";
 		};
 		
 		KEGs_cameraIdx = _KEGs_cs;
@@ -82,8 +79,7 @@ _cCamera = 55002;
 	
 	// If not in First Person mode rest camera
 	//if (!((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) && !(VM_CurrentCameraView in ["INTERNAL","GUNNER"]) ) then 
-	if !( (KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson )  then 
-	{ 
+	if !( (KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson )  then { 
 		(KEGs_cameras select KEGs_cameraIdx) cameraEffect["internal", "BACK"]; // CHECK IF NEEDED !!!
 		//_debugplayer globalchat format ["Resetting Camera on to %1", KEGs_target];
 	};
@@ -108,19 +104,15 @@ _cCamera = 55002;
 	
 // ----------------------------------------------------------------------------------------------------------------------------------------------------
 	// Toggle 1st Person view
-	if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then 
-	{
+	if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then {
 		// 1st person view
 		VM_CurrentCameraView = cameraView; // Save the current CameraView
 		//player globalChat ("Camera View: "+ str(VM_CurrentCameraView) );	
 		
-		if ( (KEGs1stGunner) && !(VM_CurrentCameraView == "GUNNER") ) then 
-		{
+		if ( (KEGs1stGunner) && !(VM_CurrentCameraView == "GUNNER") ) then {
 			(vehicle KEGs_target) switchCamera "GUNNER";
 			//player globalchat "switchCamera 'GUNNER'";
-		}
-		else 
-		{
+		} else {
 			(vehicle KEGs_target) switchCamera "INTERNAL";
 			//player globalchat "switchCamera 'INTERNAL'";
 		};

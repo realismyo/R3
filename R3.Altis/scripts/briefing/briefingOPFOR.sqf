@@ -1,8 +1,8 @@
 /*
 Mission Briefing
-by AGeNT
+by Mr. Agnet
 - Handles the briefing notes that players will have available during the mission.
-- OPFOR Specific Script, if 'agent_var_separateBriefings' is defined and set to TRUE in the init.sqf, this will run for OPFOR players.
+- OPFOR Specific Script, if 'r_var_brief_separateBriefings' is defined and set to TRUE in the init.sqf, this will run for OPFOR players.
 ========== Usage ==========
 - Some basic HTML works placed inside the briefing text, such as <br/> for new line.
 

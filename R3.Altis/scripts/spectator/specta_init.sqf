@@ -1,16 +1,12 @@
 // ====================================================================================
-
 // RESTRICT VIEWABLE UNITS
-// We use the array KEGsShownSides to restrict which sides will be visible to 
-// spectating players:
-	
-// KEGsShownSides = [west, east, resistance, civilian];
+// We use the array KEGsShownSides to restrict which sides will be visible to spectating players:
 
+// KEGsShownSides = [west, east, resistance, civilian];
 // if (side player == west) then {KEGsShownSides = [west];};
 // if (side player == east) then {KEGsShownSides = [east];};
 // if (side player == resistance) then {KEGsShownSides = [resistance];};
 // if (side player == civilian) then {KEGsShownSides = [civilian];};
-
 // ====================================================================================
 
 // Connect handler for spectating script, check if camera on seagull for first 10 seconds and launch spectating script

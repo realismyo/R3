@@ -4,6 +4,7 @@
 
 // Run the hint on all clients
 if (!isDedicated) then {
+
 	// Display hint while timer is active
 	while {pv_mission_timer > 0} do {
 		["SafeStart",[format["Weapons are on Safe<br/>Time Remaining: %1 min",pv_mission_timer]]] call bis_fnc_showNotification;

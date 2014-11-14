@@ -24,7 +24,10 @@
 // Example: nul = [this,"reset",5] execVM "murk\spawn_groups\fourth_group.sqf"; ---- Will spawn the editor unit once based on the trigger in fourth_group script, then reset the trigger after a preset time (20 seconds default). The unit will be created when trigger is true again, maximum number of lives.
 // -----------------------------------------------------------------------------------------------------
 
-if !(player == HC) exitWith {};
+// Let players enter the mission.
+waitUntil {time > 1};	
+if (isNull HC) then { waitUntil { !isNull HC; }; };
+if (player != HC) exitWith {};
 
 // CHANGE THIS TRIGGER
 #define SPAWN_TRIGGER_VARIABLE fourth_group

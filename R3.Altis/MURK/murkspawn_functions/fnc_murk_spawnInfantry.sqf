@@ -20,17 +20,22 @@ sleep 1;
 _unitsGroup = units _newgroup;
 {_x disableAI "MOVE"} forEach _unitsGroup;
 
-for [{ _loop = 0 },{ _loop < count  _unitsGroup},{ _loop = _loop + 1}] do
-{
+for [{ _loop = 0 },{ _loop < count  _unitsGroup},{ _loop = _loop + 1}] do {
+
 	_guy = _unitsGroup select _loop;
+	
 	//_guy setvehiclevarName (_AI_namearray select _loop);
+	
 	removeAllWeapons _guy;
-	{_guy removeMagazine _x} forEach magazines _guy;
 	removeAllItems _guy;
+	{_guy removeMagazine _x} forEach magazines _guy;
+	
 	{_guy addMagazine _x} forEach (_AI_magArray select _loop);
 	{_guy addWeapon _x}   forEach (_AI_wepArray select _loop);
 	_guy selectWeapon (primaryWeapon _guy);
+	
 	_guy setSkill (_AI_skillArray select _loop);
+	
 	sleep 0.1;
 };
 

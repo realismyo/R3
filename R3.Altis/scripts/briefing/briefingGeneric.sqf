@@ -1,8 +1,8 @@
 /*
 Mission Briefing
-by AGeNT
+by Mr. Agnet
 - Handles the briefing notes that players will have available during the mission.
-- General Briefing Script, if 'agent_var_separateBriefings' is set to FALSE or undefined in the init.sqf, this will run for ALL players.
+- General Briefing Script, if 'r_var_brief_separateBriefings' is set to FALSE or undefined in the init.sqf, this will run for ALL players.
 ========== Usage ==========
 - Some basic HTML works placed inside the briefing text, such as <br/> for new line.
 

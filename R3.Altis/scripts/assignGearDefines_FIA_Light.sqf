@@ -131,7 +131,7 @@ _glFlareTwo = "UGL_FlareYellow_F";
 // ======== Camo Specific ========
 // ===============================
 // ========== Uniforms ===========
-_plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1","U_NikosBody"];
+_plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1"];
 _uniformNumber = (floor(random (count _plebUniforms)));
 _plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
 _crewUniform = "U_B_CombatUniform_mcam_vest";
@@ -240,9 +240,9 @@ _basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _rifleAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["hlc_optic_kobra","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
 _rifleAttachments = _rifleAttachmentArray select _rifleRandom;

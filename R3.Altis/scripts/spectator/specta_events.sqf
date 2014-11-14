@@ -23,12 +23,10 @@ _cEventLog = 50016;
 _cDebug = 55100;
 _UI = [_cCamera, _cTarget, _cName, KEGs_cLBCameras, KEGs_cLBTargets, _cCamerasBG, _cTargetsBG, _cBG1, _cBG2, _cTitle, _cHelp];
 
-KEGs_fnc_camMove2 = 
-{
+KEGs_fnc_camMove2 = {
 	private ["_coef","_zCoef","_dX","_dY","_dZ","_pos","_dir","_camPos"];
 
-	if (KEGs_cameraNames select KEGs_cameraIdx == "Free") then
-	{
+	if (KEGs_cameraNames select KEGs_cameraIdx == "Free") then{
 		_dX = _this select 0;
 		_dY = _this select 1;
 		_dZ = _this select 2;
@@ -36,8 +34,8 @@ KEGs_fnc_camMove2 =
 		//--- Nelson's solution for key lag
 		_coef = 0.1;
 		_zCoef = 0.1;
-		if (KEGs_CTRL_PRESS && { (_dZ == 0) } ) then {_coef = 5; _zCoef = 3; }; //press left ctrl key for turbo speed
-		if (KEGs_ALT_PRESS) then {_coef = 1;  _zCoef = 0.5; }; //press left alt key to increase speed
+		if (KEGs_CTRL_PRESS && { (_dZ == 0) } ) then {_coef = 5; _zCoef = 3; }; 	// press left ctrl key for turbo speed
+		if (KEGs_ALT_PRESS) then {_coef = 1;  _zCoef = 0.5; }; 						// press left alt key to increase speed
 
 		_pos = getPosASL KEGscam_free;
 		_dir = (direction KEGscam_free) + _dX * 90;
@@ -52,15 +50,12 @@ KEGs_fnc_camMove2 =
 	};
 };
 
-switch (_type) do 
-{
+switch (_type) do {
 	// "User clicked map, find nearest unit";
-	case "MapClick": 
-	{	
+	case "MapClick":{	
 		_mapClickPos = _this select 1;
 		
-		if (KEGs_cameraNames select KEGs_cameraIdx == "Free") then  
-		{
+		if (KEGs_cameraNames select KEGs_cameraIdx == "Free") then {
 			_xx = _mapClickPos select 0;
 			_yy = _mapClickPos select 1;
 			//KEGs_cxpos = _xx;
@@ -71,27 +66,22 @@ switch (_type) do
 			KEGS_camMarker setmarkerposlocal position KEGscam_free;
 			KEGS_camMarker setmarkerdirlocal direction KEGscam_free;
 				
-			if(ctrlVisible _cMapFull) then 
-			{
+			if(ctrlVisible _cMapFull) then {
 				ctrlShow[_cMapFull, false];
 				ctrlShow[_cMapFullBG, false];			
 				0.5 fadeSound KEGsSoundVolume;
 				ctrlShow[_cMap, true];
 			};
-		}
-		else
-		{
+		} else {
 			_newCamTarget = (nearestObjects [_mapClickPos, ["CAManBase", "Air", "Car", "Tank"], 200]) select 0;
 			//player globalChat format ["new target '%1' - curr target '%2' - ('%3') - ('%4')", _newCamTarget, KEGs_target, vehicle _newCamTarget, deathCam find _newCamTarget];			
 
-			if ( !( isNull _newCamTarget ) && { ( vehicle _newCamTarget == _newCamTarget ) } ) then 
-			{
+			if ( !( isNull _newCamTarget ) && { ( vehicle _newCamTarget == _newCamTarget ) } ) then {
 				//player globalChat format ["Crew: '%1' - '%2'", _newCamTarget, crew _newCamTarget];			
 				_newCamTarget = (crew _newCamTarget) select 0;
 			};
 			
-			if ( !( isNull _newCamTarget ) && { !((deathCam find _newCamTarget) == -1) } ) then
-			{
+			if ( !( isNull _newCamTarget ) && { !((deathCam find _newCamTarget) == -1) } ) then{
 				KEGs_tgtIdx = deathCam find _newCamTarget;
 				
 				KEGs_target = _newCamTarget;
@@ -114,8 +104,7 @@ switch (_type) do
 				KEGs_autoTarget = KEGs_target;				
 				//player sideChat format ["new target '%1' - curr target '%2' - ('%3' - '%4')", _newCamTarget, KEGs_target, KEGs_tgtIdx, deathCam select KEGs_tgtIdx];			
 				
-				if(ctrlVisible _cMapFull) then 
-				{
+				if(ctrlVisible _cMapFull) then {
 					ctrlShow[_cMapFull, false];
 					ctrlShow[_cMapFullBG, false];			
 					0.5 fadeSound KEGsSoundVolume;
@@ -125,49 +114,39 @@ switch (_type) do
 		};
 	};
 	
-	case "KeyDown": 
-	{		
+	case "KeyDown":{		
 		_key = _param select 1;
 		
 		//player globalChat format ["KEY: %1", _param];
 		// "WSAD keys: camera movement in dropped mode";
-		switch(_key) do 
-		{		
-			case 32: 
-			{ 
+		switch(_key) do {		
+			case 32:{ 
 				// D = right
 				[1,1,0] call KEGs_fnc_camMove2;
 			};	
-			case 30: 
-			{ 
+			case 30:{ 
 				//A = left
 				[-1,1,0] call KEGs_fnc_camMove2;
 			};
-			case 17: 
-			{ 
+			case 17:{ 
 				// W = forward
 				[0,1,0] call KEGs_fnc_camMove2;
 			};	
-			case 31: 
-			{ 
+			case 31:{ 
 				// S = backward
 				[0,-1,0] call KEGs_fnc_camMove2;
 			};
-			case 16: 
-			{ 
+			case 16:{ 
 				// Q = up
 				[0,0,1] call KEGs_fnc_camMove2;
 			};
-			case 44: 
-			{ 
+			case 44:{ 
 				// Z = down
 				[0,0,-1] call KEGs_fnc_camMove2;
 			};			
-			case 35: 
-			{ 
+			case 35:{ 
 				// H
-				if (NORRN_noMarkersUpdates) then 
-				{
+				if (NORRN_noMarkersUpdates) then {
 					NORRN_noMarkersUpdates = false;
 					titleCut ["\n\n\n\n\n\n\n\n\nMap Marker Updates Enabled","PLAIN", 0.2];
 				} else {
@@ -175,13 +154,11 @@ switch (_type) do
 					titleCut ["\n\n\n\n\n\n\n\n\nMap Marker Updates Disabled","PLAIN", 0.2];
 				};
 			};
-			case 56: 
-			{ 
+			case 56:{ 
 				//ALT
 				KEGs_ALT_PRESS = true;
 			};
-			case 29: 
-			{ 
+			case 29:{ 
 				// CRTL
 				KEGs_CTRL_PRESS = true;
 			};
@@ -189,16 +166,13 @@ switch (_type) do
 	}; 
 	
 	// "Key up - process keypress";
-	case "KeyUp": 
-	{
+	case "KeyUp":{
 		_key = _param select 1;
 
-		switch(_key) do 
-		{
+		switch(_key) do {
 			case 32: {
 				// D
-				if !(KEGs_cameraNames select KEGs_cameraIdx == "Free") then 
-				{
+				if !(KEGs_cameraNames select KEGs_cameraIdx == "Free") then {
 					//Next target
 					KEGs_tgtIdx = ( KEGs_tgtIdx + 1 );
 					if ( KEGs_tgtIdx > ((count deathCam) - 1 ) ) then { KEGs_tgtIdx = 0 };
@@ -206,8 +180,7 @@ switch (_type) do
 					KEGs_target = deathCam select KEGs_tgtIdx;
 					
 					// Skip dead AI/players if filter has been enabled
-					while { ( KEGsDeadFilter ) && !( alive KEGs_target) } do
-					{
+					while { ( KEGsDeadFilter ) && !( alive KEGs_target) } do {
 						KEGs_tgtIdx = ( KEGs_tgtIdx + 1 );
 						if ( KEGs_tgtIdx > ((count deathCam) - 1 ) ) then { KEGs_tgtIdx = 0 };
 						KEGs_target = deathCam select KEGs_tgtIdx;
@@ -215,8 +188,7 @@ switch (_type) do
 					};
 					
 					// Skip AI if filter has been enabled
-					while { ( KEGsAIfilter ) && !( isPlayer KEGs_target) } do
-					{
+					while { ( KEGsAIfilter ) && !( isPlayer KEGs_target) } do {
 						KEGs_tgtIdx = ( KEGs_tgtIdx + 1 );
 						if ( KEGs_tgtIdx > ((count deathCam) - 1 ) ) then { KEGs_tgtIdx = 0 };
 						KEGs_target = deathCam select KEGs_tgtIdx;
@@ -224,8 +196,7 @@ switch (_type) do
 					
 					[false] spawn PlayerMenuHandler;
 					
-					if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then 
-					{
+					if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then {
 						[] spawn CameraMenuHandler;
 					};					
 
@@ -239,8 +210,7 @@ switch (_type) do
 			};	
 			case 30: {
 				// A
-				if !(KEGs_cameraNames select KEGs_cameraIdx == "Free") then 
-				{
+				if !(KEGs_cameraNames select KEGs_cameraIdx == "Free") then {
 					 //Previous target
 					KEGs_tgtIdx = ( KEGs_tgtIdx - 1 );
 					if ( KEGs_tgtIdx < 0 ) then { KEGs_tgtIdx =  ((count deathCam) - 1 ) };
@@ -248,16 +218,14 @@ switch (_type) do
 					KEGs_target = deathCam select KEGs_tgtIdx;
 					
 					// Skip dead AI/players if filter has been enabled
-					while { ( KEGsDeadFilter ) && !( alive KEGs_target) } do
-					{
+					while { ( KEGsDeadFilter ) && !( alive KEGs_target) } do {
 						KEGs_tgtIdx = ( KEGs_tgtIdx - 1 );
 						if ( KEGs_tgtIdx < 0 ) then { KEGs_tgtIdx =  ((count deathCam) - 1 ) };
 						KEGs_target = deathCam select KEGs_tgtIdx;
 					};					
 					
 					// Skip AI if filter has been enabled
-					while { ( KEGsAIfilter ) && !( isPlayer KEGs_target) } do
-					{
+					while { ( KEGsAIfilter ) && !( isPlayer KEGs_target) } do {
 						KEGs_tgtIdx = ( KEGs_tgtIdx + 1 );
 						if ( KEGs_tgtIdx > ((count deathCam) - 1 ) ) then { KEGs_tgtIdx = 0 };
 						KEGs_target = deathCam select KEGs_tgtIdx;
@@ -265,8 +233,7 @@ switch (_type) do
 					
 					[false] spawn PlayerMenuHandler;
 					
-					if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then 
-					{
+					if((KEGs_cameras select KEGs_cameraIdx) == KEGscam_1stperson) then {
 						[] spawn CameraMenuHandler;
 					};
 					
@@ -609,8 +576,7 @@ switch (_type) do
 	};
 	
 	// "Toggle particlesource tags";	
-	case "ToggleTags": 
-	{
+	case "ToggleTags":{
 	/*
 		_lifeTime = 0.25;
 		_dropPeriod = 0.05;
@@ -652,29 +618,22 @@ switch (_type) do
 	};
 	
 	// "Toggle particlesource tags";	
-	case "ToggleTagsStat": 
-	{
-		if(_param select 0) then 
-		{
+	case "ToggleTagsStat":{
+		if(_param select 0) then {
 			// "turn on";
 			{
 				_u = _x select 0;
 				_s = _x select 1;
 				[_u, _s] spawn KEGsShowCombatMode;
 			} foreach KEGsTagStatSources;
-		}
-		else 
-		{
+		} else {
 			// "turn off";
 			{
 				_u = _x select 0;	
 				_s = _x select 1;	
-				if !(isNull _u) then 
-				{
+				if !(isNull _u) then {
 					_s setDropInterval 0;
-				}
-				else
-				{
+				} else {
 					deleteVehicle _s;
 				};
 			} foreach KEGsTagStatSources;

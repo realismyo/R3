@@ -18,7 +18,7 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniform","_rpilotUniform","_fpilotUniform","_crewUniform","_diverUniform","_sniperUniform",
+"_plebUniformArray","_plebRandom","_plebUniform","_rpilotUniform","_fpilotUniform","_crewUniform","_diverUniform","_sniperUniform",
 "_goggles","_divingGoggles",
 "_plebHelmet","_rotaryPilotHelmet","_fixedPilotHelmet","_crewmanHelmet",
 "_plebVest","_glVest","_medVest","_pilotVest","_crewVest","_diverVest","_sniperVest",
@@ -85,10 +85,13 @@ _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
 // ========== Clothing ===========
 // ========== Uniforms ===========
+_plebUniformArray = ["U_I_CombatUniform","U_I_CombatUniform_shortsleeve","U_I_CombatUniform"];	
+_plebRandom = (floor(random (count _plebUniformArray)));
+_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 _plebUniform = "U_I_CombatUniform";	// leave as "" for default
 _rpilotUniform = "U_I_HeliPilotCoveralls";
 _fpilotUniform = "U_I_pilotCoveralls";
-_crewUniform = "U_I_CombatUniform";
+_crewUniform = "U_I_CombatUniform_shortsleeve";
 _diverUniform = "U_I_Wetsuit";
 _sniperUniform = "U_I_GhillieSuit";
 // =========== Helmets ===========
@@ -176,13 +179,13 @@ _gmgTripod = "I_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles_INDEP";
-_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","AGM_Altimeter"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["optic_ACO_grn","acc_flashlight"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];

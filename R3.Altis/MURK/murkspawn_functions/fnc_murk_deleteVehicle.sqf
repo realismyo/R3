@@ -18,7 +18,7 @@ _AI_vclnameArray = [];
 // Save the vehicle types, crew and positions for the group
 {
 	_vcl = vehicle _x;
-	if (!(_vcl in _vehiclesGroup) AND (typeOf _vcl != "")) then {
+	if (!(_vcl in _vehiclesGroup) && (typeOf _vcl != "")) then {
 		_crew = crew _vcl;
 		_AI_vcltypearray = _AI_vcltypearray + [typeOf _vcl]; 
 		_AI_vclposarray = _AI_vclposarray + [getPos _vcl];
@@ -26,9 +26,7 @@ _AI_vclnameArray = [];
 		_AI_vclnamearray = _AI_vclnamearray + [vehiclevarName _vcl];
 		_vehiclesgroup = _vehiclesgroup + [_vcl];
 		// Delete the crew and vehicle
-		{ 
-			deleteVehicle _x;
-		} forEach _crew;
+		{ deleteVehicle _x; } forEach _crew;
 		deleteVehicle _vcl;
 	};
 	sleep 0.01;

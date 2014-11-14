@@ -5,26 +5,28 @@ by Mr. Agnet
 - Covers most standard RIFM platoon roles, if you want to add more just ask me or do so by observation of how the others work.
 - Current Loadouts: "pltld", "pltmed", ""pltfac", "pltuavop", "secco", "sectl", "ar", "aar", "rm", "rmat", "rmsc", "dm", "gren", "mmg", "mmgass", "rotarypilot", "fixedpilot", "crewmander", "crewman", "hmggun", "hmgass", "gmggun", "gmgass", "hatgun", "hatammo", "aagun", "aaammo", "divertl", "diver", "sniper", "spotter"
 - Adapted for Arma 3, still technically WIP. Report any and all issues to Mr. Agnet via the forums, steam, ts etc.
-- Current Side, Faction: BLUFOR, AAF
-- Required Mods: @AGM, @task_force_radio
+- Current Side, Faction: BLUFOR, FIA, Random 'light' weapons.
+- Required Mods: @AGM, @task_force_radio, @HLCMods_Core, @HLCMods_AK, @HLCMods_G3, @HLCMods_FAL, @RH_M4_A3
 
 ===== Using this Script =====
+- This script in particular randomises weapons and gear given to players. If you do not wish to have this functionality, use the normal assignGear_FIA scripts.
+- Editing this pair of scripts will probably require a decent proficiency in scripting. Be warned I guess. 
 - In their current state, the scripts will not work for AI. In fact a whole different script will be required.
 
 - If called from unit init field, needs follow the following format, with the desired loadout as a lower case string value (in "").
-- nul = [this,"loadout"] execVM "scripts\assignGear_AAF.sqf";
-e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_AAF.sqf";
-- This would equip a AAF platoon leader with the gear defined below.
+- nul = [this,"loadout"] execVM "scripts\assignGear_FIA.sqf";
+e.g. - nul = [this,"pltld"] execVM "scripts\assignGear_FIA.sqf";
+- This would equip a FIA platoon leader with the gear defined below.
 - All available loadout options are annotated above.
 
 - You may include up to three extra paramters for this script, corresponding with variables in the script, in the following format:
-- nul = [this,"loadout",nightGear,scopes,suppressors] execVM "scripts\assignGear_AAF.sqf";
-e.g. - nul = [this,"pltld",false,false,true] execVM "scripts\assignGear_AAF.sqf";
-- This example would equip a AAF platoon leader with no night gear, no scope and a suppressor.
+- nul = [this,"loadout",nightGear,scopes,suppressors] execVM "scripts\assignGear_FIA.sqf";
+e.g. - nul = [this,"pltld",false,false,true] execVM "scripts\assignGear_FIA.sqf";
+- This example would equip a FIA platoon leader with no night gear, no scope.
 - This system allows for individual cases - you may still change the variables below for a 'global' effect.
 
 - Additional cases can be added below to support additional roles.
-- Check the assignGearDefines_AAF.sqf for defined variables, alter them in that script. 
+- Check the assignGearDefines_FIA.sqf for defined variables, alter them in that script. 
 - The variables at the beginning of this script can influence what gear players will receive, they should be fairly straightforward
 =============================
 */ 
@@ -62,7 +64,7 @@ if (!(local _unit)) exitWith {};
 if (isMultiplayer && isServer) exitWith {};
 
 // faction specific script with all of the variables
-#include "assignGearDefines_AAF.sqf";
+#include "assignGearDefines_FIA_Heavy.sqf";
 
 // gear removal
 if (_plebUniform != "") then { removeUniform _unit; };
@@ -92,7 +94,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,1];
 		_unit addWeapon _rifleGL;
 		["plt"] call _addRuck;
-		["general"] call _addAttachments;
+		["riflegl"] call _addAttachments;
 		call _IFAK;
 	};
 	// Plt Medic
@@ -107,7 +109,7 @@ switch (_loadout) do {
 		for "_i" from 1 to 4 do {_unit addItem _medThree};
 		_unit addWeapon _rifle;
 		["medic"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		_unit setVariable ["AGM_IsMedic", true, true];
 	};
 	// Plt FAC/FO
@@ -123,7 +125,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,5];
 		_unit addWeapon _rifleGL;
 		["fac"] call _addRuck;
-		["general"] call _addAttachments;
+		["riflegl"] call _addAttachments;
 		call _IFAK;
 	};
 	// Plt UAV Operator
@@ -137,7 +139,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		_unit addWeapon _rifle;
 		["uavop"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 	// ================================
@@ -156,7 +158,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,1];
 		_unit addWeapon _rifleGL;
 		["plt"] call _addRuck;
-		["general"] call _addAttachments;
+		["riflegl"] call _addAttachments;
 		call _IFAK;
 	};
 	// Section Team Leader / 2iC
@@ -172,7 +174,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,1];
 		_unit addWeapon _rifleGL;
 		["tl"] call _addRuck;
-		["general"] call _addAttachments;
+		["riflegl"] call _addAttachments;
 		call _IFAK;
 	};
 	// Automatic Rifleman
@@ -194,7 +196,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["aar"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 	// Rifleman
@@ -205,7 +207,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["rm"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};	
 	// Rifleman (disposable light AT)
@@ -216,7 +218,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["rmat"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		_unit addWeapon _lat;
 		call _IFAK;
 	};
@@ -228,7 +230,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifleScoped;
 		["rmsc"] call _addRuck;
-		["scopedgeneral"] call _addAttachments;
+		["riflescoped"] call _addAttachments;
 		call _IFAK;
 	};
 	// Designated Marksman
@@ -253,7 +255,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,1];
 		_unit addWeapon _rifleGL;
 		["gren"] call _addRuck;
-		["general"] call _addAttachments;
+		["riflegl"] call _addAttachments;
 		call _IFAK;
 	};
 	// Machinegunner
@@ -275,7 +277,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["mmgass"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 	// ================================
@@ -314,7 +316,7 @@ switch (_loadout) do {
 		_unit addMagazines [_smoke,2];
 		_unit addWeapon _carbine;
 		["crew"] call _addRuck;
-		["general"] call _addAttachments;
+		["carbine"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -326,7 +328,7 @@ switch (_loadout) do {
 		_unit addMagazines [_carbineMag,6];
 		_unit addMagazines [_smoke,2];
 		_unit addWeapon _carbine;
-		["general"] call _addAttachments;
+		["carbine"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -340,7 +342,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["hmggun"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -352,7 +354,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["hmgass"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -364,7 +366,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["gmggun"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -376,7 +378,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["gmgass"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
 	};
@@ -391,7 +393,7 @@ switch (_loadout) do {
 		_unit addWeapon _rifle;
 		_unit addMagazine _latMag;
 		["hat"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		_unit addWeapon _hatLaunch;
 		call _IFAK;
 	};
@@ -404,7 +406,7 @@ switch (_loadout) do {
 		_unit addWeapon _rifle;
 		_unit addMagazine _latMag;
 		["hat"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 	// AA Gunner
@@ -415,7 +417,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["aa"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		_unit addWeapon _aaLaunch;
 		call _IFAK;
 	};
@@ -427,7 +429,7 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["aa"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 	// ================================
@@ -485,7 +487,7 @@ switch (_loadout) do {
 		_unit addMagazines [_glSmokeTwo,2];
 		_unit addWeapon _rifleGL;
 		["spotter"] call _addRuck;
-		["suppgeneral"] call _addAttachments;
+		["suppriflegl"] call _addAttachments;
 		_unit setVariable ["AGM_IsMedic", true, true];
 	};
 	// ================================
@@ -498,13 +500,12 @@ switch (_loadout) do {
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
 		["rm"] call _addRuck;
-		["general"] call _addAttachments;
+		["rifle"] call _addAttachments;
 		call _IFAK;
 	};
 };
 
-[_unit,"TFAegis"] call bis_fnc_setUnitInsignia;
 _unit selectWeapon (primaryWeapon _unit);
 _unit switchMove "AmovPercMstpSlowWrflDnon";
 sleep _delay;
-_unit GroupChat format ["%1 completed gear assign", name _unit];
+_unit groupChat format ["%1 completed gear assign", name _unit];

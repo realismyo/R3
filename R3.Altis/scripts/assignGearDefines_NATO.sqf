@@ -18,7 +18,7 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniform","_crewUniform",
+"_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
 "_plebHelmet",
 "_plebVest","_glVest","_medVest",
 "_plebRuck","_medRuck","_assistantRuck","_uavRuck",
@@ -102,7 +102,9 @@ if (_3GLs) then {
 switch (_camoPattern) do {
 	case "us" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CombatUniform_mcam";	// leave as "" for default
+		_plebUniformArray = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CombatUniform_mcam_vest";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -119,7 +121,9 @@ switch (_camoPattern) do {
 	};
 	case "ctrg" : {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CTRG_1";	// leave as "" for default
+		_plebUniformArray = ["U_B_CTRG_1","U_B_CTRG_3","U_B_CTRG_1"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CTRG_3";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -136,7 +140,9 @@ switch (_camoPattern) do {
 	};
 	default {
 		// ========== Uniforms ===========
-		_plebUniform = "U_B_CombatUniform_mcam";	// leave as "" for default
+		_plebUniformArray = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam"];	
+		_plebRandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
 		_crewUniform = "U_B_CombatUniform_mcam_vest";
 		// =========== Helmets ===========
 		_plebHelmet = "H_HelmetB_light";
@@ -239,13 +245,13 @@ _gmgTripod = "B_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles";
-_basicTools = [_radio,"ItemCompass","ItemMap","ItemWatch"];
+_basicTools = [_radio,"ItemCompass","ItemMap","AGM_Altimeter"];
 _basicItems = ["AGM_EarBuds"];
 _autoItem = "AGM_SpareBarrel";
 _secTools = ["itemGPS"];
-_secItems = [];
+_secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
-_pltItems = [];
+_pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["optic_Holosight","acc_flashlight"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];
@@ -320,7 +326,7 @@ if ((!isNil "_nightGear") && _nightGear) then {
 // ===============================
 // ========== Functions ==========
 // ===============================
-
+// ========================================================================================================================================
 // Adds basic clothes/vest/helmet etc. to a unit
 // Possible Cases: leader, medic, pleb, assistant, gren, rpilot, fpilot, crew, diver, sniper
 // Example: ["leader"] call _addClothes;
@@ -390,6 +396,7 @@ _addClothes = {
 	};
 };
 
+// ========================================================================================================================================
 // Adds the basic items and tools of the loadouts to a unitBackpack
 // No cases, just generic items. Adds binocular item depeding on loadout
 // Example: call _addBasics;
@@ -407,6 +414,7 @@ _addBasics = {
 	if (_loadout in ["aar","mmgass","crewmander"]) then { _unit addWeapon _binos; };
 };
 
+// ========================================================================================================================================
 // Empties a unit's ruck
 // Example: call _clearRuck;
 _clearRuck = {
@@ -416,6 +424,7 @@ _clearRuck = {
 	sleep _delay;
 };
 
+// ========================================================================================================================================
 // Adds ruck to the unit.
 // Adds a backpack and cargo to that backpack.
 // Note that these cases are mostly similar to the unit's loadout case.
@@ -638,6 +647,7 @@ _addRuck = {
 	};
 };
 
+// ========================================================================================================================================
 // Addition of Attachments to a Unit's weapon
 // Note that pistol attachments are done regardless of what is called
 // Possible Cases: general, dmr, ar, mmg, sniper, diver, scopedgeneral, scopedar, scopedmmg, suppgeneral, suppdmr, suppar, suppmmg, scuppgeneral, scuppar, scuppmmg
@@ -795,6 +805,7 @@ _addAttachments = {
 	};
 };
 
+// ========================================================================================================================================
 // Basic Meds for the unit
 // Example: call _IFAK;
 _IFAK = {

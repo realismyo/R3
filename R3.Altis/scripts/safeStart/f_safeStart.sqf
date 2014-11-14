@@ -13,14 +13,14 @@ sleep 0.1;
 
 // Have the server setup the variables and pv for JIPs
 if (isServer) then {
-	pv_mission_timer = f_param_mission_timer;
+	pv_mission_timer = r_param_mission_timer;
 	publicVariable "pv_mission_timer";
 };
 
 // ====================================================================================
-// Wait until server has initialized pv_mission_timer OR f_param_mission_timer was not set
+// Wait until server has initialized pv_mission_timer OR r_param_mission_timer was not set
 
-waituntil {sleep 3; ((!isNil "pv_mission_timer") || (f_param_mission_timer == 0));};
+waituntil {sleep 3; ((!isNil "pv_mission_timer") || (r_param_mission_timer == 0));};
 
 // ====================================================================================
 // JIP clients are sent PVs before can init.sqf can process
