@@ -26,7 +26,7 @@
 
 // Let players enter the mission.
 waitUntil {time > 1};	
-if (isNull HC) then { waitUntil { !isNull HC; }; };
+if (isMultiplayer && isNull HC) then { waitUntil { !isNull HC; }; };
 if (player != HC) exitWith {};
 
 // CHANGE THIS TRIGGER
