@@ -508,7 +508,6 @@ switch (_loadout) do {
 	};
 };
 
-[_unit,"ACR_Patch2"] call bis_fnc_setUnitInsignia;
 _unit selectWeapon (primaryWeapon _unit);
 _unit switchMove "AmovPercMstpSlowWrflDnon";
 sleep _delay;

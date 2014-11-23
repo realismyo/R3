@@ -499,15 +499,14 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["rm"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
 	};
 };
 
-[_unit,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
 _unit selectWeapon (primaryWeapon _unit);
 _unit switchMove "AmovPercMstpSlowWrflDnon";
 sleep _delay;
