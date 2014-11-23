@@ -74,7 +74,7 @@ class PlankSettingsDialog {
         w = 0.1;
         style = 0;
         shadow = 2;
-        font = "Zeppelin32";
+        font = "PuristaLight";
         SizeEx = 0.03921;
     };
 
@@ -85,7 +85,7 @@ class PlankSettingsDialog {
         style = 0;
         shadow = 2;
         fixedWidth = 0;
-        font = "Zeppelin32";
+        font = "PuristaLight";
         w = TITLE_BASE_W;
         h = TITLE_BASE_H;
         text="Height";
@@ -139,7 +139,7 @@ class PlankSettingsDialog {
         w = 0;
         h = 0;
         shadow = 0;
-        font = "Zeppelin32";
+        font = "PuristaLight";
         sizeEx = 0.03921;
         offsetX = 0.003;
         offsetY = 0.003;
