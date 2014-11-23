@@ -59,8 +59,8 @@ _rifleGL = "hlc_rifle_aks74_GL";
 _rifleScoped = "hlc_rifle_aks74";
 _autoRifle = "hlc_rifle_rpk";
 _carbine = "hlc_rifle_aks74u";
-_dmr = "hlc_rifle_akm";
-_mmg = "LMG_Zafir_F";
+_dmr = "rhs_weap_svdp";
+_mmg = "rhs_weap_pkp";
 _smg = "hlc_rifle_aks74u";
 _pistol = "hgun_Rook40_F";
 // ====== General Magazines ======
@@ -71,8 +71,8 @@ _rifleScopedMag = "hlc_30Rnd_545x39_B_AK";
 _autoRifleMag = "hlc_75Rnd_762x39_m_rpk";
 _autoTracerMag = "hlc_75Rnd_762x39_m_rpk";
 _carbineMag = "hlc_30Rnd_545x39_B_AK";
-_dmrMag = "hlc_30Rnd_762x39_b_ak";
-_mmgMag = "150Rnd_762x51_Box";
+_dmrMag = "rhs_10Rnd_762x54mmR_7N1";
+_mmgMag = "rhs_100Rnd_762x54mmR";
 _smgMag = "hlc_30Rnd_545x39_B_AK";
 _pistolMag = "16Rnd_9x21_Mag";
 // ===== General Throwables ======
@@ -281,8 +281,8 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagTwo = "hlc_30Rnd_545x39_B_AK";
 };
 // ============ LAT ==============
-_lat = "launch_RPG32_F";
-_latMag = "RPG32_F";
+_lat = "rhs_weap_rpg26";
+_latMag = "rhs_rpg26_mag";
 // ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
@@ -293,8 +293,8 @@ _uavBat = "AGM_UAVBattery";
 _hatLaunch = "launch_O_Titan_short_F";
 _hatMag = "Titan_AT";
 // ========== Anti-Air ===========
-_aaLaunch = "launch_O_Titan_F";
-_aaMag = "Titan_AA";
+_aaLaunch = "rhs_weap_igla";
+_aaMag = "rhs_mag_9k38_rocket";
 // ========== Sniper =============
 _boltRifle = "srifle_GM6_LRPS_F";
 _boltRifleMag = "5Rnd_127x108_Mag";
@@ -324,11 +324,11 @@ _pltTools = ["itemGPS"];
 _pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["hlc_optic_kobra"];
-_dmrAttachments = ["HLC_Optic_PSO1"];
+_dmrAttachments = ["rhs_acc_pso1m2"];
 _autoRifleAttachments = ["hlc_optic_kobra"];
 _mmgAttachments = ["optic_aco_grn"];
 
-_sniperAttachments = ["optic_LRPS"];
+_sniperAttachments = ["optic_SOS"];
 _pistolAttachments = [];
 
 _scoped_rifleAttachments = ["HLC_Optic_PSO1"];
@@ -336,7 +336,7 @@ _scoped_autoRifleAttachments = ["HLC_Optic_PSO1"];
 _scoped_mmgAttachments = ["optic_mrco"];
 
 _suppressed_generalAttachments = ["hlc_muzzle_545SUP_AK"];
-_suppressed_dmrAttachments = ["hlc_muzzle_762SUP_AK"];
+_suppressed_dmrAttachments = [];
 _suppressed_autoRifleAttachments = ["hlc_muzzle_762SUP_AK"];
 _suppressed_mmgAttachments = [];
 
@@ -605,14 +605,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		

@@ -192,7 +192,7 @@ _dmrAttachments = ["optic_MRCO","acc_flashlight"];
 _autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
 _mmgAttachments = ["optic_ACO_grn","acc_flashlight"];
 
-_sniperAttachments = ["optic_LRPS"];
+_sniperAttachments = ["optic_SOS"];
 _pistolAttachments = ["optic_MRD"];
 
 _scoped_rifleAttachments = ["optic_MRCO","acc_flashlight"];
@@ -483,14 +483,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		case "crew" : {

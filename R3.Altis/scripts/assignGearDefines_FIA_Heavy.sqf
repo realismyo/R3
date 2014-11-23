@@ -202,8 +202,8 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagTwo = "30Rnd_556x45_Stanag";
 };
 // ============ LAT ==============
-_lat = "launch_RPG32_F";
-_latMag = "RPG32_F";
+_lat = "rhs_weap_rpg26";
+_latMag = "rhs_rpg26_mag";
 // ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
@@ -214,8 +214,8 @@ _uavBat = "AGM_UAVBattery";
 _hatLaunch = "launch_B_Titan_short_F";
 _hatMag = "Titan_AT";
 // ========== Anti-Air ===========
-_aaLaunch = "launch_B_Titan_F";
-_aaMag = "Titan_AA";
+_aaLaunch = "rhs_weap_igla";
+_aaMag = "rhs_mag_9k38_rocket";
 // ========== Sniper =============
 _boltRifle = "srifle_GM6_LRPS_F";
 _boltRifleMag = "5Rnd_127x108_Mag";
@@ -261,7 +261,7 @@ _dmrAttachments = _dmrAttachmentArray select _dmrRandom;
 
 _autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
 _mmgAttachments = ["optic_ACO_grn","acc_flashlight"];
-_sniperAttachments = ["optic_LRPS"];
+_sniperAttachments = ["optic_SOS"];
 _pistolAttachments = [];
 
 
@@ -649,14 +649,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		

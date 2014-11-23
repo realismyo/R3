@@ -57,7 +57,7 @@ private [
 _rifle = "acr_a3_CZ805_A1";
 _rifleGL = "acr_a3_CZ805_GL";
 _rifleScoped = "acr_a3_CZ805_A1";
-_autoRifle = "LMG_Mk200_F";
+_autoRifle = "R3F_Minimi";
 _carbine = "acr_a3_CZ805_A2";
 _dmr = "srifle_EBR_F";
 _mmg = "hlc_lmg_M60E4";
@@ -74,8 +74,8 @@ _rifleMag = "30Rnd_556x45_Stanag";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGLMag = "30Rnd_556x45_Stanag";
 _rifleScopedMag = "30Rnd_556x45_Stanag";
-_autoRifleMag = "200Rnd_65x39_cased_Box";
-_autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
+_autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
+_autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
 _carbineMag = "30Rnd_556x45_Stanag";
 _dmrMag = "20Rnd_762x51_Mag";
 _mmgMag = "hlc_100Rnd_762x51_B_M60E4";
@@ -268,8 +268,8 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagTwo = "30Rnd_556x45_Stanag";
 };
 // ============ LAT ==============
-_lat = "launch_NLAW_F";
-_latMag = "NLAW_F";
+_lat = "R3F_AT4CS";
+_latMag = "R3F_AT4CS_Mag";
 // ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
@@ -280,8 +280,8 @@ _uavBat = "AGM_UAVBattery";
 _hatLaunch = "launch_B_Titan_short_F";
 _hatMag = "Titan_AT";
 // ========== Anti-Air ===========
-_aaLaunch = "launch_B_Titan_F";
-_aaMag = "Titan_AA";
+_aaLaunch = "R3F_STINGER";
+_aaMag = "R3F_STINGER_mag";
 // ========== Sniper =============
 _boltRifle = "srifle_LRR_LRPS_F";
 _boltRifleMag = "7Rnd_408_Mag";
@@ -315,7 +315,7 @@ _dmrAttachments = ["optic_MRCO","acc_flashlight"];
 _autoRifleAttachments = ["optic_Aco","acc_flashlight"];
 _mmgAttachments = ["optic_Aco","acc_flashlight"];
 
-_sniperAttachments = ["optic_LRPS"];
+_sniperAttachments = ["optic_SOS"];
 _pistolAttachments = ["optic_MRD"];
 
 _scoped_rifleAttachments = ["optic_Hamr","acc_flashlight"];
@@ -610,14 +610,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		

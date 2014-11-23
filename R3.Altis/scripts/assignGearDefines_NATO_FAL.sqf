@@ -7,7 +7,7 @@
 - Default behaviour DOES NOT replace goggles (aside from divers), players will have their default goggles.
 - Make sure you test locally to ensure your loadouts work.
 - Current Side, Faction: BLUFOR, NATO
-- Required Mods: @AGM, @task_force_radio, @HLCMods_Core, @HLCMods_FAL
+- Required Mods: @AGM, @task_force_radio, @HLCMods_Core, @HLCMods_FAL, @r3f_armes, @HLC_M60E4
 */
 // ===============================
 // ========== Variables ==========
@@ -57,10 +57,10 @@ private [
 _rifle = "hlc_rifle_falosw";
 _rifleGL = "hlc_rifle_osw_GL";
 _rifleScoped = "hlc_rifle_falosw";
-_autoRifle = "LMG_Mk200_F";
+_autoRifle = "R3F_Minimi";
 _carbine = "hlc_rifle_hk53";
 _dmr = "hlc_rifle_falosw";
-_mmg = "LMG_Zafir_F";
+_mmg = "hlc_lmg_M60E4";
 _smg = "hlc_rifle_hk53";
 _pistol = "hgun_Pistol_heavy_01_F";
 // ===== General Throwables ======
@@ -74,11 +74,11 @@ _rifleMag = "hlc_20Rnd_762x51_B_fal";
 _rifleTracerMag = "hlc_20Rnd_762x51_t_fal";
 _rifleGLMag = "hlc_20Rnd_762x51_B_fal";
 _rifleScopedMag = "hlc_20Rnd_762x51_B_fal";
-_autoRifleMag = "200Rnd_65x39_cased_Box";
-_autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
+_autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
+_autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
 _carbineMag = "hlc_30rnd_556x45_b_HK33";
 _dmrMag = "hlc_20Rnd_762x51_B_fal";
-_mmgMag = "150Rnd_762x51_Box";
+_mmgMag = "hlc_100Rnd_762x51_B_M60E4";
 _smgMag = "hlc_30rnd_556x45_b_HK33";
 _pistolMag = "11Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
@@ -203,8 +203,8 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagTwo = "hlc_20Rnd_762x51_B_fal";
 };
 // ============ LAT ==============
-_lat = "launch_NLAW_F";
-_latMag = "NLAW_F";
+_lat = "R3F_AT4CS";
+_latMag = "R3F_AT4CS_Mag";
 // ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
@@ -215,8 +215,8 @@ _uavBat = "AGM_UAVBattery";
 _hatLaunch = "launch_B_Titan_short_F";
 _hatMag = "Titan_AT";
 // ========== Anti-Air ===========
-_aaLaunch = "launch_B_Titan_F";
-_aaMag = "Titan_AA";
+_aaLaunch = "R3F_STINGER";
+_aaMag = "R3F_STINGER_mag";
 // ========== Sniper =============
 _boltRifle = "srifle_LRR_LRPS_F";
 _boltRifleMag = "7Rnd_408_Mag";
@@ -250,7 +250,7 @@ _dmrAttachments = ["optic_MRCO","acc_flashlight"];
 _autoRifleAttachments = ["optic_Holosight","acc_flashlight"];
 _mmgAttachments = ["optic_Aco","acc_flashlight"];
 
-_sniperAttachments = ["optic_LRPS"];
+_sniperAttachments = ["optic_SOS"];
 _pistolAttachments = ["optic_MRD"];
 
 _scoped_rifleAttachments = ["optic_Hamr","acc_flashlight"];
@@ -543,14 +543,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,8];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,8];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		

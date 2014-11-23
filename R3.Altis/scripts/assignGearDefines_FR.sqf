@@ -6,8 +6,8 @@
 
 - Default behaviour DOES NOT replace goggles (aside from divers), players will have their default goggles.
 - Make sure you test locally to ensure your loadouts work.
-- Current Side, Faction: OPFOR, CSAT
-- Required Mods: @AGM, @task_force_radio, @TEC_CSAT, @HLCMods_Core, @HLCMods_G3
+- Current Side, Faction: BLUFOR, ACR
+- Required Mods: @AGM, @task_force_radio, @r3f_armes, @r3f_uniformes
 */
 // ===============================
 // ========== Variables ==========
@@ -18,8 +18,8 @@ private [
 "_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
-"_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
-"_plebHelmet",
+"_plebUniformArray","_plebURandom","_plebUniform","_crewUniform",
+"_plebHelmetArray","_plebHRandom","_plebHelmet",
 "_plebVest","_glVest","_medVest",
 "_plebRuck","_medRuck","_assistantRuck","_uavRuck",
 "_rpilotUniform","_fpilotUniform",
@@ -28,7 +28,7 @@ private [
 "_sniperUniform","_sniperVest","_sniperRuck",
 "_diverUniform","_diverVest","_diverRuck",
 "_goggles","_divingGoggles",
-"_radioRuck","_airRadioRuck",
+"_airRadioRuck","_radioRuck",
 "_medOne","_medTwo","_medThree","_medFour",
 "_rifleDiver","_rifleDiverMagOne","_rifleDiverMagTwo",
 "_lat","_latMag",
@@ -53,16 +53,119 @@ private [
 // ===============================
 // =========== Defines ===========
 // ===============================
+// ===== Camo Specific Gear ======
+// ===============================
+switch (_camoPattern) do {
+	case "woodland" : {
+		// ======= General Weapons =======
+		_rifle = "R3F_Famas_G2_HG";
+		_rifleGL = "R3F_Famas_G2_M203";
+		_rifleScoped = "R3F_Famas_G2_HG";
+		_carbine = "R3F_Famas_surb_HG";
+		_dmr = "R3F_HK417L";
+		// ========== Uniforms ===========
+		_plebUniformArray = ["R3F_uniform_f1","R3F_uniform_urr","R3F_uniform_f1","R3F_uniform_apso","R3F_uniform_f1"];	
+		_plebURandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebURandom;	// leave as "" for default, or enter single string value to remove randommess
+		_crewUniform = "R3F_uniform_apso";
+		_rpilotUniform = "R3F_uniform_piheli";
+		// =========== Helmets ===========
+		_plebHelmetArray = ["R3F_casque_spectra","R3F_casque_spectra_bleu","R3F_casque_spectra","R3F_casque_spectra_jaune","R3F_casque_spectra","R3F_casque_spectra_vert","R3F_casque_spectra"];	
+		_plebHRandom = (floor(random (count _plebHelmetArray)));
+		_plebHelmet = _plebHelmetArray select _plebHRandom;	// enter single string value to remove randommess
+		// ============ Vests ============
+		_plebVest = "R3F_veste_ce300";
+		_glVest = "R3F_veste_ce600";
+		_medVest = "R3F_veste_ce300";
+		_pilotVest = "R3F_vestetactique_noire";
+		_crewVest = "R3F_vestetactique_noire";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "R3F_sac_lourd_APSO_CE_FLG";
+		_assistantRuck = "R3F_sac_lourd_APSO_CE_FLG";
+		_uavRuck = "I_UAV_01_backpack_F";
+		// ========= Sniper Team =========
+		_sniperUniform = "R3F_uniform_Ghillie";
+		_sniperVest = "V_Chestrig_rgr";
+		_sniperRuck = "B_AssaultPack_rgr";
+		// ===============================
+	};
+	case "desert" : {
+		// ======= General Weapons =======
+		_rifle = "R3F_Famas_G2_HG_DES";
+		_rifleGL = "R3F_Famas_G2_M203_DES";
+		_rifleScoped = "R3F_Famas_G2_HG_DES";
+		_carbine = "R3F_Famas_surb_HG_DES";
+		_dmr = "R3F_HK417L_DES";
+		// ========== Uniforms ===========
+		_plebUniformArray = ["R3F_uniform_f1_DA","R3F_uniform_apso_DA","R3F_uniform_f1_DA","R3F_uniform_apso_DA","R3F_uniform_f1_DA"];	
+		_plebURandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebURandom;	// leave as "" for default, or enter single string value to remove randommess
+		_crewUniform = "R3F_uniform_apso_DA";
+		_rpilotUniform = "R3F_uniform_piheli";
+		// =========== Helmets ===========
+		_plebHelmetArray = ["R3F_casque_spectra_DA","R3F_casque_spectra_DA_bleu","R3F_casque_spectra_DA","R3F_casque_spectra_DA_jaune","R3F_casque_spectra_DA","R3F_casque_spectra_DA_vert","R3F_casque_spectra_DA"];	
+		_plebHRandom = (floor(random (count _plebHelmetArray)));
+		_plebHelmet = _plebHelmetArray select _plebHRandom;	// enter single string value to remove randommess
+		// ============ Vests ============
+		_plebVest = "R3F_veste_ce300";
+		_glVest = "R3F_veste_ce600";
+		_medVest = "R3F_veste_ce300";
+		_pilotVest = "R3F_vestetactique_noire";
+		_crewVest = "R3F_vestetactique_noire";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "R3F_sac_lourd_APSO_TAN";
+		_assistantRuck = "R3F_sac_lourd_APSO_TAN";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ========= Sniper Team =========
+		_sniperUniform = "R3F_uniform_Ghillie_DA";
+		_sniperVest = "V_Chestrig_khk";
+		_sniperRuck = "B_AssaultPack_rgr";
+		// ===============================
+	};
+	default {
+		// ======= General Weapons =======
+		_rifle = "R3F_Famas_G2_HG";
+		_rifleGL = "R3F_Famas_G2_M203";
+		_rifleScoped = "R3F_Famas_G2_HG";
+		_carbine = "R3F_Famas_surb_HG";
+		_dmr = "R3F_HK417L";
+		// ========== Uniforms ===========
+		_plebUniformArray = ["R3F_uniform_f1","R3F_uniform_urr","R3F_uniform_f1","R3F_uniform_apso","R3F_uniform_f1"];	
+		_plebURandom = (floor(random (count _plebUniformArray)));
+		_plebUniform = _plebUniformArray select _plebURandom;	// leave as "" for default, or enter single string value to remove randommess
+		_crewUniform = "R3F_uniform_apso";
+		_rpilotUniform = "R3F_uniform_piheli";
+		// =========== Helmets ===========
+		_plebHelmetArray = ["R3F_casque_spectra","R3F_casque_spectra_bleu","R3F_casque_spectra","R3F_casque_spectra_jaune","R3F_casque_spectra","R3F_casque_spectra_vert","R3F_casque_spectra"];	
+		_plebHRandom = (floor(random (count _plebHelmetArray)));
+		_plebHelmet = _plebHelmetArray select _plebHRandom;	// enter single string value to remove randommess
+		// ============ Vests ============
+		_plebVest = "R3F_veste_ce300";
+		_glVest = "R3F_veste_ce600";
+		_medVest = "R3F_veste_ce300";
+		_pilotVest = "R3F_vestetactique_noire";
+		_crewVest = "R3F_vestetactique_noire";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "R3F_sac_lourd_APSO_CE_FLG";
+		_assistantRuck = "R3F_sac_lourd_APSO_CE_FLG";
+		_uavRuck = "I_UAV_01_backpack_F";
+		// ========= Sniper Team =========
+		_sniperUniform = "R3F_uniform_Ghillie";
+		_sniperVest = "V_Chestrig_rgr";
+		_sniperRuck = "B_AssaultPack_rgr";
+		// ===============================
+	};
+};
+// ===============================
 // ======= General Weapons =======
-_rifle = "hlc_rifle_g3ka4";
-_rifleGL = "HLC_Rifle_g3ka4_GL";
-_rifleScoped = "hlc_rifle_g3ka4";
-_autoRifle = "LMG_Mk200_F";
-_carbine = "hlc_rifle_hk53";
-_dmr = "hlc_rifle_g3ka4";
-_mmg = "LMG_Zafir_F";
+// ===== Non-Camo Specific =======
+_autoRifle = "R3F_Minimi";
+_mmg = "R3F_Minimi_762";
 _smg = "hlc_rifle_hk53";
-_pistol = "hgun_Rook40_F";
+_pistol = "R3F_PAMAS";
 // ===== General Throwables ======
 _grenade = "HandGrenade";
 _smoke = "SmokeShell";
@@ -70,17 +173,17 @@ _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
 // ====== General Magazines ======
-_rifleMag = "hlc_20rnd_762x51_b_G3";
-_rifleTracerMag = "hlc_20rnd_762x51_T_G3";
-_rifleGLMag = "hlc_20rnd_762x51_b_G3";
-_rifleScopedMag = "hlc_20rnd_762x51_b_G3";
-_autoRifleMag = "200Rnd_65x39_cased_Box";
-_autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
-_carbineMag = "hlc_30rnd_556x45_b_HK33";
-_dmrMag = "hlc_20rnd_762x51_b_G3";
-_mmgMag = "150Rnd_762x51_Box";
-_smgMag = "hlc_30rnd_556x45_b_HK33";
-_pistolMag = "16Rnd_9x21_Mag";
+_rifleMag = "R3F_30Rnd_556x45_FAMAS";
+_rifleTracerMag = "R3F_30Rnd_556x45_TRACER_FAMAS";
+_rifleGLMag = "R3F_30Rnd_556x45_FAMAS";
+_rifleScopedMag = "R3F_30Rnd_556x45_FAMAS";
+_autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
+_autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
+_carbineMag = "R3F_30Rnd_556x45_FAMAS";
+_dmrMag = "R3F_20Rnd_762x51_HK417";
+_mmgMag = "R3F_100Rnd_762x51_MINIMI";
+_smgMag = "hlc_30Rnd_556x45_b_HK33";
+_pistolMag = "R3F_15Rnd_9x19_PAMAS";
 // ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
 _glSmokeOne = "1Rnd_SmokeGreen_Grenade_shell";
@@ -89,174 +192,25 @@ _glFlareOne = "UGL_FlareWhite_F";
 _glFlareTwo = "UGL_FlareYellow_F";
 // ===============================
 // ========== Clothing ===========
-// ======== Camo Specific ========
-// ===============================
-switch (_camoPattern) do {
-	case "arid" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Arid","TEC_U_O_Arid_Shortsleeve","TEC_U_O_Arid"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Arid_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Arid";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Arid";
-		_medRuck = "TEC_B_Carryall_Arid";
-		_assistantRuck = "TEC_B_Carryall_Arid";
-		_uavRuck = "TEC_B_O_UAV_Arid";
-		// ==============================
-	};
-	case "navy" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Navy","TEC_U_O_Navy_Shortsleeve","TEC_U_O_Navy"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Navy_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Booniehat_Navy";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "B_FieldPack_blk";
-		_medRuck = "TEC_B_Carryall_Urban";
-		_assistantRuck = "TEC_B_Carryall_Urban";
-		_uavRuck = "O_UAV_01_backpack_F";
-		// ==============================
-	};
-	case "semiarid" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Semiarid","TEC_U_O_Semiarid_Shortsleeve","TEC_U_O_Semiarid"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Semiarid_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Semiarid";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Semiarid";
-		_medRuck = "TEC_B_Carryall_Semiarid";
-		_assistantRuck = "TEC_B_Carryall_Semiarid";
-		_uavRuck = "TEC_B_O_UAV_Semiarid";
-		// ==============================
-	};
-	case "sof" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_SOF","TEC_U_O_SOF_Shortsleeve","TEC_U_O_SOF"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_SOF_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Arid";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Arid";
-		_medRuck = "TEC_B_Carryall_Arid";
-		_assistantRuck = "TEC_B_Carryall_Arid";
-		_uavRuck = "TEC_B_O_UAV_Arid";
-		// ==============================
-	};
-	case "urban" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Urban","TEC_U_O_Urban_Shortsleeve","TEC_U_O_Urban"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Urban_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Urban";
-		// ============ Vests ============
-		_plebVest = "V_HarnessO_gry";
-		_glVest = "V_HarnessOGL_gry";
-		_medVest = "V_HarnessO_gry";
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Urban";
-		_medRuck = "TEC_B_Carryall_Urban";
-		_assistantRuck = "TEC_B_Carryall_Urban";
-		_uavRuck = "TEC_B_O_UAV_Urban";
-		// ==============================
-	};
-	case "woodland" : {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Woodland","TEC_U_O_Woodland_Shortsleeve","TEC_U_O_Woodland"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Woodland_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Woodland";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Woodland";
-		_medRuck = "TEC_B_Carryall_Woodland";
-		_assistantRuck = "TEC_B_Carryall_Woodland";
-		_uavRuck = "TEC_B_O_UAV_Woodland";
-		// ==============================
-	};
-	default {
-		// ========== Uniforms ===========
-		_plebUniformArray = ["TEC_U_O_Arid","TEC_U_O_Arid_Shortsleeve","TEC_U_O_Arid"];	
-		_plebRandom = (floor(random (count _plebUniformArray)));
-		_plebUniform = _plebUniformArray select _plebRandom;	// leave as "" for default, or enter single string value to remove randommess
-		_crewUniform = "TEC_U_O_Arid_Shortsleeve";
-		// =========== Helmets ===========
-		_plebHelmet = "TEC_H_Penah_Arid";
-		// ============ Vests ============
-		_plebVest = "TEC_V_PC_Light_Black";
-		_glVest = "TEC_V_PC_Heavy_Black";
-		_medVest = "TEC_V_PC_Light_Black";
-		// ============ Rucks ============
-		_plebRuck = "TEC_B_Fieldpack_Arid";
-		_medRuck = "TEC_B_Carryall_Arid";
-		_assistantRuck = "TEC_B_Carryall_Arid";
-		_uavRuck = "TEC_B_O_UAV_Arid";
-		// ==============================
-	};
-};
-// ===============================
-// ========== Clothing ===========
 // ===== Non-Camo Specific =======
 // ===============================
 // ========== Veh Crews ==========
-_rpilotUniform = "TEC_U_O_Helicopter";
-_fpilotUniform = "TEC_U_O_Jet";
-_rotaryPilotHelmet = "H_PilotHelmetHeli_O";
-_fixedPilotHelmet = "H_PilotHelmetFighter_O";
-_crewmanHelmet = "TEC_H_CrewHelmet";
-_pilotVest = "TEC_V_TacVest_Black";
-_crewVest = "TEC_V_TacVest_Black";
-// ========= Sniper Team =========
-_sniperUniform = "U_O_GhillieSuit";
-_sniperVest = "V_HarnessOGL_brn";
-_sniperRuck = "TEC_B_Fieldpack_Arid";
+_fpilotUniform = "R3F_uniform_piheli";
+_rotaryPilotHelmet = "R3F_casque_pilote";
+_fixedPilotHelmet = "H_PilotHelmetFighter_B";
+_crewmanHelmet = "H_HelmetCrew_I";
 // ========= Diver Gear ==========
-_diverUniform = "U_O_Wetsuit";
+_diverUniform = "R3F_uniform_diver";
 _diverVest = "V_RebreatherB";
 _diverRuck = "B_AssaultPack_blk";
 // ===============================
 // ============ Misc =============
 // =========== Goggles ===========
 _goggles = "";	// leave as "" for default
-_divingGoggles = "G_O_Diving";
+_divingGoggles = "G_I_Diving";
 // ========= Radio Rucks =========
-_radioRuck = "tf_mr3000";
-_airRadioRuck = "tf_mr6000l";
+_airRadioRuck = "tf_anarc210";
+_radioRuck = "tf_rt1523g_black";
 // ======== Medical Gear =========
 _medOne = "AGM_Bandage";
 _medTwo = "AGM_Morphine";
@@ -266,7 +220,7 @@ _medFour = "AGM_Bloodbag";
 // ====== Equipment/Items ========
 // ========== General ============
 _binos = "Binocular";
-_radio = "tf_fadak";
+_radio = "tf_anprc152";
 // ============ Diver ============
 if (_underwaterWeapons) then { 
 	_rifleDiver = "arifle_SDAR_F"; 
@@ -277,12 +231,12 @@ if (_underwaterWeapons) then {
 	_rifleDiverMagOne = "30Rnd_556x45_Stanag";	// standard mag
 	_rifleDiverMagTwo = "20Rnd_556x45_UW_mag";	// underwater mag
 } else { 
-	_rifleDiverMagOne = "30Rnd_65x39_caseless_green";
-	_rifleDiverMagTwo = "30Rnd_65x39_caseless_green";
+	_rifleDiverMagOne = "30Rnd_556x45_Stanag";
+	_rifleDiverMagTwo = "30Rnd_556x45_Stanag";
 };
 // ============ LAT ==============
-_lat = "rhs_weap_rpg26";
-_latMag = "rhs_rpg26_mag";
+_lat = "R3F_AT4CS";
+_latMag = "R3F_AT4CS_Mag";
 // ============ FAC ==============
 _facItems = ["AGM_MapTools"];
 _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
@@ -290,14 +244,14 @@ _facSmokes = ["SmokeShellBlue","SmokeShellOrange"];
 _uavTool = "B_UavTerminal";
 _uavBat = "AGM_UAVBattery";
 // ============= HAT =============
-_hatLaunch = "launch_O_Titan_short_F";
+_hatLaunch = "launch_B_Titan_short_F";
 _hatMag = "Titan_AT";
 // ========== Anti-Air ===========
-_aaLaunch = "rhs_weap_igla";
-_aaMag = "rhs_mag_9k38_rocket";
+_aaLaunch = "R3F_STINGER";
+_aaMag = "R3F_STINGER_mag";
 // ========== Sniper =============
-_boltRifle = "srifle_GM6_LRPS_F";
-_boltRifleMag = "5Rnd_127x108_Mag";
+_boltRifle = "R3F_PGM_Hecate_II_POLY";
+_boltRifleMag = "R3F_7Rnd_127x99_PGM";
 _sniperItems = ["AGM_ItemKestrel"];
 // ======== Rangefinder ==========
 _rangeFinder = "AGM_Vector";	// Rangefinder
@@ -306,12 +260,12 @@ _rangeFinderBat = "";			// no batteries as of yet
 _designator = "LaserDesignator";
 _designatorBat = "LaserBatteries";
 // ========== HMG Team ===========
-_hmgBarrel = "O_HMG_01_weapon_F";
-_hmgTripod = "O_HMG_01_support_F";
+_hmgBarrel = "B_HMG_01_weapon_F";
+_hmgTripod = "B_HMG_01_support_F";
 _hmgMag = "";	// no magazines as of yet
 // ========== GMG Team ===========
-_gmgBarrel = "O_GMG_01_weapon_F";
-_gmgTripod = "O_HMG_01_support_F";
+_gmgBarrel = "B_GMG_01_weapon_F";
+_gmgTripod = "B_HMG_01_support_F";
 _gmgMag = "";	// no magazines as of yet
 // =========== Tools =============
 _nightVision = "NVGoggles_OPFOR";
@@ -323,35 +277,79 @@ _secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
 _pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
-_generalAttachments = ["optic_ACO_grn","acc_flashlight"];
-_dmrAttachments = ["optic_MRCO","acc_flashlight"];
-_autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
-_mmgAttachments = ["optic_ACO_grn","acc_flashlight"];
+switch (_camoPattern) do {
+	case "woodland" : {
+		_generalAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB"];
+		_dmrAttachments = ["optic_MRCO","R3F_LAMPE_SURB"];
+		_autoRifleAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB"];
+		_mmgAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB"];
 
-_sniperAttachments = ["optic_SOS"];
-_pistolAttachments = [];
+		_sniperAttachments = ["optic_SOS"];
+		_pistolAttachments = [];
 
-_scoped_rifleAttachments = ["optic_MRCO","acc_flashlight"];
-_scoped_autoRifleAttachments = ["optic_MRCO","acc_flashlight"];
-_scoped_mmgAttachments = ["optic_MRCO","acc_flashlight"];
+		_scoped_rifleAttachments = ["optic_MRCO","R3F_LAMPE_SURB"];
+		_scoped_autoRifleAttachments = ["optic_MRCO","R3F_LAMPE_SURB"];
+		_scoped_mmgAttachments = ["optic_MRCO","R3F_LAMPE_SURB"];
 
-_suppressed_generalAttachments = ["hlc_muzzle_snds_g3"];
-_suppressed_dmrAttachments = ["hlc_muzzle_snds_g3"];
-_suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
-_suppressed_mmgAttachments = [];
+		_suppressed_generalAttachments = ["R3F_SILENCIEUX_FAMAS"];
+		_suppressed_dmrAttachments = ["R3F_SILENCIEUX_HK417"];
+		_suppressed_autoRifleAttachments = [];
+		_suppressed_mmgAttachments = [];
 
-_suppressed_pistolAttachments = ["muzzle_snds_acp"];
+		_suppressed_pistolAttachments = [];
+	};
+	case "desert" : {
+		_generalAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB_DES"];
+		_dmrAttachments = ["optic_MRCO","R3F_LAMPE_SURB_DES"];
+		_autoRifleAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB_DES"];
+		_mmgAttachments = ["R3F_EOTECH","R3F_LAMPE_SURB_DES"];
+
+		_sniperAttachments = ["optic_SOS"];
+		_pistolAttachments = [];
+
+		_scoped_rifleAttachments = ["optic_MRCO","R3F_LAMPE_SURB_DES"];
+		_scoped_autoRifleAttachments = ["optic_MRCO","R3F_LAMPE_SURB_DES"];
+		_scoped_mmgAttachments = ["optic_MRCO","R3F_LAMPE_SURB_DES"];
+
+		_suppressed_generalAttachments = ["R3F_SILENCIEUX_FAMAS_DES"];
+		_suppressed_dmrAttachments = ["R3F_SILENCIEUX_HK417_DES"];
+		_suppressed_autoRifleAttachments = [];
+		_suppressed_mmgAttachments = [];
+
+		_suppressed_pistolAttachments = ["muzzle_snds_acp"];
+	};
+	default {
+		_generalAttachments = ["optic_Aco","acc_flashlight"];
+		_dmrAttachments = ["optic_MRCO","acc_flashlight"];
+		_autoRifleAttachments = ["optic_Aco","acc_flashlight"];
+		_mmgAttachments = ["optic_Aco","acc_flashlight"];
+
+		_sniperAttachments = ["optic_SOS"];
+		_pistolAttachments = ["optic_MRD"];
+
+		_scoped_rifleAttachments = ["optic_Hamr","acc_flashlight"];
+		_scoped_autoRifleAttachments = ["optic_Hamr","acc_flashlight"];
+		_scoped_mmgAttachments = ["optic_Hamr","acc_flashlight"];
+
+		_suppressed_generalAttachments = ["muzzle_snds_M"];
+		_suppressed_dmrAttachments = ["muzzle_snds_B"];
+		_suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
+		_suppressed_mmgAttachments = [];
+
+		_suppressed_pistolAttachments = ["muzzle_snds_acp"];
+	};
+};
 // ===============================
 // ===== Variable Processing =====
 // ===============================
 if ((!isNil "_suppressors") && _suppressors) then {
-	_rifleMag = "hlc_20rnd_762x51_S_G3";
-	_rifleGLMag = "hlc_20rnd_762x51_S_G3";
-	_rifleScopedMag = "hlc_20rnd_762x51_S_G3";
-	_carbineMag = "hlc_30rnd_556x45_b_HK33";
+	_rifleMag = "R3F_30Rnd_556x45_FAMAS";
+	_rifleGLMag = "R3F_30Rnd_556x45_FAMAS";
+	_rifleScopedMag = "R3F_30Rnd_556x45_FAMAS";
+	_carbineMag = "R3F_30Rnd_556x45_FAMAS";
 	if (!_underwaterWeapons) then { 
-		_rifleDiverMagOne = "hlc_20rnd_762x51_S_G3";
-		_rifleDiverMagTwo = "hlc_20rnd_762x51_S_G3";
+		_rifleDiverMagOne = "R3F_30Rnd_556x45_FAMAS";
+		_rifleDiverMagTwo = "R3F_30Rnd_556x45_FAMAS";
 	};
 };
 if ((!isNil "_scopes") && _scopes) then {
@@ -378,19 +376,19 @@ if ((!isNil "_nightGear") && _nightGear) then {
 if ((!isNil "_nightGear") && _nightGear) then { 
 	private "_test";
 	_test = _generalAttachments find "acc_flashlight";
-	if (_test != -1) then {_generalAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_generalAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _dmrAttachments find "acc_flashlight";
-	if (_test != -1) then {_dmrAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_dmrAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _autoRifleAttachments find "acc_flashlight";
-	if (_test != -1) then {_autoRifleAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_autoRifleAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _mmgAttachments find "acc_flashlight";
-	if (_test != -1) then {_mmgAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_mmgAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _scoped_rifleAttachments find "acc_flashlight";
-	if (_test != -1) then {_scoped_rifleAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_scoped_rifleAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _scoped_autoRifleAttachments find "acc_flashlight";
-	if (_test != -1) then {_scoped_autoRifleAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_scoped_autoRifleAttachments set [_test,"R3F_POINTEUR_SURB"]};
 	_test = _scoped_mmgAttachments find "acc_flashlight";
-	if (_test != -1) then {_scoped_mmgAttachments set [_test,"acc_pointer_IR"]};
+	if (_test != -1) then {_scoped_mmgAttachments set [_test,"R3F_POINTEUR_SURB"]};
 };
 
 // ===============================
@@ -505,7 +503,7 @@ _addRuck = {
 			_unit addBackpack _radioRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_rifleTracerMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,6];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,2];
@@ -532,9 +530,9 @@ _addRuck = {
 			_unit addBackpack _radioRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_rifleTracerMag,2];
-			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeTwo,2];
 		};
@@ -542,7 +540,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,6];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_rifleTracerMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,2];
@@ -552,6 +550,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
+			sleep _delay;
 			(unitBackpack _unit) addMagazineCargoGlobal [_autoRifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_autoTracerMag,1];
 		};
@@ -559,7 +558,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_autoRifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_autoTracerMag,1];
 		};
@@ -567,7 +566,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,10];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_grenade,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
 		};
@@ -576,7 +575,7 @@ _addRuck = {
 			call _clearRuck;
 			sleep _delay;
 			(unitBackpack _unit) addMagazineCargoGlobal [_latMag,1];
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,8];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
 			(unitBackpack _unit) addMagazineCargoGlobal [_grenade,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
 		};
@@ -584,7 +583,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleScopedMag,10];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleScopedMag,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_grenade,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
 		};
@@ -592,7 +591,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_dmrMag,10];
+			(unitBackpack _unit) addMagazineCargoGlobal [_dmrMag,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_grenade,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_smoke,2];
 		};
@@ -600,7 +599,7 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,8];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleGLMag,6];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glExplody,8];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeOne,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_glSmokeTwo,2];
@@ -615,21 +614,21 @@ _addRuck = {
 			_unit addBackpack _plebRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,8];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,6];
 			(unitBackpack _unit) addMagazineCargoGlobal [_mmgMag,2];		
 		};
 		case "hat" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		
@@ -683,7 +682,7 @@ _addRuck = {
 			(unitBackpack _unit) addItemCargoGlobal [_medOne,8];	// bandages
 			(unitBackpack _unit) addItemCargoGlobal [_medTwo,4];	// morphine
 			(unitBackpack _unit) addItemCargoGlobal [_medThree,4];	// epinephrine
-			(unitBackpack _unit) addItemCargoGlobal [_medFour,2];	// bloodbag
+			(unitBackpack _unit) addItemCargoGlobal [_medFour,1];	// bloodbag
 		};
 		default {
 			_unit groupChat format ["Incorrect ruck call for unit: %1",_unit];
@@ -756,7 +755,6 @@ _addAttachments = {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
 			};
 		};
-		
 		// ===================================================
 		// ===== Scoped - Redundant if '_scopes' is true =====
 		// ===================================================
@@ -784,7 +782,6 @@ _addAttachments = {
 				{ _unit addHandgunItem _x } forEach _pistolAttachments;
 			};
 		};
-		
 		// ============================================================
 		// ===== Suppressed - Redundant if '_suppressors' is true =====
 		// ============================================================
@@ -821,7 +818,6 @@ _addAttachments = {
 			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
 			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
 		};
-		
 		// =========================================================================================
 		// ===== Scoped & Suppressed - Redundant if both '_suppressors' and '_scopes' are true =====
 		// =========================================================================================
@@ -837,14 +833,13 @@ _addAttachments = {
 			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
 			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
 		};
-		// Scoped & Suppressed MMG - not possible yet.
+		// Scoed & Suppressed MMG - not possible yet.
 		case "scuppmmg" : {
 			if (!isNil "_scoped_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _scoped_mmgAttachments; };
 			if (!isNil "_suppressed_mmgAttachments") then { { _unit addPrimaryWeaponItem _x } forEach _suppressed_mmgAttachments; };
 			if (!isNil "_pistolAttachments") then { { _unit addHandgunItem _x } forEach _pistolAttachments; };
 			if (!isNil "_suppressed_pistolAttachments") then { { _unit addHandgunItem _x } forEach _suppressed_pistolAttachments; };
 		};
-		
 		// =========================================================================================
 		default {
 			_unit groupChat format ["Incorrect attachment call for unit: %1",_unit];
@@ -855,7 +850,7 @@ _addAttachments = {
 // Basic Meds for the unit
 // Example: call _IFAK;
 _IFAK = {
-	if (!isNull (unitBackpack _unit) && !(_loadout in ["pltuavop","hmggun","hmgass","gmggun","gmgass"])) then {
+	if (!isNull (unitBackpack _unit) && !(_loadout in ["pltuavop"])) then {
 		(unitBackpack _unit) addItemCargoGlobal [_medOne,4];
 		(unitBackpack _unit) addItemCargoGlobal [_medTwo,2];
 	} else {

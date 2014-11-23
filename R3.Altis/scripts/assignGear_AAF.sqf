@@ -260,7 +260,7 @@ switch (_loadout) do {
 	case "mmg" : {
 		["pleb"] call _addClothes;
 		call _addBasics;
-		_unit addMagazines [_mmgMag,4];
+		_unit addMagazines [_mmgMag,2];
 		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _mmg;
 		["mmg"] call _addRuck;

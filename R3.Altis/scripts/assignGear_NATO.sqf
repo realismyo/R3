@@ -90,7 +90,6 @@ switch (_loadout) do {
 		{ _unit addItem _x } foreach _pltItems;
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
 			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
@@ -101,6 +100,7 @@ switch (_loadout) do {
 			_unit addMagazines [_glSmokeTwo,1];
 		};
 		_unit addWeapon _rifleGL;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -111,11 +111,11 @@ switch (_loadout) do {
 		call _addBasics; 
 		{ _unit linkItem _x } foreach _pltTools;
 		_unit addMagazines [_rifleMag,9];
-		_unit addMagazines [_smoke,4];
 		for "_i" from 1 to 16 do {_unit addItem _medOne};
 		for "_i" from 1 to 4 do {_unit addItem _medTwo};
 		for "_i" from 1 to 4 do {_unit addItem _medThree};
 		_unit addWeapon _rifle;
+		_unit addMagazines [_smoke,4];
 		["medic"] call _addRuck;
 		["general"] call _addAttachments;
 		_unit setVariable ["AGM_IsMedic", true, true];
@@ -128,7 +128,6 @@ switch (_loadout) do {
 		{ _unit addItem _x } foreach _facItems;
 		_unit addMagazines [_rifleGLMag,9];
 		_unit addMagazine _designatorBat;
-		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		if (_3GLs) then {
 			_unit addMagazines [_glSmokeOne,2];
 			_unit addMagazines [_glSmokeTwo,2];
@@ -136,6 +135,7 @@ switch (_loadout) do {
 			_unit addMagazines [_glSmokeOne,5];
 			_unit addMagazines [_glSmokeTwo,5];
 		};
+		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		_unit addWeapon _rifleGL;
 		["fac"] call _addRuck;
 		["general"] call _addAttachments;
@@ -149,8 +149,8 @@ switch (_loadout) do {
 		_unit linkItem _uavTool;
 		_unit addMagazines [_rifleMag,9];
 		_unit addMagazine _uavBat;
-		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _facSmokes;
 		["uavop"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -165,7 +165,6 @@ switch (_loadout) do {
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
 			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
@@ -176,6 +175,7 @@ switch (_loadout) do {
 			_unit addMagazines [_glSmokeTwo,1];
 		};
 		_unit addWeapon _rifleGL;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["plt"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -187,7 +187,6 @@ switch (_loadout) do {
 		{ _unit linkItem _x } foreach _secTools;
 		_unit addMagazines [_rifleGLMag,7];
 		_unit addMagazines [_rifleTracerMag,2];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
 			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
@@ -198,6 +197,7 @@ switch (_loadout) do {
 			_unit addMagazines [_glSmokeTwo,1];
 		};
 		_unit addWeapon _rifleGL;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["tl"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -207,8 +207,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_autoRifleMag,5];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _autoRifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["ar"] call _addRuck;
 		["ar"] call _addAttachments;
 		call _IFAK;
@@ -218,8 +218,8 @@ switch (_loadout) do {
 		["assistant"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["aar"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -229,8 +229,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["rm"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -240,8 +240,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["rmat"] call _addRuck;
 		["general"] call _addAttachments;
 		_unit addWeapon _lat;
@@ -252,8 +252,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleScopedMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifleScoped;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["rmsc"] call _addRuck;
 		["scopedgeneral"] call _addAttachments;
 		call _IFAK;
@@ -263,8 +263,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_dmrMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _dmr;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["dmr"] call _addRuck;
 		["dmr"] call _addAttachments;
 		call _IFAK;
@@ -274,7 +274,6 @@ switch (_loadout) do {
 		["gren"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleGLMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		if (_3GLs) then {
 			_unit addMagazines [_glExplody,3];
 			_unit addMagazines [_glSmokeOne,1];
@@ -285,6 +284,7 @@ switch (_loadout) do {
 			_unit addMagazines [_glSmokeTwo,1];
 		};
 		_unit addWeapon _rifleGL;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["gren"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -293,9 +293,9 @@ switch (_loadout) do {
 	case "mmg" : {
 		["pleb"] call _addClothes;
 		call _addBasics;
-		_unit addMagazines [_mmgMag,4];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
+		_unit addMagazines [_mmgMag,2];
 		_unit addWeapon _mmg;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["mmg"] call _addRuck;
 		["mmg"] call _addAttachments;
 		call _IFAK;
@@ -305,8 +305,8 @@ switch (_loadout) do {
 		["assistant"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["mmgass"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
@@ -320,8 +320,8 @@ switch (_loadout) do {
 		{ _unit linkItem _x } foreach _secTools;
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_smgMag,6];
-		_unit addMagazines [_smoke,2];
 		_unit addWeapon _smg;
+		_unit addMagazines [_smoke,2];
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
@@ -332,8 +332,8 @@ switch (_loadout) do {
 		{ _unit linkItem _x } foreach _secTools;
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_smgMag,6];
-		_unit addMagazines [_smoke,2];
 		_unit addWeapon _smg;
+		_unit addMagazines [_smoke,2];
 		["aircrew"] call _addRuck;
 		call _IFAK;
 	};
@@ -344,8 +344,8 @@ switch (_loadout) do {
 		{ _unit linkItem _x } foreach _secTools;
 		{ _unit addItem _x } foreach _secItems;
 		_unit addMagazines [_carbineMag,6];
-		_unit addMagazines [_smoke,2];
 		_unit addWeapon _carbine;
+		_unit addMagazines [_smoke,2];
 		["crew"] call _addRuck;
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
@@ -357,8 +357,8 @@ switch (_loadout) do {
 		call _addBasics;
 		{ _unit linkItem _x } foreach _secTools;
 		_unit addMagazines [_carbineMag,6];
-		_unit addMagazines [_smoke,2];
 		_unit addWeapon _carbine;
+		_unit addMagazines [_smoke,2];
 		["general"] call _addAttachments;
 		for "_i" from 1 to 4 do {_unit addMagazine _medOne};
 		for "_i" from 1 to 2 do {_unit addMagazine _medTwo};
@@ -534,8 +534,8 @@ switch (_loadout) do {
 		["pleb"] call _addClothes;
 		call _addBasics;
 		_unit addMagazines [_rifleMag,9];
-		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		_unit addWeapon _rifle;
+		{ _unit addMagazines [_x,2]; } foreach _throwG;
 		["rm"] call _addRuck;
 		["general"] call _addAttachments;
 		call _IFAK;
