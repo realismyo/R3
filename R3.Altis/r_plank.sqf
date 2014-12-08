@@ -70,14 +70,23 @@ if (r_var_plankForts) then {
 		if (player == BLU_D11_MMG1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == BLU_D11_MMGASS1) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == BLU_D11_GREN1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == BLU_D11_FTL1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == BLU_D11_HWG) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == BLU_D11_HWA1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == BLU_D11_HWA2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == BLU_D11_FTL2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == BLU_D11_MMG2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == BLU_D11_MMGASS2) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == BLU_D11_GREN2) then {  [player,	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_D11_GREN2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_D11_FTL3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_D11_MMG3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_D11_MMGASS3) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_D11_GREN3) then {  [player,	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		
+		if (player == BLU_SUPP_1) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_2) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_3) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_4) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_5) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_6) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_7) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == BLU_SUPP_8) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
 	};
 	if (_opf) then {
 		// ============================== REDFOR ==============================
@@ -119,13 +128,22 @@ if (r_var_plankForts) then {
 		if (player == RED_D11_MMGASS1) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == RED_D11_GREN1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == RED_D11_FTL1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == RED_D11_HWG) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == RED_D11_HWA1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == RED_D11_HWA2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == RED_D11_FTL2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == RED_D11_MMG2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_D11_MMG2) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == RED_D11_MMGASS2) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == RED_D11_GREN2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_D11_FTL3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_D11_MMG3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_D11_MMGASS3) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_D11_GREN3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		
+		if (player == RED_SUPP_1) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_2) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_3) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_4) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_5) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_6) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_7) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == RED_SUPP_8) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
 	};
 	if (_ind) then {
 		// ============================== INDFOR ==============================
@@ -167,12 +185,21 @@ if (r_var_plankForts) then {
 		if (player == IND_D11_MMGASS1) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == IND_D11_GREN1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == IND_D11_FTL1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == IND_D11_HWG) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == IND_D11_HWA1) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == IND_D11_HWA2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == IND_D11_FTL2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
-		if (player == IND_D11_MMG2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_D11_MMG2) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == IND_D11_MMGASS2) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
 		if (player == IND_D11_GREN2) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_D11_FTL3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_D11_MMG3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_D11_MMGASS3) then {  [player, [0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_D11_GREN3) then {  [player, 	[0, 0, 3, 1, 0, 2, 0, 0]] call plank_deploy_fnc_init;  };
+		
+		if (player == IND_SUPP_1) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_2) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_3) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_4) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_5) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_6) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_7) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
+		if (player == IND_SUPP_8) then {  [player, 	[0, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  };
 	};
 };

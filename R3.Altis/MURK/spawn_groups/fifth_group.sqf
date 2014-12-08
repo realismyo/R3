@@ -26,8 +26,8 @@
 
 // Let players enter the mission.
 waitUntil {time > 1};	
-if (isMultiplayer && isNull HC) then { waitUntil { !isNull HC; }; };
-if (player != HC) exitWith {};
+if (isMultiplayer && isNull Numpty) then { waitUntil { !isNull Numpty; }; };
+if (player != Numpty) exitWith {};
 
 // CHANGE THIS TRIGGER
 #define SPAWN_TRIGGER_VARIABLE fifth_group
