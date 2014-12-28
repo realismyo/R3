@@ -18,7 +18,7 @@ private [
 "_rifleMagArray","_rifleTracerMagArray","_rifleGLMagArray","_rifleScopedMagArray","_carbineMagArray","_dmrMagArray","_smgMagArray",
 "_rifleRandom","_rifleGLRandom","_rifleScopedRandom","_carbineRandom","_dmrRandom","_smgRandom",
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
-"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
+"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo","_flashbang",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glRoundsArray","_glRounds","_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniforms","_uniformNumber","_plebUniform","_crewUniform",
@@ -59,15 +59,15 @@ private [
 // =========== Defines ===========
 // ===============================
 // ======= General Weapons =======
-_rifleArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4_ris","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
+_rifleArray = ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_c1A1","hlc_rifle_LAR","hlc_rifle_SLRchopmod","hlc_rifle_g3a3","hlc_rifle_g3sg1"];
 _rifleRandom = (floor(random (count _rifleArray)));
 _rifle = _rifleArray select _rifleRandom;
 
-_rifleGLArray = ["hlc_rifle_aks74_GL","RH_m4a1_ris_m203","RH_m16a4gl","arifle_TRG21_GL_F"];
+_rifleGLArray = ["HLC_Rifle_g3ka4_GL","hlc_rifle_osw_GL","HLC_Rifle_g3ka4_GL","hlc_rifle_osw_GL","HLC_Rifle_g3ka4_GL"];
 _rifleGLRandom = (floor(random (count _rifleGLArray)));
 _rifleGL = _rifleGLArray select _rifleGLRandom;
 
-_rifleScopedArray = ["hlc_rifle_aks74","hlc_rifle_ak74","hlc_rifle_ak12","RH_m4a1_ris","RH_m16a4","arifle_TRG21_F"];
+_rifleScopedArray =  ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_c1A1","hlc_rifle_LAR","hlc_rifle_SLRchopmod","hlc_rifle_g3a3","hlc_rifle_g3sg1"];
 _rifleScopedRandom = (floor(random (count _rifleScopedArray)));
 _rifleScoped = _rifleScopedArray select _rifleScopedRandom;
 
@@ -75,7 +75,7 @@ _carbineArray = ["hlc_rifle_aks74u","RH_m4_ris","RH_m4a1_ris","RH_m4_ris","arifl
 _carbineRandom = (floor(random (count _carbineArray)));
 _carbine = _carbineArray select _carbineRandom;
 
-_dmrArray = ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_SLRchopmod","hlc_rifle_LAR","hlc_rifle_g3sg1","hlc_rifle_g3a3","srifle_EBR_F"];
+_dmrArray = ["hlc_rifle_l1a1slr","hlc_rifle_SLR","hlc_rifle_STG58F","hlc_rifle_c1A1","hlc_rifle_LAR","hlc_rifle_SLRchopmod","hlc_rifle_g3a3","hlc_rifle_g3sg1""srifle_EBR_F"];
 _dmrRandom = (floor(random (count _dmrArray)));
 _dmr = _dmrArray select _dmrRandom;
 
@@ -92,23 +92,24 @@ _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
+_flashbang = "AGM_M84";
 // ====== General Magazines ======
-_rifleMagArray = ["hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleMagArray = ["hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_G3"];
 _rifleMag = _rifleMagArray select _rifleRandom;
 
-_rifleTracerMagArray = ["hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_T_AK","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Tracer_Red"];
+_rifleTracerMagArray = ["hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20rnd_762x51_T_G3","hlc_20rnd_762x51_T_G3"];
 _rifleTracerMag = _rifleTracerMagArray select _rifleRandom;
 
-_rifleGLMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleGLMagArray = ["hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3"];
 _rifleGLMag = _rifleGLMagArray select _rifleGLRandom;
 
-_rifleScopedMagArray = ["hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
+_rifleScopedMagArray = ["hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_G3"];
 _rifleScopedMag = _rifleScopedMagArray select _rifleScopedRandom;
 
 _carbineMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"];
 _carbineMag = _carbineMagArray select _carbineRandom;
 
-_dmrMagArray = ["hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_fal","hlc_20Rnd_762x51_B_G3","hlc_20Rnd_762x51_B_G3","20Rnd_762x51_Mag"];
+_dmrMagArray = ["hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20Rnd_762x51_t_fal","hlc_20rnd_762x51_T_G3","hlc_20rnd_762x51_T_G3","20Rnd_762x51_Mag"];
 _dmrMag = _dmrMagArray select _dmrRandom;
 
 _smgMagArray = ["hlc_30Rnd_545x39_B_AK","30Rnd_556x45_Stanag","hlc_30rnd_556x45_b_HK33","30Rnd_9x21_Mag"];
@@ -119,7 +120,7 @@ _autoTracerMag = "200Rnd_65x39_cased_Box_Tracer";
 _mmgMag = "150Rnd_762x51_Box";
 _pistolMag = "9Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
-_glRoundsArray = [["hlc_VOG25_AK","hlc_GRD_green","hlc_GRD_red"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"]];
+_glRoundsArray = [["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"]];
 _glRounds = _glRoundsArray select _rifleGLRandom;
 _glExplody = _glRounds select 0;
 _glSmokeOne = _glRounds select 1;
@@ -130,25 +131,113 @@ _glFlareTwo = "UGL_FlareYellow_F";
 // ========== Clothing ===========
 // ======== Camo Specific ========
 // ===============================
-// ========== Uniforms ===========
-_plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1"];
-_uniformNumber = (floor(random (count _plebUniforms)));
-_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
-_crewUniform = "U_B_CombatUniform_mcam_vest";
-// =========== Helmets ===========
-_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
-_helmetNumber = (floor(random (count _plebHelmets)));
-_plebHelmet =  _plebHelmets select _helmetNumber; 
-// ============ Vests ============
-_plebVest = "V_Chestrig_oli";
-_glVest = "V_Chestrig_rgr";
-_medVest = "V_Chestrig_oli";
-// ============ Rucks ============
-_plebRuck = "B_AssaultPack_rgr";
-_medRuck = "B_Carryall_oli";
-_assistantRuck = "B_Kitbag_rgr";
-_uavRuck = "B_UAV_01_backpack_F";
-// ==============================
+switch (_camoPattern) do {
+	case "fia" : {
+		// ========== Uniforms ===========
+		_plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1"];
+		_uniformNumber = (floor(random (count _plebUniforms)));
+		_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
+		_crewUniform = "U_B_CombatUniform_mcam_vest";
+		// =========== Helmets ===========
+		_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
+		_helmetNumber = (floor(random (count _plebHelmets)));
+		_plebHelmet =  _plebHelmets select _helmetNumber; 
+		// ============ Vests ============
+		_plebVest = "V_Chestrig_oli";
+		_glVest = "V_Chestrig_oli";
+		_medVest = "V_Chestrig_oli";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "B_Carryall_oli";
+		_assistantRuck = "B_Kitbag_rgr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ===============================
+	};
+	case "afr" : {
+		// ========== Uniforms ===========
+		_plebUniforms = ["Afr_paramil_uniform_02","Afr_paramil_uniform_02a","Afr_paramil_uniform_02b","Afr_paramil_uniform_03","Afr_paramil_uniform_03a","Afr_paramil_uniform_03b"];
+		_uniformNumber = (floor(random (count _plebUniforms)));
+		_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
+		_crewUniform = "U_B_CombatUniform_mcam_vest";
+		// =========== Helmets ===========
+		_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
+		_helmetNumber = (floor(random (count _plebHelmets)));
+		_plebHelmet =  _plebHelmets select _helmetNumber; 
+		// ============ Vests ============
+		_plebVest = "V_Chestrig_blk";
+		_glVest = "V_Chestrig_blk";
+		_medVest = "V_Chestrig_blk";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_blk";
+		_medRuck = "B_Carryall_cbr";
+		_assistantRuck = "B_Kitbag_rgr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ===============================
+	};
+	case "east" : {
+		// ========== Uniforms ===========
+		_plebUniforms = ["East_paramil_uniform_02","East_paramil_uniform_02a","East_paramil_uniform_02b","East_paramil_uniform_03","East_paramil_uniform_03a","East_paramil_uniform_03b"];
+		_uniformNumber = (floor(random (count _plebUniforms)));
+		_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
+		_crewUniform = "U_B_CombatUniform_mcam_vest";
+		// =========== Helmets ===========
+		_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
+		_helmetNumber = (floor(random (count _plebHelmets)));
+		_plebHelmet =  _plebHelmets select _helmetNumber; 
+		// ============ Vests ============
+		_plebVest = "V_Chestrig_blk";
+		_glVest = "V_Chestrig_blk";
+		_medVest = "V_Chestrig_blk";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_blk";
+		_medRuck = "B_Carryall_cbr";
+		_assistantRuck = "B_Kitbag_rgr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ===============================
+	};
+	case "euro" : {
+		// ========== Uniforms ===========
+		_plebUniforms = ["Euro_paramil_uniform_01","Euro_paramil_uniform_01a","Euro_paramil_uniform_01b","Euro_paramil_uniform_02","Euro_paramil_uniform_02a","Euro_paramil_uniform_02b","Euro_paramil_uniform_03","Euro_paramil_uniform_03a","Euro_paramil_uniform_03b"];
+		_uniformNumber = (floor(random (count _plebUniforms)));
+		_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
+		_crewUniform = "U_B_CombatUniform_mcam_vest";
+		// =========== Helmets ===========
+		_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
+		_helmetNumber = (floor(random (count _plebHelmets)));
+		_plebHelmet =  _plebHelmets select _helmetNumber; 
+		// ============ Vests ============
+		_plebVest = "V_Chestrig_oli";
+		_glVest = "V_Chestrig_oli";
+		_medVest = "V_Chestrig_oli";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "B_Carryall_oli";
+		_assistantRuck = "B_Kitbag_rgr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ===============================
+	};
+	default {
+		// ========== Uniforms ===========
+		_plebUniforms = ["U_BG_Guerilla1_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_leader","U_BG_Guerrilla_6_1","U_BG_Guerilla3_1","U_BG_Guerilla2_1"];
+		_uniformNumber = (floor(random (count _plebUniforms)));
+		_plebUniform = _plebUniforms select _uniformNumber; // leave as "" for default
+		_crewUniform = "U_B_CombatUniform_mcam_vest";
+		// =========== Helmets ===========
+		_plebHelmets = ["H_Booniehat_khk_hs","H_Bandanna_khk_hs","H_Cap_oli_hs","H_Shemag_olive_hs","H_Cap_headphones","H_Watchcap_blk"];
+		_helmetNumber = (floor(random (count _plebHelmets)));
+		_plebHelmet =  _plebHelmets select _helmetNumber; 
+		// ============ Vests ============
+		_plebVest = "V_Chestrig_oli";
+		_glVest = "V_Chestrig_oli";
+		_medVest = "V_Chestrig_oli";
+		// ============ Rucks ============
+		_plebRuck = "B_AssaultPack_rgr";
+		_medRuck = "B_Carryall_oli";
+		_assistantRuck = "B_Kitbag_rgr";
+		_uavRuck = "B_UAV_01_backpack_F";
+		// ===============================
+	};
+};
 // ===============================
 // ========== Clothing ===========
 // ===== Non-Camo Specific =======
@@ -244,19 +333,19 @@ _secItems = ["AGM_MapTools"];
 _pltTools = ["itemGPS"];
 _pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
-_rifleAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["hlc_optic_kobra","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
+_rifleAttachmentArray = [[],[],[],[],[],[],[],[]];
 _rifleAttachments = _rifleAttachmentArray select _rifleRandom;
 
-_rifleGLAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
+_rifleGLAttachmentArray = [["optic_ACO_grn","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["optic_ACO_grn","acc_flashlight"],["optic_ACO_grn","acc_flashlight"]];
 _rifleGLAttachments = _rifleGLAttachmentArray select _rifleGLRandom;
 
-_rifleScopedAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_rifleScopedAttachmentArray = [["hlc_optic_suit"],["hlc_optic_suit"],["optic_MRCO"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_accupoint_g3"],["hlc_optic_accupoint_g3"]];
 _rifleScopedAttachments = _rifleScopedAttachmentArray select _rifleScopedRandom;
 
 _carbineAttachmentArray = [["hlc_optic_kobra","acc_flashlight"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["RH_t1","RH_SFM952V"],["optic_ACO_grn","acc_flashlight"]];
 _carbineAttachments = _carbineAttachmentArray select _carbineRandom;
 
-_dmrAttachmentArray = [["hlc_optic_suit","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["optic_MRCO","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["hlc_optic_suit","acc_flashlight"],["HLC_Optic_ZFSG1","acc_flashlight"],["HLC_Optic_ZFSG1","acc_flashlight"],["optic_MRCO","acc_flashlight"]];
+_dmrAttachmentArray = [["hlc_optic_suit"],["hlc_optic_suit"],["optic_MRCO"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_accupoint_g3"],["hlc_optic_accupoint_g3"],["optic_MRCO","acc_flashlight"]];
 _dmrAttachments = _dmrAttachmentArray select _dmrRandom;
 
 _autoRifleAttachments = ["optic_ACO_grn","acc_flashlight"];
@@ -265,13 +354,13 @@ _sniperAttachments = ["optic_SOS"];
 _pistolAttachments = [];
 
 
-_scoped_rifleAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleAttachmentArray = [["hlc_optic_suit"],["hlc_optic_suit"],["optic_MRCO"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_accupoint_g3"],["hlc_optic_accupoint_g3"]];
 _scoped_rifleAttachments = _scoped_rifleAttachmentArray select _rifleRandom;
 
-_scoped_rifleGLAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleGLAttachmentArray = [["optic_MRCO","acc_flashlight"],["optic_MRCO","acc_flashlight"],["optic_MRCO","acc_flashlight"],["optic_MRCO","acc_flashlight"],["optic_MRCO","acc_flashlight"]];
 _scoped_rifleGLAttachments = _scoped_rifleGLAttachmentArray select _rifleGLRandom;
 
-_scoped_rifleScopedAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["HLC_Optic_PSO1","acc_flashlight"],["optic_MRCO","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
+_scoped_rifleScopedAttachmentArray = [["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_suit"],["hlc_optic_accupoint_g3"],["hlc_optic_accupoint_g3"]];
 _scoped_rifleScopedAttachments = _scoped_rifleScopedAttachmentArray select _rifleScopedRandom;
 
 _scoped_carbineAttachmentArray = [["HLC_Optic_PSO1","acc_flashlight"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["RH_ta31rco_2d","RH_SFM952V"],["optic_MRCO","acc_flashlight"]];
@@ -282,19 +371,19 @@ _scoped_mmgAttachments = ["optic_MRCO","acc_flashlight"];
 _scoped_pistolAttachments = [];
 
 
-_suppressed_rifleAttachmentArray = [["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleAttachmentArray = [["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_G3"]];
 _suppressed_rifleAttachments = _suppressed_rifleAttachmentArray select _rifleRandom;
 
-_suppressed_rifleGLAttachmentArray = [["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleGLAttachmentArray = [["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"]];
 _suppressed_rifleGLAttachments = _suppressed_rifleGLAttachmentArray select _rifleGLRandom;
 
-_suppressed_rifleScopedAttachmentArray = [["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
+_suppressed_rifleScopedAttachmentArray = [["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_G3"]];
 _suppressed_rifleScopedAttachments = _suppressed_rifleScopedAttachmentArray select _rifleScopedRandom;
 
 _suppressed_carbineAttachmentArray = [["hlc_muzzle_545SUP_AK"],["RH_qdss_nt4"],["RH_qdss_nt4"],["RH_qdss_nt4"],["muzzle_snds_M"]];
 _suppressed_carbineAttachments = _suppressed_carbineAttachmentArray select _carbineRandom;
 
-_suppressed_dmrAttachmentArray = [["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_G3"],["muzzle_snds_B"]];
+_suppressed_dmrAttachmentArray = [["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_fal"],["hlc_muzzle_snds_G3"],["hlc_muzzle_snds_G3"],["muzzle_snds_B"]];
 _suppressed_dmrAttachments = _suppressed_dmrAttachmentArray select _dmrRandom;
 
 _suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
@@ -305,13 +394,13 @@ _suppressed_pistolAttachments = ["muzzle_snds_acp"];
 // ===== Variable Processing =====
 // ===============================
 if ((!isNil "_suppressors") && _suppressors) then {
-	_rifleSDMagArray = ["hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleSDMagArray = ["hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20rnd_762x51_S_G3","hlc_20rnd_762x51_S_G3"];
 	_rifleMag = _rifleSDMagArray select _rifleRandom;
 	
-	_rifleGLSDMagArray = ["hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleGLSDMagArray = ["hlc_20rnd_762x51_S_G3","hlc_20Rnd_762x51_S_fal","hlc_20rnd_762x51_S_G3","hlc_20Rnd_762x51_S_fal","hlc_20rnd_762x51_S_G3"];
 	_rifleGLMag = _rifleGLSDMagArray select _rifleGLRandom;
 	
-	_rifleScopedSDMagArray = ["hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
+	_rifleScopedSDMagArray = ["hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20Rnd_762x51_S_fal","hlc_20rnd_762x51_S_G3","hlc_20rnd_762x51_S_G3"];
 	_rifleScopedMag = _rifleScopedSDMagArray select _rifleScopedRandom;
 	
 	_carbineSDMagArray = ["hlc_30Rnd_545x39_S_AK","30rnd_556x45_STANAG","30rnd_556x45_STANAG","30rnd_556x45_STANAG","AGM_30Rnd_556x45_Stanag_SD"];
@@ -649,14 +738,14 @@ _addRuck = {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_hatMag,2];
 		};
 		case "aa" : {
 			_unit addBackpack _assistantRuck;
 			call _clearRuck;
 			sleep _delay;
-			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,2];
+			(unitBackpack _unit) addMagazineCargoGlobal [_rifleMag,4];
 			(unitBackpack _unit) addMagazineCargoGlobal [_aaMag,2];
 		};
 		
@@ -726,8 +815,8 @@ _addAttachments = {
 	_type =  toLower (_this select 0);
 	_primaryAttachments = primaryWeaponItems _unit;
 	_handgunAttachments = handgunItems _unit;
-	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
-	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
+	if (!isNil "_primaryAttachments") then { { _unit removePrimaryWeaponItem _x } forEach _primaryAttachments; };
+	if (!isNil "_handgunAttachments") then { { _unit removeHandgunItem _x } forEach _handgunAttachments; };
 	switch (_type) do {
 		// ===============================
 		// ===== General Attachments =====

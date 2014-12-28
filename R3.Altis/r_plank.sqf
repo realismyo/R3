@@ -6,7 +6,7 @@ If variable 'r_var_plankForts' is true, assigns players their relevant fortifica
 ==================== Usage ====================
 - Script follows the unit naming standard of the R3 framework.
 - If the units in your mission aren't named as such, this will not work unless you modify the calls.
-- Is one massive script to allow for alterations to any and all roles.
+- This is one massive script to allow for alterations to any and all roles.
 
 Call: [player, [1, 0, 0, 0, 0, 0, 0, 0]] call plank_deploy_fnc_init;  
 - Each number in the array corresponds to a certain fortification, and how many of those the player will get.

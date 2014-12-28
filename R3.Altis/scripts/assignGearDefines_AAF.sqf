@@ -15,7 +15,7 @@
 
 private [
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
-"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
+"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo","_flashbang",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniformArray","_plebRandom","_plebUniform","_rpilotUniform","_fpilotUniform","_crewUniform","_diverUniform","_sniperUniform",
@@ -64,6 +64,7 @@ _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
+_flashbang = "AGM_M84";
 // ====== General Magazines ======
 _rifleMag = "30Rnd_556x45_Stanag";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
@@ -560,8 +561,8 @@ _addAttachments = {
 	_type =  toLower (_this select 0);
 	_primaryAttachments = primaryWeaponItems _unit;
 	_handgunAttachments = handgunItems _unit;
-	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
-	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
+	if (!isNil "_primaryAttachments") then { { _unit removePrimaryWeaponItem _x } forEach _primaryAttachments; };
+	if (!isNil "_handgunAttachments") then { { _unit removeHandgunItem _x } forEach _handgunAttachments; };
 	switch (_type) do {
 		// ===============================
 		// ===== General Attachments =====

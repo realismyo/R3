@@ -15,7 +15,7 @@
 
 private [
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
-"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
+"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo","_flashbang",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniformArray","_plebURandom","_plebUniform","_crewUniform",
@@ -60,7 +60,7 @@ switch (_camoPattern) do {
 		// ======= General Weapons =======
 		_rifle = "R3F_Famas_G2_HG";
 		_rifleGL = "R3F_Famas_G2_M203";
-		_rifleScoped = "R3F_Famas_G2_HG";
+		_rifleScoped = "RH_mk12mod1";
 		_carbine = "R3F_Famas_surb_HG";
 		_dmr = "R3F_HK417L";
 		// ========== Uniforms ===========
@@ -94,7 +94,7 @@ switch (_camoPattern) do {
 		// ======= General Weapons =======
 		_rifle = "R3F_Famas_G2_HG_DES";
 		_rifleGL = "R3F_Famas_G2_M203_DES";
-		_rifleScoped = "R3F_Famas_G2_HG_DES";
+		_rifleScoped = "RH_mk12mod1";
 		_carbine = "R3F_Famas_surb_HG_DES";
 		_dmr = "R3F_HK417L_DES";
 		// ========== Uniforms ===========
@@ -128,7 +128,7 @@ switch (_camoPattern) do {
 		// ======= General Weapons =======
 		_rifle = "R3F_Famas_G2_HG";
 		_rifleGL = "R3F_Famas_G2_M203";
-		_rifleScoped = "R3F_Famas_G2_HG";
+		_rifleScoped = "RH_mk12mod1";
 		_carbine = "R3F_Famas_surb_HG";
 		_dmr = "R3F_HK417L";
 		// ========== Uniforms ===========
@@ -164,7 +164,7 @@ switch (_camoPattern) do {
 // ===== Non-Camo Specific =======
 _autoRifle = "R3F_Minimi";
 _mmg = "R3F_Minimi_762";
-_smg = "hlc_rifle_hk53";
+_smg = "SMG_01_F";
 _pistol = "R3F_PAMAS";
 // ===== General Throwables ======
 _grenade = "HandGrenade";
@@ -172,17 +172,18 @@ _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
+_flashbang = "AGM_M84";
 // ====== General Magazines ======
 _rifleMag = "R3F_30Rnd_556x45_FAMAS";
 _rifleTracerMag = "R3F_30Rnd_556x45_TRACER_FAMAS";
 _rifleGLMag = "R3F_30Rnd_556x45_FAMAS";
-_rifleScopedMag = "R3F_30Rnd_556x45_FAMAS";
+_rifleScopedMag = "RH_30Rnd_556x45_Mk262";
 _autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
 _autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
 _carbineMag = "R3F_30Rnd_556x45_FAMAS";
 _dmrMag = "R3F_20Rnd_762x51_HK417";
 _mmgMag = "R3F_100Rnd_762x51_MINIMI";
-_smgMag = "hlc_30Rnd_556x45_b_HK33";
+_smgMag = "30Rnd_45ACP_Mag_SMG_01";
 _pistolMag = "R3F_15Rnd_9x19_PAMAS";
 // ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
@@ -699,8 +700,8 @@ _addAttachments = {
 	_type =  toLower (_this select 0);
 	_primaryAttachments = primaryWeaponItems _unit;
 	_handgunAttachments = handgunItems _unit;
-	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
-	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
+	if (!isNil "_primaryAttachments") then { { _unit removePrimaryWeaponItem _x } forEach _primaryAttachments; };
+	if (!isNil "_handgunAttachments") then { { _unit removeHandgunItem _x } forEach _handgunAttachments; };
 	switch (_type) do {
 		// ===============================
 		// ===== General Attachments =====

@@ -12,8 +12,8 @@ disableSerialization;
 
 if ( ( count _this ) > 0 ) then { _target = _this select 0; };
 
-VM_scriptName="specta";
-VM_SpectatorCamerasEnabled = False;
+VM_scriptName = "specta";
+VM_SpectatorCamerasEnabled = false;
 
 f_var_debugMode = 0;
 r_var_isSpectating = true;
@@ -380,8 +380,7 @@ KEGs_fnc_MovementCameraLoop = {
 				//KEGs_czpos = _KEGs_targetPos select 2;
 				
 				_stance = "VEHICLE";
-				if ( vehicle _KEGs_target == _KEGs_target ) then 
-				{
+				if ( vehicle _KEGs_target == _KEGs_target ) then {
 					_stance = stance _KEGs_target;
 				};
 				

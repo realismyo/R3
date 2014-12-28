@@ -4,7 +4,7 @@
 // https://community.bistudio.com/wiki/Arma_3_Respawn
 // ====================================================================================
 
-// Reset AGM Variables
+// Reset AGM Variables - repeated just cos
 [false] call AGM_Core_fnc_disableUserInput;
 [player, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
 player setVariable ["AGM_Diagnosed", false, true];

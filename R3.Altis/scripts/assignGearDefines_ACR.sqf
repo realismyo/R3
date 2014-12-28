@@ -15,7 +15,7 @@
 
 private [
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
-"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
+"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo","_flashbang",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
@@ -56,7 +56,7 @@ private [
 // ======= General Weapons =======
 _rifle = "acr_a3_CZ805_A1";
 _rifleGL = "acr_a3_CZ805_GL";
-_rifleScoped = "acr_a3_CZ805_A1";
+_rifleScoped = "RH_mk12mod1";
 _autoRifle = "R3F_Minimi";
 _carbine = "acr_a3_CZ805_A2";
 _dmr = "srifle_EBR_F";
@@ -69,11 +69,12 @@ _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
+_flashbang = "AGM_M84";
 // ====== General Magazines ======
 _rifleMag = "30Rnd_556x45_Stanag";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGLMag = "30Rnd_556x45_Stanag";
-_rifleScopedMag = "30Rnd_556x45_Stanag";
+_rifleScopedMag = "RH_30Rnd_556x45_Mk262";
 _autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
 _autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
 _carbineMag = "30Rnd_556x45_Stanag";
@@ -688,8 +689,8 @@ _addAttachments = {
 	_type =  toLower (_this select 0);
 	_primaryAttachments = primaryWeaponItems _unit;
 	_handgunAttachments = handgunItems _unit;
-	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
-	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
+	if (!isNil "_primaryAttachments") then { { _unit removePrimaryWeaponItem _x } forEach _primaryAttachments; };
+	if (!isNil "_handgunAttachments") then { { _unit removeHandgunItem _x } forEach _handgunAttachments; };
 	switch (_type) do {
 		// ===============================
 		// ===== General Attachments =====

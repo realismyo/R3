@@ -15,7 +15,7 @@
 
 private [
 "_rifle","_rifleGL","_rifleScoped","_autoRifle","_carbine","_dmr","_mmg","_smg","_pistol",
-"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo",
+"_grenade","_smoke","_throwG","_chemlightOne","_chemlightTwo","_flashbang",
 "_rifleMag","_rifleTracerMag","_rifleGLMag","_rifleScopedMag","_autoRifleMag","_autoTracerMag","_carbineMag","_dmrMag","_mmgMag","_smgMag","_pistolMag",
 "_glExplody","_glSmokeOne","_glSmokeTwo","_glFlareOne","_glFlareTwo",
 "_plebUniformArray","_plebRandom","_plebUniform","_crewUniform",
@@ -59,22 +59,22 @@ switch (_variant) do {
 		_rifle = "RH_m4a1_ris";
 		_rifleGL = "RH_m4a1_ris_m203";
 		_rifleScoped = "RH_mk12mod1";
-		_autoRifle = "R3F_Minimi";
+		_autoRifle = "rhs_weap_m249_pip";
 		_carbine = "RH_m4a1_ris";
-		_dmr = "hlc_rifle_falosw";
-		_mmg = "hlc_lmg_M60E4";
-		_smg = "hlc_rifle_hk53";
+		_dmr = "rhs_weap_m14ebrri";
+		_mmg = "rhs_weap_m240B";
+		_smg = "SMG_01_F";
 		_pistol = "hgun_Pistol_heavy_01_F";
 	};
 	case "m16" : {
 		_rifle = "RH_m16a4";
 		_rifleGL = "RH_m16a4gl";
 		_rifleScoped = "RH_mk12mod1";
-		_autoRifle = "R3F_Minimi";
+		_autoRifle = "rhs_weap_m249_pip";
 		_carbine = "RH_m4a1_ris";
-		_dmr = "hlc_rifle_falosw";
-		_mmg = "hlc_lmg_M60E4";
-		_smg = "hlc_rifle_hk53";
+		_dmr = "rhs_weap_m14ebrri";
+		_mmg = "rhs_weap_m240B";
+		_smg = "SMG_01_F";
 		_pistol = "hgun_Pistol_heavy_01_F";
 	};
 };
@@ -84,17 +84,18 @@ _smoke = "SmokeShell";
 _throwG = [_grenade,_smoke];
 _chemlightOne = "chemlight_green";
 _chemlightTwo = "chemlight_red";
+_flashbang = "AGM_M84";
 // ====== General Magazines ======
 _rifleMag = "30Rnd_556x45_STANAG";
 _rifleTracerMag = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGLMag = "30Rnd_556x45_STANAG";
 _rifleScopedMag = "RH_30Rnd_556x45_Mk262";
-_autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
-_autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
+_autoRifleMag = "rhsusf_100Rnd_556x45_soft_pouch";
+_autoTracerMag = "rhsusf_100Rnd_556x45_soft_pouch";
 _carbineMag = "30rnd_556x45_STANAG";
-_dmrMag = "hlc_20Rnd_762x51_B_fal";
-_mmgMag = "hlc_100Rnd_762x51_B_M60E4";
-_smgMag = "hlc_30Rnd_556x45_b_HK33";
+_dmrMag = "20Rnd_762x51_Mag";
+_mmgMag = "rhsusf_100Rnd_762x51";
+_smgMag = "30Rnd_45ACP_Mag_SMG_01";
 _pistolMag = "11Rnd_45ACP_Mag";
 // ========== GL Rounds ==========
 _glExplody = "1Rnd_HE_Grenade_shell";
@@ -261,9 +262,9 @@ _pltTools = ["itemGPS"];
 _pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["RH_t1","RH_SFM952V"];
-_dmrAttachments = ["optic_MRCO","acc_flashlight"];
-_autoRifleAttachments = ["optic_Holosight","acc_flashlight"];
-_mmgAttachments = ["optic_Holosight","acc_flashlight"];
+_dmrAttachments = ["rhsusf_acc_LEUPOLDMK4","acc_flashlight"];
+_autoRifleAttachments = ["rhsusf_acc_EOTECH","acc_flashlight"];
+_mmgAttachments = ["rhsusf_acc_EOTECH","acc_flashlight"];
 
 _sniperAttachments = ["optic_SOS"];
 _pistolAttachments = ["optic_MRD"];
@@ -273,7 +274,7 @@ _scoped_autoRifleAttachments = ["optic_MRCO","RH_SFM952V"];
 _scoped_mmgAttachments = ["optic_MRCO","RH_SFM952V"];
 
 _suppressed_generalAttachments = ["RH_qdss_nt4"];
-_suppressed_dmrAttachments = [];
+_suppressed_dmrAttachments = ["muzzle_snds_B"];
 _suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
 _suppressed_mmgAttachments = [];
 
@@ -636,8 +637,8 @@ _addAttachments = {
 	_type =  toLower (_this select 0);
 	_primaryAttachments = primaryWeaponItems _unit;
 	_handgunAttachments = handgunItems _unit;
-	{ _unit removePrimaryWeaponItem _x } forEach _primaryAttachments;
-	{ _unit removeHandgunItem _x } forEach _handgunAttachments;
+	if (!isNil "_primaryAttachments") then { { _unit removePrimaryWeaponItem _x } forEach _primaryAttachments; };
+	if (!isNil "_handgunAttachments") then { { _unit removeHandgunItem _x } forEach _handgunAttachments; };
 	switch (_type) do {
 		// ===============================
 		// ===== General Attachments =====

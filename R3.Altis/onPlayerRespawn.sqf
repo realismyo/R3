@@ -27,6 +27,9 @@ player setVariable ["AGM_Overdosing", false];
 player setVariable ["AGM_Dragging", objNull];
 player setVariable ["AGM_Carrying", objNull];
 
+// Move that pesky seagull the fuck elsewhere
+(_this select 0) setPos [0,0,2];
+
 // Force player into TFAR spectator mode
 [player, true] call TFAR_fnc_forceSpectator;
 	
