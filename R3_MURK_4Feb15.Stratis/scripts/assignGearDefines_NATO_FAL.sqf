@@ -75,8 +75,8 @@ _rifleMag = "hlc_20Rnd_762x51_B_fal";
 _rifleTracerMag = "hlc_20Rnd_762x51_t_fal";
 _rifleGLMag = "hlc_20Rnd_762x51_B_fal";
 _rifleScopedMag = "hlc_20Rnd_762x51_B_fal";
-_autoRifleMag = "R3F_200Rnd_556x45_MINIMI";
-_autoTracerMag = "R3F_200Rnd_556x45_MINIMI";
+_autoRifleMag = "rhsusf_100Rnd_556x45_soft_pouch";
+_autoTracerMag = "rhsusf_100Rnd_556x45_soft_pouch";
 _carbineMag = "hlc_30rnd_556x45_b_HK33";
 _dmrMag = "hlc_20Rnd_762x51_B_fal";
 _mmgMag = "rhsusf_100Rnd_762x51";
@@ -249,19 +249,19 @@ _pltItems = ["AGM_MapTools"];
 // ======== Attachments ==========
 _generalAttachments = ["optic_Aco","acc_flashlight"];
 _dmrAttachments = ["optic_MRCO","acc_flashlight"];
-_autoRifleAttachments = ["optic_Holosight","acc_flashlight"];
+_autoRifleAttachments = ["rhsusf_acc_EOTECH","acc_flashlight"];
 _mmgAttachments = ["optic_Aco","acc_flashlight"];
 
 _sniperAttachments = ["optic_SOS"];
 _pistolAttachments = ["optic_MRD"];
 
 _scoped_rifleAttachments = ["optic_Hamr","acc_flashlight"];
-_scoped_autoRifleAttachments = ["optic_Hamr","acc_flashlight"];
+_scoped_autoRifleAttachments = ["rhsusf_acc_ELCAN","acc_flashlight"];
 _scoped_mmgAttachments = ["optic_Hamr","acc_flashlight"];
 
 _suppressed_generalAttachments = ["hlc_muzzle_snds_fal"];
 _suppressed_dmrAttachments = ["hlc_muzzle_snds_fal"];
-_suppressed_autoRifleAttachments = ["muzzle_snds_H_MG"];
+_suppressed_autoRifleAttachments = [];
 _suppressed_mmgAttachments = [];
 
 _suppressed_pistolAttachments = ["muzzle_snds_acp"];
