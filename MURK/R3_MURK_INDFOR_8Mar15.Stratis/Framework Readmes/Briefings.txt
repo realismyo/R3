@@ -1,0 +1,39 @@
+========== Brefing Scripts ==========
+
+The briefing scripts are designed to allow the mission maker to supply players with crucial mission information 
+without having to necessarily explain each and every step, and also to be there as a quick reference. 
+
+
+===== Usage =====
+
+- R3's init.sqf includes the variable 'r_var_separateBriefings'.
+- Set this to TRUE to run a different briefing script for the different sides (BLUFOR, OPFOR, INDEPENDENT and CIVILIAN).
+- Set this to FALSE to run the same briefing script for ALL of the different sides.
+
+
+The following are some basic syntax rules:
+
+- Some basic HTML works placed inside the briefing text, such as <br/> for new line.
+
+player createDiarySubject ["Subject Handle","Subject Title"];
+- "Subject Handle" = The handle used to tie records under. (default diary, which will appear under the 'Notes' section in the map screen).
+- "Subject Title" = The title players will see in the briefing / map screen.
+
+player createDiaryRecord ["Subject Handle", ["Record Title","Insert Briefing Text Here"]];
+- "Subject Handle" = The handle that the record will appear under.
+- "Record Title" = The title players will see in the briefing / map screen.
+- "Briefing Text" = Insert whatever you want players to read here. Accepts some basic HTML. 
+
+
+===== Examples =====
+
+1:
+player createDiaryRecord ["diary", ["Execution","This line will appear under the player's briefing notes, under an 'Execution' sub-section."]];
+
+2:
+player createDiarySubject ["MissionCredits","Credits"];
+player createDiaryRecord ["MissionCredits", ["Mission Scripts","
+The gear scripts in this mission were made by Mr. Agnet.
+<br/>
+This text will appear under a Mission Scripts sub-section, which will be under a custom Credits section in the mission's briefing notes.
+"]];

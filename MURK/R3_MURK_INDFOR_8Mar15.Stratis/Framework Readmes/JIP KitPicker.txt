@@ -1,0 +1,19 @@
+========== F3 JIP KitPicker ==========
+
+These KitPicker scripts are originally part of the F3 framework. They allow the player to bring up a menu to select their loadout. 
+Generally, and by default, this action is allowed either for specific player slots designated for JIP players, or in general to all JIP players.
+
+
+===== Usage =====
+
+- The scripts in this framework are edited to work in conjunction with Agent's Gear Scripts, including all of the different roles.
+- To allow specific slots to have the action, insert the following into that unit's init field: nul = [this] execVM "scripts\kitPicker\f_JIP_addReinforcementOptionsAction.sqf";
+- Although it is set up in this framework, the system also requires the following lines:
+
+In the init.sqf, changing this for whichever gear script you are using:
+f_fnc_assignGear = compile preprocessfilelinenumbers "scripts\assignGear_US.sqf";
+
+In the description.ext: 
+#include "scripts\kitPicker\f_JIP_kitpicker.h"
+
+There's also a cfgNotifications section, check the description.ext in this framework for this. 

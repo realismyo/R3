@@ -1,0 +1,1 @@
+#include "plank_settings_dialog.h"

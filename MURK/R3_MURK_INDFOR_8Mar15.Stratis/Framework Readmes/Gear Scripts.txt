@@ -1,0 +1,15 @@
+========== Gear Scripts ==========
+
+The gear scripts by Mr. Agnet are designed to allow any and all mission makers to have easy access to RIFM's main platoon layout and roles.
+These scripts only work on players at the moment.
+
+
+===== Usage =====
+
+- The beginning of each gear script has a commented section including how to use the script.
+- Each assignGear_FACTION.sqf script has a corresponding assignGearDefines_FACTION.sqf.
+- BOTH FILES MUST BE INCLUDED. SAVE YOUR MISSION BEFORE DOING SO OR BEFORE PREVIEWING, AS NOT INCLUDING BOTH, EXECUTING THE SCRIPT AND NOT HAVING BOTH WILL CRASH YOUR GAME WITHOUT SAVING YOUR MISSION. 
+- assignGear_FACTION.sqf includes the roles, assignGearDefines_FACTION.sqf includes the classnames for defining what gear those roles actually receive.
+- Place the following in a unit's init field, changing the parameter in quotes to what you want to have as your unit's loadout: 
+nul = [this,"pltld"] execVM "scripts\assignGear.sqf";
+- Modifiable variables are included at the beginning of each script, which can alter some gear player's receive.
