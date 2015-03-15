@@ -1,0 +1,14 @@
+This framework has been put together for the use of creating missions for Rifling Matters.
+It has been built over time using scripts and ideas from RIFM members and the Arma community.
+
+Where possible, credit for peoples work has been maintained (Note: variable names and peices of code may have been changed to fit in with this framework.)
+Below will also try and have a maintained list of people's work used in this framework.
+
+Credits:
+
+Simwah [RIFM] - http://www.riflingmatters.com/
+AGeNT [RIFM] - http://www.riflingmatters.com/
+Stevetastic [RIFM] - http://www.riflingmatters.com/
+F3 - https://github.com/ferstaberinde/F3
+Celery - http://www.armaholic.com/page.php?id=14137
+Murklor - http://www.armaholic.com/page.php?id=7074

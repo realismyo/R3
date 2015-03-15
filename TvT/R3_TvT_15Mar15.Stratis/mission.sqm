@@ -1,0 +1,4367 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"agm_core",
+		"agm_movement",
+		"agm_medical",
+		"agm_explosives",
+		"task_force_radio_items",
+		"agm_nametags",
+		"A3_Modules_F_Curator_Curator",
+		"a3_map_stratis",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_OPFOR"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_OPFOR",
+		"agm_core",
+		"agm_movement",
+		"agm_medical",
+		"agm_explosives",
+		"task_force_radio_items",
+		"agm_nametags",
+		"A3_Modules_F_Curator_Curator",
+		"a3_map_stratis"
+	};
+	randomSeed=3671847;
+	class Intel
+	{
+		briefingName="** Insert mission type, name and version number here. This appears in mission select screen/lobby. **";
+		overviewText="** Insert mission description here. This appears in mission select screen/lobby. **";
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		wavesForced=1;
+		windForced=1;
+		year=2015;
+		month=1;
+		day=1;
+		hour=10;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
+	};
+	class Groups
+	{
+		items=41;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=7;
+				class Item0
+				{
+					position[]={1700.002,5.5,5699.9204};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.2;
+					text="BLU_COY_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7982,5.5,5699.8784};
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="BLU_COY_2IC";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company 2iC";
+				};
+				class Item2
+				{
+					position[]={1703.5083,5.5,5699.9106};
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_COY_MEDIC1";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company Medic";
+				};
+				class Item3
+				{
+					position[]={1705.1017,5.5,5699.8462};
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_COY_MEDIC2";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company Medic";
+				};
+				class Item4
+				{
+					position[]={1706.8903,5.5,5699.8223};
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_COY_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company JTAC";
+				};
+				class Item5
+				{
+					position[]={1708.7126,5.5,5699.8223};
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="B_engineer_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_COY_ENG";
+					init="nul = [this,""engi""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""]";
+					description="Company Engineer";
+				};
+				class Item6
+				{
+					position[]={1710.4778,5.5,5699.8145};
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_COY_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - COY""];";
+					description="Company Rifleman";
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1699.9639,5.5,5693.7378};
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="BLU_PLT11_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1""];";
+					description="1-1 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8115,5.5,5693.644};
+					special="NONE";
+					id=8;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="BLU_PLT11_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1""];";
+					description="1-1 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.5537,5.5,5693.644};
+					special="NONE";
+					id=9;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT11_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1""];";
+					description="1-1 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.374,5.5,5693.6519};
+					special="NONE";
+					id=10;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT11_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1""];";
+					description="1-1 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.042,5.5,5693.6519};
+					special="NONE";
+					id=11;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_PLT11_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1""];";
+					description="1-1 Platoon Rifleman";
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.917,5.5,5691.6479};
+					special="NONE";
+					id=12;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_A11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8037,5.5,5691.5542};
+					special="NONE";
+					id=13;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5889,5.5,5691.519};
+					special="NONE";
+					id=14;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.374,5.5,5691.519};
+					special="NONE";
+					id=15;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.042,5.5,5691.5542};
+					special="NONE";
+					id=16;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8662,5.5,5691.5542};
+					special="NONE";
+					id=17;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5342,5.5,5691.5542};
+					special="NONE";
+					id=18;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2803,5.5,5691.519};
+					special="NONE";
+					id=19;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-A""];";
+					description="1-1-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9561,5.5,5689.3979};
+					special="NONE";
+					id=20;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_B11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8467,5.5,5689.3042};
+					special="NONE";
+					id=21;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.667,5.5,5689.3472};
+					special="NONE";
+					id=22;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.4131,5.5,5689.2651};
+					special="NONE";
+					id=23;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0811,5.5,5689.3042};
+					special="NONE";
+					id=24;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9053,5.5,5689.3042};
+					special="NONE";
+					id=25;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5732,5.5,5689.3042};
+					special="NONE";
+					id=26;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3193,5.5,5689.2651};
+					special="NONE";
+					id=27;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-B""];";
+					description="1-1-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item4
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.8779,5.5,5687.5386};
+					special="NONE";
+					id=28;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_C11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7686,5.5,5687.4448};
+					special="NONE";
+					id=29;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5498,5.5,5687.4097};
+					special="NONE";
+					id=30;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.335,5.5,5687.4097};
+					special="NONE";
+					id=31;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0029,5.5,5687.4448};
+					special="NONE";
+					id=32;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8271,5.5,5687.4448};
+					special="NONE";
+					id=33;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.4951,5.5,5687.4448};
+					special="NONE";
+					id=34;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2412,5.5,5687.4097};
+					special="NONE";
+					id=35;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-C""];";
+					description="1-1-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item5
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.0342,5.5,5685.4058};
+					special="NONE";
+					id=36;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_D11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9248,5.5,5685.312};
+					special="NONE";
+					id=37;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.7061,5.5,5685.2769};
+					special="NONE";
+					id=38;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.4912,5.5,5685.2769};
+					special="NONE";
+					id=39;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1592,5.5,5685.312};
+					special="NONE";
+					id=40;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9795,5.5,5685.312};
+					special="NONE";
+					id=41;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.6514,5.5,5685.312};
+					special="NONE";
+					id=42;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.3975,5.5,5685.2769};
+					special="NONE";
+					id=43;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.1396,5.5,5685.2769};
+					special="NONE";
+					id=44;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.7295,5.5,5685.2769};
+					special="NONE";
+					id=45;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.3232,5.5,5685.2769};
+					special="NONE";
+					id=46;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.0264,5.5,5685.312};
+					special="NONE";
+					id=47;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D11_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+			};
+		};
+		class Item6
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1699.9637,5.5,5681.3438};
+					special="NONE";
+					id=48;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="BLU_PLT12_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2""];";
+					description="1-2 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8114,5.5,5681.25};
+					special="NONE";
+					id=49;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="BLU_PLT12_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2""];";
+					description="1-2 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.5536,5.5,5681.25};
+					special="NONE";
+					id=50;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT12_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2""];";
+					description="1-2 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.3739,5.5,5681.2578};
+					special="NONE";
+					id=51;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_PLT12_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2""];";
+					description="1-2 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.0419,5.5,5681.2578};
+					special="NONE";
+					id=52;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_PLT12_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2""];";
+					description="1-2 Platoon Rifleman";
+				};
+			};
+		};
+		class Item7
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9169,5.5,5679.2539};
+					special="NONE";
+					id=53;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_A12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8036,5.5,5679.1602};
+					special="NONE";
+					id=54;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5887,5.5,5679.125};
+					special="NONE";
+					id=55;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3739,5.5,5679.125};
+					special="NONE";
+					id=56;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0419,5.5,5679.1602};
+					special="NONE";
+					id=57;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8661,5.5,5679.1602};
+					special="NONE";
+					id=58;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5341,5.5,5679.1602};
+					special="NONE";
+					id=59;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2802,5.5,5679.125};
+					special="NONE";
+					id=60;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_A12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-A""];";
+					description="1-2-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item8
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9559,5.5,5677.0039};
+					special="NONE";
+					id=61;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_B12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8466,5.5,5676.9102};
+					special="NONE";
+					id=62;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.6669,5.5,5676.9531};
+					special="NONE";
+					id=63;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.413,5.5,5676.8711};
+					special="NONE";
+					id=64;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0809,5.5,5676.9102};
+					special="NONE";
+					id=65;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9052,5.5,5676.9102};
+					special="NONE";
+					id=66;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5731,5.5,5676.9102};
+					special="NONE";
+					id=67;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3192,5.5,5676.8711};
+					special="NONE";
+					id=68;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_B12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item9
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.8778,5.5,5675.1445};
+					special="NONE";
+					id=69;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_C12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-C""];";
+					description="1-2-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7684,5.5,5675.0508};
+					special="NONE";
+					id=70;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5497,5.5,5675.0156};
+					special="NONE";
+					id=71;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3348,5.5,5675.0156};
+					special="NONE";
+					id=72;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0028,5.5,5675.0508};
+					special="NONE";
+					id=73;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.827,5.5,5675.0508};
+					special="NONE";
+					id=74;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.495,5.5,5675.0508};
+					special="NONE";
+					id=75;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2411,5.5,5675.0156};
+					special="NONE";
+					id=76;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_C12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-B""];";
+					description="1-2-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item10
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.0341,5.5,5673.0117};
+					special="NONE";
+					id=77;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="BLU_D12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9247,5.5,5672.918};
+					special="NONE";
+					id=78;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.7059,5.5,5672.8828};
+					special="NONE";
+					id=79;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.4911,5.5,5672.8828};
+					special="NONE";
+					id=80;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1591,5.5,5672.918};
+					special="NONE";
+					id=81;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9794,5.5,5672.918};
+					special="NONE";
+					id=82;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.6512,5.5,5672.918};
+					special="NONE";
+					id=83;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.3973,5.5,5672.8828};
+					special="NONE";
+					id=84;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.1395,5.5,5672.8828};
+					special="NONE";
+					id=85;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.7294,5.5,5672.8828};
+					special="NONE";
+					id=86;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.3231,5.5,5672.8828};
+					special="NONE";
+					id=87;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.0262,5.5,5672.918};
+					special="NONE";
+					id=88;
+					side="WEST";
+					vehicle="B_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="BLU_D12_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""B - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+			};
+		};
+		class Item11
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=7;
+				class Item0
+				{
+					position[]={1699.9857,5.5,5499.9751};
+					special="NONE";
+					id=89;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.2;
+					text="IND_COY_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company Commander";
+				};
+				class Item1
+				{
+					position[]={1701.782,5.5,5499.9331};
+					special="NONE";
+					id=90;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="IND_COY_2IC";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company 2iC";
+				};
+				class Item2
+				{
+					position[]={1703.4921,5.5,5499.9653};
+					special="NONE";
+					id=91;
+					side="GUER";
+					vehicle="I_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_COY_MEDIC1";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company Medic";
+				};
+				class Item3
+				{
+					position[]={1705.0854,5.5,5499.9009};
+					special="NONE";
+					id=92;
+					side="GUER";
+					vehicle="I_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_COY_MEDIC2";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company Medic";
+				};
+				class Item4
+				{
+					position[]={1706.874,5.5,5499.877};
+					special="NONE";
+					id=93;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_COY_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company JTAC";
+				};
+				class Item5
+				{
+					position[]={1708.6964,5.5,5499.877};
+					special="NONE";
+					id=94;
+					side="GUER";
+					vehicle="I_engineer_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_COY_ENG";
+					init="nul = [this,""engi""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""]";
+					description="Company Engineer";
+				};
+				class Item6
+				{
+					position[]={1710.4615,5.5,5499.8691};
+					special="NONE";
+					id=95;
+					side="GUER";
+					vehicle="I_soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_COY_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - COY""];";
+					description="Company Rifleman";
+				};
+			};
+		};
+		class Item12
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1699.9476,5.5,5493.7925};
+					special="NONE";
+					id=96;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_PLT11_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1""];";
+					description="1-1 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7953,5.5,5493.6987};
+					special="NONE";
+					id=97;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="IND_PLT11_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1""];";
+					description="1-1 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.5375,5.5,5493.6987};
+					special="NONE";
+					id=98;
+					side="GUER";
+					vehicle="I_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT11_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1""];";
+					description="1-1 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.3578,5.5,5493.7065};
+					special="NONE";
+					id=99;
+					side="GUER";
+					vehicle="I_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT11_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1""];";
+					description="1-1 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.0258,5.5,5493.7065};
+					special="NONE";
+					id=100;
+					side="GUER";
+					vehicle="I_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_PLT11_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1""];";
+					description="1-1 Platoon Rifleman";
+				};
+			};
+		};
+		class Item13
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9008,5.5,5491.7026};
+					special="NONE";
+					id=101;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_A11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7875,5.5,5491.6089};
+					special="NONE";
+					id=102;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5726,5.5,5491.5737};
+					special="NONE";
+					id=103;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3578,5.5,5491.5737};
+					special="NONE";
+					id=104;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0258,5.5,5491.6089};
+					special="NONE";
+					id=105;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.85,5.5,5491.6089};
+					special="NONE";
+					id=106;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5179,5.5,5491.6089};
+					special="NONE";
+					id=107;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.264,5.5,5491.5737};
+					special="NONE";
+					id=108;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-A""];";
+					description="1-1-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item14
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9398,5.5,5489.4526};
+					special="NONE";
+					id=109;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_B11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8304,5.5,5489.3589};
+					special="NONE";
+					id=110;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.6508,5.5,5489.4019};
+					special="NONE";
+					id=111;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3969,5.5,5489.3198};
+					special="NONE";
+					id=112;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0648,5.5,5489.3589};
+					special="NONE";
+					id=113;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.889,5.5,5489.3589};
+					special="NONE";
+					id=114;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.557,5.5,5489.3589};
+					special="NONE";
+					id=115;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3031,5.5,5489.3198};
+					special="NONE";
+					id=116;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-B""];";
+					description="1-1-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item15
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.8617,5.5,5487.5933};
+					special="NONE";
+					id=117;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_C11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7523,5.5,5487.4995};
+					special="NONE";
+					id=118;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5336,5.5,5487.4644};
+					special="NONE";
+					id=119;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3187,5.5,5487.4644};
+					special="NONE";
+					id=120;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1706.9867,5.5,5487.4995};
+					special="NONE";
+					id=121;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8109,5.5,5487.4995};
+					special="NONE";
+					id=122;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.4789,5.5,5487.4995};
+					special="NONE";
+					id=123;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.225,5.5,5487.4644};
+					special="NONE";
+					id=124;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-C""];";
+					description="1-1-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item16
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.0179,5.5,5485.4604};
+					special="NONE";
+					id=125;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_D11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9086,5.5,5485.3667};
+					special="NONE";
+					id=126;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.6898,5.5,5485.3315};
+					special="NONE";
+					id=127;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.475,5.5,5485.3315};
+					special="NONE";
+					id=128;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1429,5.5,5485.3667};
+					special="NONE";
+					id=129;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9633,5.5,5485.3667};
+					special="NONE";
+					id=130;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.6351,5.5,5485.3667};
+					special="NONE";
+					id=131;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.3812,5.5,5485.3315};
+					special="NONE";
+					id=132;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.1234,5.5,5485.3315};
+					special="NONE";
+					id=133;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.7133,5.5,5485.3315};
+					special="NONE";
+					id=134;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.307,5.5,5485.3315};
+					special="NONE";
+					id=135;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.0101,5.5,5485.3667};
+					special="NONE";
+					id=136;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D11_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+			};
+		};
+		class Item17
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1699.9475,5.5,5481.3984};
+					special="NONE";
+					id=137;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="IND_PLT12_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2""];";
+					description="1-2 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7952,5.5,5481.3047};
+					special="NONE";
+					id=138;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="IND_PLT12_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2""];";
+					description="1-2 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.5374,5.5,5481.3047};
+					special="NONE";
+					id=139;
+					side="GUER";
+					vehicle="I_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT12_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2""];";
+					description="1-2 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.3577,5.5,5481.3125};
+					special="NONE";
+					id=140;
+					side="GUER";
+					vehicle="I_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_PLT12_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2""];";
+					description="1-2 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.0256,5.5,5481.3125};
+					special="NONE";
+					id=141;
+					side="GUER";
+					vehicle="I_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_PLT12_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2""];";
+					description="1-2 Platoon Rifleman";
+				};
+			};
+		};
+		class Item18
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9006,5.5,5479.3086};
+					special="NONE";
+					id=142;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_A12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7874,5.5,5479.2148};
+					special="NONE";
+					id=143;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5725,5.5,5479.1797};
+					special="NONE";
+					id=144;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3577,5.5,5479.1797};
+					special="NONE";
+					id=145;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0256,5.5,5479.2148};
+					special="NONE";
+					id=146;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8499,5.5,5479.2148};
+					special="NONE";
+					id=147;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5178,5.5,5479.2148};
+					special="NONE";
+					id=148;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2639,5.5,5479.1797};
+					special="NONE";
+					id=149;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_A12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-A""];";
+					description="1-2-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item19
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9397,5.5,5477.0586};
+					special="NONE";
+					id=150;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_B12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8303,5.5,5476.9648};
+					special="NONE";
+					id=151;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.6506,5.5,5477.0078};
+					special="NONE";
+					id=152;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3967,5.5,5476.9258};
+					special="NONE";
+					id=153;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.0647,5.5,5476.9648};
+					special="NONE";
+					id=154;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8889,5.5,5476.9648};
+					special="NONE";
+					id=155;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.5569,5.5,5476.9648};
+					special="NONE";
+					id=156;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.303,5.5,5476.9258};
+					special="NONE";
+					id=157;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_B12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item20
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.8616,5.5,5475.1992};
+					special="NONE";
+					id=158;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_C12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-C""];";
+					description="1-2-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.7522,5.5,5475.1055};
+					special="NONE";
+					id=159;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.5334,5.5,5475.0703};
+					special="NONE";
+					id=160;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.3186,5.5,5475.0703};
+					special="NONE";
+					id=161;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1706.9866,5.5,5475.1055};
+					special="NONE";
+					id=162;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.8108,5.5,5475.1055};
+					special="NONE";
+					id=163;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.4788,5.5,5475.1055};
+					special="NONE";
+					id=164;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.2249,5.5,5475.0703};
+					special="NONE";
+					id=165;
+					side="GUER";
+					vehicle="I_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_C12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-B""];";
+					description="1-2-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item21
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.0178,5.5,5473.0664};
+					special="NONE";
+					id=166;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="IND_D12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9084,5.5,5472.9727};
+					special="NONE";
+					id=167;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.6897,5.5,5472.9375};
+					special="NONE";
+					id=168;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.4749,5.5,5472.9375};
+					special="NONE";
+					id=169;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1428,5.5,5472.9727};
+					special="NONE";
+					id=170;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9631,5.5,5472.9727};
+					special="NONE";
+					id=171;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.635,5.5,5472.9727};
+					special="NONE";
+					id=172;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.3811,5.5,5472.9375};
+					special="NONE";
+					id=173;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.1233,5.5,5472.9375};
+					special="NONE";
+					id=174;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.7131,5.5,5472.9375};
+					special="NONE";
+					id=175;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.3069,5.5,5472.9375};
+					special="NONE";
+					id=176;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.01,5.5,5472.9727};
+					special="NONE";
+					id=177;
+					side="GUER";
+					vehicle="I_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="IND_D12_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_AAF.sqf""; this setGroupID [""I - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+			};
+		};
+		class Item22
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=7;
+				class Item0
+				{
+					position[]={1700.1177,5.5,5600.0645};
+					special="NONE";
+					id=178;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.2;
+					text="RED_COY_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9139,5.5,5600.0225};
+					special="NONE";
+					id=179;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="RED_COY_2IC";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company 2iC";
+				};
+				class Item2
+				{
+					position[]={1703.624,5.5,5600.0547};
+					special="NONE";
+					id=180;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_COY_MEDIC1";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company Medic";
+				};
+				class Item3
+				{
+					position[]={1705.2174,5.5,5599.9902};
+					special="NONE";
+					id=181;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_COY_MEDIC2";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company Medic";
+				};
+				class Item4
+				{
+					position[]={1707.006,5.5,5599.9663};
+					special="NONE";
+					id=182;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_COY_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company JTAC";
+				};
+				class Item5
+				{
+					position[]={1708.8284,5.5,5599.9663};
+					special="NONE";
+					id=183;
+					side="EAST";
+					vehicle="O_engineer_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_COY_ENG";
+					init="nul = [this,""engi""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""]";
+					description="Company Engineer";
+				};
+				class Item6
+				{
+					position[]={1710.5935,5.5,5599.9585};
+					special="NONE";
+					id=184;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_COY_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - COY""];";
+					description="Company Rifleman";
+				};
+			};
+		};
+		class Item23
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1700.0796,5.5,5593.8818};
+					special="NONE";
+					id=185;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="RED_PLT11_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1""];";
+					description="1-1 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9272,5.5,5593.7881};
+					special="NONE";
+					id=186;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="RED_PLT11_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1""];";
+					description="1-1 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.6694,5.5,5593.7881};
+					special="NONE";
+					id=187;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT11_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1""];";
+					description="1-1 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.4897,5.5,5593.7959};
+					special="NONE";
+					id=188;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT11_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1""];";
+					description="1-1 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.1577,5.5,5593.7959};
+					special="NONE";
+					id=189;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_PLT11_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1""];";
+					description="1-1 Platoon Rifleman";
+				};
+			};
+		};
+		class Item24
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1700.0327,5.5,5591.792};
+					special="NONE";
+					id=190;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_A11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9194,5.5,5591.6982};
+					special="NONE";
+					id=191;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.7046,5.5,5591.6631};
+					special="NONE";
+					id=192;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.4897,5.5,5591.6631};
+					special="NONE";
+					id=193;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1577,5.5,5591.6982};
+					special="NONE";
+					id=194;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9819,5.5,5591.6982};
+					special="NONE";
+					id=195;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.6499,5.5,5591.6982};
+					special="NONE";
+					id=196;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.396,5.5,5591.6631};
+					special="NONE";
+					id=197;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-A""];";
+					description="1-1-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item25
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1700.0718,5.5,5589.542};
+					special="NONE";
+					id=198;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_B11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9624,5.5,5589.4482};
+					special="NONE";
+					id=199;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.7827,5.5,5589.4912};
+					special="NONE";
+					id=200;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.5288,5.5,5589.4092};
+					special="NONE";
+					id=201;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1968,5.5,5589.4482};
+					special="NONE";
+					id=202;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1709.021,5.5,5589.4482};
+					special="NONE";
+					id=203;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.689,5.5,5589.4482};
+					special="NONE";
+					id=204;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.4351,5.5,5589.4092};
+					special="NONE";
+					id=205;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-B""];";
+					description="1-1-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item26
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9937,5.5,5587.6826};
+					special="NONE";
+					id=206;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_C11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8843,5.5,5587.5889};
+					special="NONE";
+					id=207;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.6655,5.5,5587.5537};
+					special="NONE";
+					id=208;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.4507,5.5,5587.5537};
+					special="NONE";
+					id=209;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1187,5.5,5587.5889};
+					special="NONE";
+					id=210;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9429,5.5,5587.5889};
+					special="NONE";
+					id=211;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.6108,5.5,5587.5889};
+					special="NONE";
+					id=212;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3569,5.5,5587.5537};
+					special="NONE";
+					id=213;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C11_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-C""];";
+					description="1-1-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item27
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.1499,5.5,5585.5498};
+					special="NONE";
+					id=214;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_D11_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1702.0405,5.5,5585.4561};
+					special="NONE";
+					id=215;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.8218,5.5,5585.4209};
+					special="NONE";
+					id=216;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.6069,5.5,5585.4209};
+					special="NONE";
+					id=217;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.2749,5.5,5585.4561};
+					special="NONE";
+					id=218;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1709.0952,5.5,5585.4561};
+					special="NONE";
+					id=219;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.7671,5.5,5585.4561};
+					special="NONE";
+					id=220;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.5132,5.5,5585.4209};
+					special="NONE";
+					id=221;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.2554,5.5,5585.4209};
+					special="NONE";
+					id=222;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.8452,5.5,5585.4209};
+					special="NONE";
+					id=223;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.439,5.5,5585.4209};
+					special="NONE";
+					id=224;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.1421,5.5,5585.4561};
+					special="NONE";
+					id=225;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D11_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-1-D""];";
+					description="1-1-D Grenadier";
+				};
+			};
+		};
+		class Item28
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={1700.0795,5.5,5581.4878};
+					special="NONE";
+					id=226;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.2;
+					text="RED_PLT12_CO";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2""];";
+					description="1-2 Platoon Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9271,5.5,5581.394};
+					special="NONE";
+					id=227;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.2;
+					text="RED_PLT12_SGT";
+					init="nul = [this,""pltld""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2""];";
+					description="1-2 Platoon Sergeant";
+				};
+				class Item2
+				{
+					position[]={1703.6693,5.5,5581.394};
+					special="NONE";
+					id=228;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT12_MEDIC";
+					init="nul = [this,""pltmed""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2""];";
+					description="1-2 Platoon Medic";
+				};
+				class Item3
+				{
+					position[]={1705.4896,5.5,5581.4019};
+					special="NONE";
+					id=229;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_PLT12_JTACFO";
+					init="nul = [this,""pltfac""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2""];";
+					description="1-2 Platoon JTAC";
+				};
+				class Item4
+				{
+					position[]={1707.1576,5.5,5581.4019};
+					special="NONE";
+					id=230;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_PLT12_RM";
+					init="nul = [this,""rm""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2""];";
+					description="1-2 Platoon Rifleman";
+				};
+			};
+		};
+		class Item29
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1700.0326,5.5,5579.3979};
+					special="NONE";
+					id=231;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_A12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9193,5.5,5579.3042};
+					special="NONE";
+					id=232;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.7045,5.5,5579.269};
+					special="NONE";
+					id=233;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.4896,5.5,5579.269};
+					special="NONE";
+					id=234;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1576,5.5,5579.3042};
+					special="NONE";
+					id=235;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9818,5.5,5579.3042};
+					special="NONE";
+					id=236;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.6498,5.5,5579.3042};
+					special="NONE";
+					id=237;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3959,5.5,5579.269};
+					special="NONE";
+					id=238;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_A12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-A""];";
+					description="1-2-A Rifleman (AT)";
+				};
+			};
+		};
+		class Item30
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1700.0717,5.5,5577.1479};
+					special="NONE";
+					id=239;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_B12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.9623,5.5,5577.0542};
+					special="NONE";
+					id=240;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.7826,5.5,5577.0972};
+					special="NONE";
+					id=241;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.5287,5.5,5577.0151};
+					special="NONE";
+					id=242;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1967,5.5,5577.0542};
+					special="NONE";
+					id=243;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Team Leader";
+				};
+				class Item5
+				{
+					position[]={1709.0209,5.5,5577.0542};
+					special="NONE";
+					id=244;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.6888,5.5,5577.0542};
+					special="NONE";
+					id=245;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.4349,5.5,5577.0151};
+					special="NONE";
+					id=246;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_B12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-B Rifleman (AT)";
+				};
+			};
+		};
+		class Item31
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={1699.9935,5.5,5575.2886};
+					special="NONE";
+					id=247;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_C12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-C""];";
+					description="1-2-C Section Commander";
+				};
+				class Item1
+				{
+					position[]={1701.8842,5.5,5575.1948};
+					special="NONE";
+					id=248;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_AR1";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={1703.6654,5.5,5575.1597};
+					special="NONE";
+					id=249;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_AAR1";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={1705.4506,5.5,5575.1597};
+					special="NONE";
+					id=250;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_GREN";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.1185,5.5,5575.1948};
+					special="NONE";
+					id=251;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_FTL";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Team Leader";
+				};
+				class Item5
+				{
+					position[]={1708.9427,5.5,5575.1948};
+					special="NONE";
+					id=252;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_AR2";
+					init="nul = [this,""ar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Automatic Rifleman";
+				};
+				class Item6
+				{
+					position[]={1710.6107,5.5,5575.1948};
+					special="NONE";
+					id=253;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_AAR2";
+					init="nul = [this,""aar""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Assistant Automatic Rifleman";
+				};
+				class Item7
+				{
+					position[]={1712.3568,5.5,5575.1597};
+					special="NONE";
+					id=254;
+					side="EAST";
+					vehicle="O_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_C12_RMAT";
+					init="nul = [this,""rmat""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-B""];";
+					description="1-2-C Rifleman (AT)";
+				};
+			};
+		};
+		class Item32
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=12;
+				class Item0
+				{
+					position[]={1700.1498,5.5,5573.1558};
+					special="NONE";
+					id=255;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.2;
+					text="RED_D12_SECCO";
+					init="nul = [this,""secco""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Section Commander";
+				};
+				class Item1
+				{
+					position[]={1702.0404,5.5,5573.062};
+					special="NONE";
+					id=256;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMG1";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item2
+				{
+					position[]={1703.8217,5.5,5573.0269};
+					special="NONE";
+					id=257;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMGASS1";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item3
+				{
+					position[]={1705.6068,5.5,5573.0269};
+					special="NONE";
+					id=258;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_GREN1";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item4
+				{
+					position[]={1707.2748,5.5,5573.062};
+					special="NONE";
+					id=259;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_FTL2";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item5
+				{
+					position[]={1709.0951,5.5,5573.062};
+					special="NONE";
+					id=260;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMG2";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item6
+				{
+					position[]={1710.767,5.5,5573.062};
+					special="NONE";
+					id=261;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMGASS2";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item7
+				{
+					position[]={1712.5131,5.5,5573.0269};
+					special="NONE";
+					id=262;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_GREN2";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+				class Item8
+				{
+					position[]={1714.2552,5.5,5573.0269};
+					special="NONE";
+					id=263;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_FTL3";
+					init="nul = [this,""sectl""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Team Leader";
+				};
+				class Item9
+				{
+					position[]={1715.8451,5.5,5573.0269};
+					special="NONE";
+					id=264;
+					side="EAST";
+					vehicle="O_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMG3";
+					init="nul = [this,""mmg""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Machinegunner";
+				};
+				class Item10
+				{
+					position[]={1717.4388,5.5,5573.0269};
+					special="NONE";
+					id=265;
+					side="EAST";
+					vehicle="O_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_MMGASS3";
+					init="nul = [this,""mmgass""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Assistant Machinegunner";
+				};
+				class Item11
+				{
+					position[]={1719.142,5.5,5573.062};
+					special="NONE";
+					id=266;
+					side="EAST";
+					vehicle="O_Soldier_GL_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="RED_D12_GREN3";
+					init="nul = [this,""gren""] execVM ""scripts\assignGear_NATO.sqf""; this setGroupID [""O - 1-2-D""];";
+					description="1-2-D Grenadier";
+				};
+			};
+		};
+		class Item33
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.2157,0.21270591,5999.8721};
+					class args
+					{
+						items=3;
+						class Item0
+						{
+							value="2";
+							parentCls="AGM_ModuleCheckPBOs";
+							typeName="Action";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="AGM_ModuleCheckPBOs";
+							typeName="CheckAll";
+						};
+						class Item2
+						{
+							value="";
+							parentCls="AGM_ModuleCheckPBOs";
+							typeName="Whitelist";
+						};
+					};
+					id=267;
+					side="LOGIC";
+					vehicle="AGM_ModuleCheckPBOs";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.2;
+				};
+			};
+		};
+		class Item34
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.2079,-0.076226093,5799.7334};
+					class args
+					{
+						items=2;
+						class Item0
+						{
+							value="1";
+							parentCls="AGM_ModuleFatigue";
+							typeName="CoefFatigue";
+						};
+						class Item1
+						{
+							value="1";
+							parentCls="AGM_ModuleFatigue";
+							typeName="CoefRecover";
+						};
+					};
+					id=268;
+					side="LOGIC";
+					vehicle="AGM_ModuleFatigue";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.2;
+				};
+			};
+		};
+		class Item35
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.1872,-0.17115118,5699.752};
+					class args
+					{
+						items=16;
+						class Item0
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefDamage";
+						};
+						class Item1
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefBleeding";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefPain";
+						};
+						class Item3
+						{
+							value="2";
+							parentCls="AGM_ModuleMedical";
+							typeName="CoefNonMedic";
+						};
+						class Item4
+						{
+							value="-1";
+							parentCls="AGM_ModuleMedical";
+							typeName="MaxUnconsciousnessTime";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="AllowNonmedics";
+						};
+						class Item6
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="RequireDiagnosis";
+						};
+						class Item7
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="PreventInstaDeath";
+						};
+						class Item8
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="PreventDeathWhileUnconscious";
+						};
+						class Item9
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="SingleBandage";
+						};
+						class Item10
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="AllowChatWhileUnconscious";
+						};
+						class Item11
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="EnableOverdosing";
+						};
+						class Item12
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="RequireMEDEVAC";
+						};
+						class Item13
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="TypeMEDEVAC";
+						};
+						class Item14
+						{
+							value="1";
+							parentCls="AGM_ModuleMedical";
+							typeName="AutomaticWakeup";
+						};
+						class Item15
+						{
+							value="0";
+							parentCls="AGM_ModuleMedical";
+							typeName="DisableScreams";
+						};
+					};
+					id=269;
+					side="LOGIC";
+					vehicle="AGM_ModuleMedical";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.2;
+				};
+			};
+		};
+		class Item36
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.2251,-0.12775646,5899.7749};
+					id=270;
+					side="LOGIC";
+					vehicle="AGM_ModuleLSDVehicles";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.2;
+				};
+			};
+		};
+		class Item37
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.2338,0.20930815,5499.7808};
+					class args
+					{
+						items=2;
+						class Item0
+						{
+							value="0";
+							parentCls="AGM_ModuleExplosive";
+							typeName="RequireSpecialist";
+						};
+						class Item1
+						{
+							value="1";
+							parentCls="AGM_ModuleExplosive";
+							typeName="PunishNonSpecialists";
+						};
+					};
+					id=271;
+					side="LOGIC";
+					vehicle="AGM_ModuleExplosive";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.2;
+				};
+			};
+		};
+		class Item38
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.2256,0.17562355,5399.7729};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="TeamLeaderRadio";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="RiflemanRadio";
+						};
+						class Item2
+						{
+							value="7";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="terrain_interception_coefficient";
+						};
+						class Item3
+						{
+							value="TaskForceRadio";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_name";
+						};
+						class Item4
+						{
+							value="123";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_password";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_sw_frequencies_for_side";
+						};
+						class Item6
+						{
+							value="1";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_lr_frequencies_for_side";
+						};
+					};
+					id=272;
+					side="LOGIC";
+					vehicle="tfar_ModuleTaskForceRadioEnforceUsage";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item39
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1000.258,0.065322839,5599.7305};
+					class args
+					{
+						items=3;
+						class Item0
+						{
+							value="5";
+							parentCls="AGM_ModuleNameTags";
+							typeName="PlayerNamesViewDistance";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="AGM_ModuleNameTags";
+							typeName="ShowNamesForAI";
+						};
+						class Item2
+						{
+							value="-1";
+							parentCls="AGM_ModuleNameTags";
+							typeName="Visibility";
+						};
+					};
+					id=273;
+					side="LOGIC";
+					vehicle="AGM_ModuleNameTags";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item40
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={999.98602,0.1144667,5299.9775};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="#adminLogged";
+							parentCls="ModuleCurator_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="";
+							parentCls="ModuleCurator_F";
+							typeName="Name";
+						};
+						class Item2
+						{
+							value="2";
+							parentCls="ModuleCurator_F";
+							typeName="Addons";
+						};
+						class Item3
+						{
+							value="0";
+							parentCls="ModuleCurator_F";
+							typeName="Forced";
+						};
+					};
+					id=274;
+					side="LOGIC";
+					vehicle="ModuleCurator_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=15932239;
+	class Intel
+	{
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2015;
+		month=1;
+		day=1;
+		hour=10;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=5804557;
+	class Intel
+	{
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2015;
+		month=1;
+		day=1;
+		hour=10;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=4178947;
+	class Intel
+	{
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=2015;
+		month=1;
+		day=1;
+		hour=10;
+		minute=0;
+		startFogDecay=0;
+		forecastFogDecay=0;
+	};
+};
