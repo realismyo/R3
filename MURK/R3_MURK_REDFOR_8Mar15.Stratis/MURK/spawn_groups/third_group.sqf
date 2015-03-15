@@ -31,7 +31,7 @@ waitUntil {time > 1};
 _exit = false;
 
 // determine if parameter is set to HC being present.
-if (("HeadlessClient" call BIS_fnc_GetParamValue) == 1) then { 
+if (("HeadlessClient_Controller" call BIS_fnc_GetParamValue) == 1) then { 
 	_headlessClient = true; 
 } else { 
 	_headlessClient = false; 
