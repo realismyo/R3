@@ -39,13 +39,13 @@ r_param_mission_timer = (["SafeStart_Timer",0] call BIS_fnc_GetParamValue);
 // Headless Client Parameter
 // Dictates whether applicable scripts will run on the Headless Client or Server, primarily for testing purposes. 
 
-if ((["HeadlessClient_Controller",0] call BIS_fnc_GetParamValue) == 1) then { r_var_headlessClient = true; } else { r_var_headlessClient = false; };
+if (("HeadlessClient_Controller" call BIS_fnc_GetParamValue) == 1) then { r_var_headlessClient = true; } else { r_var_headlessClient = false; };
 
 //=====================================================================================
 // JIP Menu Script
 // Needs to be changed to the respective gear script you are using, so JIP players can have the same gear as other players.
 
-r_fnc_assignGear = compile preprocessfilelinenumbers "scripts\assignGear_CSAT.sqf";
+r_fnc_assignGear = compile preprocessfilelinenumbers "scripts\assignGear_NATO.sqf";
 
 //=====================================================================================
 // Briefing Variable
@@ -138,4 +138,4 @@ if (r_isJIP) then {
 /*
 if (r_var_bo_enabled) then { [] execVM "scripts\bleedout\fnc_initBleedout.sqf"; };
 */
-// ====================================================================================
+//===================================================================================
